@@ -1,0 +1,140 @@
+\section{Complex Numbers}
+
+\begin{tcolorbox}[title={Introduction to Complex Numbers}]
+    It is assumed that a high school student is aware of the set of positive integers (also called natural numbers) $\mathbb N$, the set of integers $\mathbb Z$, the set of rational numbers $\mathbb Q$, and the of real numbers $\mathbb R$.  It is unfortunate that all the numbers in these sets, even all real numbers, are not enough to solve all polynomial equations. For instance, the simple equation $x^2+1=0$ does not have any real roots and that is where the imaginary unit $i=\sqrt{-1}$ comes from.
+    \begin{definition}[The Set of Complex Numbers $\mathbb C$]
+        If we allow $i=\sqrt{-1}$, then the set
+        \[\mathbb C = \{x+iy \ | \ x,y \in\mathbb R\},\]
+        is the set of complex numbers. Realize that we can represent each complex number as a pair $(x,y)$ of real numbers, and that $\mathbb R$ (attained by plugging $y=0$) is a subset of $\mathbb C$.
+    \end{definition}
+
+    \begin{definition}[Real and Imaginary Parts of a Complex Number]
+        Let $z=x+iy$ be a complex number, $z\in\mathbb C$ for short. We call $x$ the real part of $z$ and $y$ the imaginary part of $z$, and denote $\text{Re}(z)=x$ and $\text{Im}(z)=y$.
+    \end{definition}
+
+    \begin{definition}[Sum and Product of Complex Numbers]
+        For two complex numbers $z_1=x_1+iy_1$ and $z_2=x_2+iy_2$, define
+        \begin{align*}
+            z_1 + z_2 &= (x_1+x_2)+i(y_1+y_2),\\
+            z_1 - z_2 &= (x_1-x_2)+i(y_1-y_2),\\
+            z_1z_2 &= (x_1x_2-y_1y_2) + i(x_1y_2+x_2y_1).
+        \end{align*}
+        These can be written in terms of $\text{Re}(z)$ and $\text{Im}(z)$ as
+        \begin{align*}
+            \text{Re}(z_1 \pm z_2) &= \text{Re}(z_1)\pm\text{Re}(z_2),\\
+            \text{Im}(z_1 \pm z_2) &= \text{Im}(z_1)\pm\text{Im}(z_2),\\
+            \text{Re}(z_1 \cdot z_2) &= \text{Re}(z_1)\cdot\text{Re}(z_2)-\text{Im}(z_1)\cdot\text{Im}(z_2),\\
+            \text{Im}(z_1 \cdot z_2) &= \text{Re}(z_1)\cdot\text{Im}(z_2)+\text{Re}(z_2)\cdot\text{Im}(z_1).
+        \end{align*}
+        In order to divide $z_1=x_1+iy_1$ by $z_2=x_2+iy_2\neq 0$, we can write
+        \[\frac{z_1}{z_2}=\frac{x_1+iy_1}{x_2+iy_2} = \frac{x_1x_2+y_1y_2}{x_2^2+y_2^2} + i\frac{y_1x_2-x_1y_2}{x_2^2+y_2^2},\]
+        or in terms of $\text{Re}(z_{1,2})$ and $\text{Im}(z_{1,2})$,
+        \begin{align*}
+            \text{Re}\left(\frac{\text{Re}(z_1)+\text{Im}(z_1)}{\text{Re}(z_2)+\text{Im}(z_2)}\right) &= \frac{\text{Re}(z_1)\cdot\text{Re}(z_2)+\text{Im}(z_1)\cdot\text{Im}(z_2)}{\left(\text{Re}(z_2)\right)^2+\left(\text{Im}(z_2)\right)^2},\\
+            \text{Im}\left(\frac{\text{Re}(z_1)+\text{Im}(z_1)}{\text{Re}(z_2)+\text{Im}(z_2)}\right) &= \frac{\text{Im}(z_1)\cdot\text{Re}(z_2)-\text{Re}(z_1)\cdot\text{Im}(z_2)}{\left(\text{Re}(z_2)\right)^2+\left(\text{Im}(z_2)\right)^2}.
+        \end{align*}
+    \end{definition}
+\end{tcolorbox}
+
+\subsection{Polar Representation of Complex Numbers}
+\begin{tcolorbox}[title={Complex Conjugate Definitions}]
+\begin{definition}
+    The \textbf{polar representation} of a complex number $z=x+iy$ is given by $z=r(\cos\theta+i\sin\theta)$, so that
+    \begin{align*}
+        x = r \cos \theta \qquad \text{and} \qquad y = r \sin \theta,
+    \end{align*}
+    where $\theta$ is the angle between the $x$--axis and the vector formed by connecting the point $z$ in the complex plane to the origin. In this definition, $r$ is the absolute value of $z$, and $\theta$ is the angle or argument of $z$. Finally,
+    \begin{align*}
+        r= |z| = \sqrt{x^2+y^2}\qquad \text{and} \qquad \theta=\arg(z)=\arctan\left(\frac{y}{x}\right).
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Complex Conjugates]
+    The two complex numbers $x+iy$ and $x-iy$ are \textbf{conjugate} of one another in the complex plane. We usually denote the complex conjugate of $z$ by $\overline{z}$.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{theorem}[Complex Conjugate Theorem]
+Prove that $z$ is a root of a polynomial with real coefficients if and only if $\overline{z}$ is also the root of the same polynomial.
+\end{theorem}
+
+
+\begin{theorem}
+    For any three complex numbers $z_1,z_2,z_3$, prove the following:
+    \begin{tasks}
+        \task The real and imaginary part of $z_1$ are
+        \[\text{Re}(z_1)=\frac{z_1+\overline{z_1}}{2} \qquad \text{and} \qquad \text{Im}(z_1)=\frac{z_1-\overline{z_1}}{2i}.\]
+        \task $|z_1\cdot z_2|  = |z_1| \cdot |z_2|$, and if $z_2\neq 0$,
+        \[\left|\frac{z_1}{z_2}\right|=\frac{|z_1|}{|z_2|}.\]
+        \task the triangle inequality for absolute values:
+        \[|z_1|-|z_2| \leq |z_1-z_2| \qquad \text{and} \qquad |z_1+z_2| \leq |z_1|+|z_2|.\]
+        \task $\overline{\overline{z_1}}=z_1$,
+        \task $\overline{z_1}=z_1 \iff z_1 \in \mathbb R$,
+        \task $\overline{z_1+z_2} = \overline{z_1}+\overline{z_2}$,
+        \task $\overline{z_1\cdot z_2} = \overline{z_1}\cdot \overline{z_2}$,
+        \task $|z_1|^2 = z_1\cdot \overline{z_1}$.
+    \end{tasks}
+\end{theorem}
+
+\begin{theorem}
+If we have 
+    \[z_1 = r_1(\cos \theta_1 + i\sin\theta_1) \qquad \text{and} \qquad z_2 = r_2(\cos \theta_2 + i\sin\theta_2),\]
+    prove the following polar identities:
+    \begin{tasks}
+        \task $z_1z_2 = r_1r_2(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2))$.
+        \task If $z_2 \neq 0$,
+        \[\frac{z_1}{z_2}= \frac{r_1}{r_2}(\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)).\]
+        \task $z_1^n = (r_1^n)\left(\cos(n\theta_1) + i \sin(n\theta_1)\right)$.
+    \end{tasks}
+\end{theorem}
+
+
+\begin{theorem}[De Moivre’s Theorem]
+Prove that for all $\theta \in \mathbb R$ and positive integer $n$,
+\[\cos n\theta + i\sin n\theta = (\cos\theta+i\sin\theta)^n.\]
+\end{theorem}
+
+\begin{theorem}[Euler's Formula]
+    For all reals $\theta$,
+    \[e^{i\theta}= \cos\theta+i\sin\theta.\]
+\end{theorem}
+
+\begin{definition}[Roots of Unity]
+    The $n^{th}$ roots of unity are roots of $z^n = 1$.
+\end{definition}
+
+\begin{question}[name={1995 AIME \#5}]
+% https://artofproblemsolving.com/community/c4h66873p394478
+    For certain real values of $a, b, c,$ and $d,$ the equation $x^4+ax^3+bx^2+cx+d=0$ has four non-real roots. The product of two of these roots is $13+i$ and the sum of the other two roots is $3+4i,$ where $i=\sqrt{-1}$. Find $b$.
+\end{question}
+
+\begin{question}[name={2013 AIME I \#10}]
+% https://artofproblemsolving.com/community/c5h525072p2969823
+    There are nonzero integers $a$, $b$, $r$, and $s$ such that the complex number $r+si$ is a zero of the polynomial $P(x) = x^3 - ax^2 + bx - 65$. For each possible combination of $a$ and $b$, let $p_{a,b}$ be the sum of the zeroes of $P(x)$. Find the sum of the $p_{a,b}$'s for all possible combinations of $a$ and $b$.
+\end{question}
+
+\begin{question}[name={2013 AIME II \#12}]
+% https://artofproblemsolving.com/community/c5h528163p3003348
+    Let $S$ be the set of all polynomials of the form $z^3+az^2+bz+c$, where $a$, $b$, and $c$ are integers. Find the number of polynomials in $S$ such that each of its roots $z$ satisfies either $\left\lvert z \right\rvert = 20$ or $\left\lvert z \right\rvert = 13$.	
+\end{question}
+
+
+\begin{question}[name={2011 AIME II \#8}]
+% https://artofproblemsolving.com/community/c5h399700p2224415
+    Let $z_1,z_2,z_3,\dots,z_{12}$ be the 12 zeroes of the polynomial $z^{12}-2^{36}$. For each $j$, let $w_j$ be one of $z_j$ or $i z_j$. Then the maximum possible value of the real part of $\displaystyle\sum_{j=1}^{12} w_j$ can be written as $m+\sqrt{n}$ where $m$ and $n$ are positive integers. Find $m+n$.
+\end{question}
+
+
+\begin{question}[name={2019 AIME II \#8}]
+% https://artofproblemsolving.com/community/c5h1807872p12030059
+    The polynomial $f(z)=az^{2018}+bz^{2017}+cz^{2016}$ has real coefficients not exceeding $2019$, and 
+    \[f\left(\dfrac{1+\sqrt{3}i}{2}\right)=2015+2019\sqrt{3}i.\] Find the remainder when $f(1)$ is divided by $1000$.
+\end{question}
+
+
+\begin{question}[name={1996 AIME \#11}]
+% https://artofproblemsolving.com/community/c6h66820p394249
+    Let $P$ be the product of the roots of $z^6+z^4+z^3+z^2+1=0$ that have positive imaginary part, and suppose that $P=r(\cos \theta^\circ+i\sin \theta^\circ),$ where $0<r$ and $0\le \theta <360.$ Find $\theta.$
+\end{question}
+

@@ -1,0 +1,476 @@
+\section{Advanced Polynomial Problems \& Theorems}
+
+\subsection{Symmetric Sums}
+
+\begin{tcolorbox}[title={Symmetries of Things}]
+\begin{definition}[Symmetric Sums $\sigma_k$]
+    Define $\sigma_k$, known as the \textbf{$k^{th}$ symmetric sum} of the $n$ numbers $x_1,x_2,\dots,x_n$ by \[\sigma_k(x_1,x_2,\dots,x_n)= \sum_{1\leq n_1 < n_2 < \cdots < n_k \leq n} x_{n_1} \cdot x_{n_2} \cdots x_{n_k}. \]
+    Then Vieta's Formulas for a polynomial $P(x)=a_nx^n+\cdots+a_0$ reduce to:
+    \begin{align*}
+        \sigma_k(x_1,x_2,\dots,x_n) = (-1)^k \frac{a_{n-k}}{a_n},\qquad \text{for} \quad k=1,2,\dots,n.
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Elementary Symmetric Polynomial]
+    An elementary symmetric polynomial is any multivariate (in more than one variable, like $x_1, x_2,\dots$) polynomial defined as an equivalent polynomial to symmetric sums $\sigma_k$.
+\end{definition}
+
+\begin{definition}[$n$--Variable Symmetric Polynomial]
+    A polynomial in $n$ variables is called an \textbf{$n$--Variable Symmetric Polynomial} if switching any two of the variables leaves the polynomial unchanged.
+\end{definition}
+\end{tcolorbox}
+
+\begin{theorem}[Fundamental Theorem of Symmetric Polynomials]
+Any symmetric polynomial can be expressed as the sum and product of multiple (not necessarily different)
+symmetric polynomials.
+\end{theorem}
+
+
+
+%% Problems from
+% https://yu-dylan.github.io/euclid-orchard/Handouts/Polynomials_in_the_AIME.pdf
+
+\begin{question}[name={1973 USAMO}]
+% https://artofproblemsolving.com/community/c6h336448p1799885
+    Determine all roots, real or complex, of the system of simultaneous equations
+    \begin{align*} 
+        \begin{cases}
+            x\phantom{^2}+y\phantom{^2}+z\phantom{^2} &= 3, \\
+        x^2+y^2+z^2 &= 3, \\
+        x^3+y^3+z^3 &= 3.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+
+\begin{question}[name={1983 AIME}]
+    % https://artofproblemsolving.com/community/c4h61075p367523
+    Suppose that the sum of the squares of two complex numbers $x$ and $y$ is $7$ and the sum of the cubes is $10$. What is the largest real value that $x + y$ can have?
+\end{question}
+
+\begin{question}[name={2003 AIME}]
+% https://artofproblemsolving.com/community/c4h125806p713214
+    Consider the polynomials \[P(x)=x^{6}-x^{5}-x^{3}-x^{2}-x,\] and \[Q(x)=x^{4}-x^{3}-x^{2}-1.\] Given that $z_{1},z_{2},z_{3},$ and $z_{4}$ are the roots of $Q(x)=0$, find $P(z_{1})+P(z_{2})+P(z_{3})+P(z_{4})$.
+\end{question}
+
+\begin{question}[name={2015 AIME}]
+% https://artofproblemsolving.com/community/c5h1070293p4652236
+    Let $x$ and $y$ be real numbers satisfying $x^4y^5+y^4x^5=810$ and $x^3y^6+y^3x^6=945$. Evaluate $2x^3+(xy)^3+2y^3$.	
+\end{question}
+
+
+\begin{question}[name={2018 AIME}]
+% https://artofproblemsolving.com/community/c5h1613514p10083255
+    A real number $a$ is chosen randomly and uniformly from the interval $[-20, 18]$. The probability that the roots of the polynomial\[x^4 + 2ax^3 + (2a-2)x^2 + (-4a+3)x - 2\]are all real can be written in the form $\tfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+\end{question}
+
+\begin{question}[name={2019 AIME}]
+% https://artofproblemsolving.com/community/c5h1802340p11972735
+    Let $x$ be a real number such that $\sin^{10}x+\cos^{10} x = \tfrac{11}{36}$. Then 
+    \[\sin^{12}x+\cos^{12} x = \dfrac{m}{n},\] where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+\end{question}
+
+\begin{question}[name={1988 Canada}]
+% https://artofproblemsolving.com/community/c4h435641p2458165
+    For what real values of $k$ do $1988x^2 + kx + 8891$ and $8891x^2 + kx + 1988$ have a common zero?
+\end{question}
+
+\begin{question}[name={2011 AIME I \#9}]
+% https://artofproblemsolving.com/community/c5h397335p2209695
+    Suppose $x$ is in the interval $[0,\pi/2]$ and \[\log_{24\sin{x}}(24\cos{x})=\frac{3}{2}.\] Find $24\cot^2{x}$.
+\end{question}
+
+
+\begin{question}[name={2016 AIME}]
+% https://artofproblemsolving.com/community/c5h1213143p6023700
+    For $1\leq i\leq 215$ let $a_i=\frac{1}{2^i}$ and $a_{216}=\frac{1}{2^{215}}$. Let $x_1,x_2,\ldots,x_{216}$ be positive real numbers such that\[ \sum\limits_{i=1}^{216} x_i=1 \text{\quad and \quad} \sum\limits_{1\leq i<j \leq 216} x_ix_j = \frac{107}{215}+ \sum\limits_{i=1}^{216} \frac{a_ix_i^2}{2(1-a_i)}.\]The maximum possible value of $x_2=\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+\end{question}
+
+
+\begin{question}[name={2019 AIME}]
+% https://artofproblemsolving.com/community/c5h1802332p11972643
+    For distinct complex numbers $z_1,z_2,\dots,z_{673}$, the polynomial
+    \[ (x-z_1)^3(x-z_2)^3 \cdots (x-z_{673})^3, \]
+    can be expressed as \[x^{2019} + 20x^{2018} + 19x^{2017}+g(x),\] where $g(x)$ is a polynomial with complex coefficients and with degree at most $2016$. The value of
+    \[ \left| \sum_{1 \le j <k \le 673} z_jz_k \right|, \] 
+    can be expressed in the form $\tfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+\end{question}
+
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h370577p2041706
+    Let $n$ be an integer and let $x_1,x_2,x_3$ be the roots of $x^3+px+q=0$, where $p$ and $q$ are two real numbers. Find the expression $x_1^n+x_2^n +x_3^n$ in terms of $p$ and $q.$
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h424709p2403359
+Find all solutions $(x,y,z)$ of
+\begin{align*}
+    \begin{cases}
+        10  &= x+y+z+w,\\
+        30  &= x^2+y^2+z^2+w^2,\\
+        100 &= x^3+y^3+z^3+w^3=100,\\
+        24  &= xyzw.
+    \end{cases}
+\end{align*}
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c3h449295p2528397
+    Prove that the sum of the reciprocals of the $5$ solutions to the following equation is $1/2001$: 
+    \[5x^5+4x^4-3x^3+2x^2+x-1=2000.\]
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c4h525498p2974908
+    The roots of the equation $x^{3} +ax +b=0$ are $\alpha, \beta$ and $\gamma$. Find the equation with roots \[\frac{\alpha}{\beta} + \frac{\beta}{\alpha}, \frac{\alpha}{\gamma} + \frac{\gamma}{\alpha} \qquad \text{and} \qquad \frac{\beta}{\gamma} + \frac{\gamma}{\beta}.\]
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h523373p2955034
+    Let $a_1, a_2, \dots, a_n$ and $b_1, b_2, \dots, b_n$ be two distinct collections of $n$ positive integers, where each collection may contain repetitions. If the two collections of integers $a_i + a_j $ (where $1 \leq i<j \leq n$) and $b_i + b_j $ (where $1 \leq i<j \leq n$) are the same, then show that $n$ is a power of $2$.
+\end{question}
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c7h1114443p5094774
+    Assume that $a$, $b$, $c$, $d$ are roots of the equation \[x^4 + 120x^3 + 1279x^2 + 11x + 9 = 0.\] Also assume that \[\frac{abc}{d}, \quad \frac{abd}{c}, \quad \frac{acd}{b}, \quad \text{and} \quad \frac{bcd}{a},\] are the roots of \[x^4 + a_1x^3 + a_2x^2 + a_3x + a_4 = 0.\] Find $a_1 + a_2 + a_3 + a_4$.
+\end{question}
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c4h1281977p6748257
+    Let $a,b,c$ be non--zero real numbers such that $a+b+c=0$. Prove that
+    \[\frac{\left( a^{3}+b^{3}+c^{3} \right)^{2}\left( a^{4}+b^{4}+c^{4} \right)}{\left( a^{5}+b^{5}+c^{5} \right)^{2}}=\frac{18}{25}.\]
+\end{question}
+
+\begin{question}[name={2017 PUMaC}]
+% https://artofproblemsolving.com/community/c140h1549830p9419796
+    Together, Kenneth and Ellen pick a real number $a$. Kenneth subtracts $a$ from every thousandth root of unity (that is, the thousand complex numbers $\omega$ for which $\omega^{1000}=1$) then inverts each, then sums the results. Ellen inverts every thousandth root of unity, then subtracts $a$ from each, and then sums the results. They are surprised to find that they actually got the same answer! How many possible values of $a$ are there?
+\end{question}
+
+\begin{question}[name={2019 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h2279006p17828803
+    Let $x_1, x_2, \dots, x_n$ be different real numbers. Prove that
+    \[\sum_{1 \leqslant i \leqslant n} \prod_{j \neq i} \frac{1-x_{i} x_{j}}{x_{i}-x_{j}}=\left\{\begin{array}{ll}
+    0, & \text { if } n \text { is even; } \\
+    1, & \text { if } n \text { is odd. }
+    \end{array}\right.\]
+\end{question}
+
+
+\begin{question}[name={2014 HMIC}]
+% https://artofproblemsolving.com/community/c129h1359782p7448398
+    Let $\omega$ be a root of unity and $f$ be a polynomial with integer coefficients. Show that if $|f(\omega)|=1$, then $f(\omega)$ is also a root of unity.
+\end{question}
+
+
+
+
+\subsection{Pool of Advanced Polynomial Theorems}
+
+\begin{tcolorbox}[title={Newton's Sums}]
+    \begin{theorem}[Newton's Formulas on Symmetric Sums]
+    For a polynomial $P(x)$ of degree $n$, where
+    \[P(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0,\]
+    let $x_1,x_2,\ldots,x_n$ be the roots of $P(x)=0$. Define the sum:
+    \[P_k = x_1^k + x_2^k + \cdots + x_n^k.\]
+    According to Newton's Formulas, and assuming $a_j = 0$ for $j<0$,
+    \begin{align*}
+        0 &= a_nP_1 + a_{n-1},\\
+        0 &= a_nP_2 + a_{n-1}P_1 + 2a_{n-2},\\
+        0 &= a_nP_3 + a_{n-1}P_2 + a_{n-2}P_1 + 3a_{n-3},\\
+        &\vdots\\
+        0 &= a_nP_k+a_{n-1}P_{k-1}+\cdots+a_{n-k+1}P_1+k\cdot a_{n-k}.
+    \end{align*}
+    We also can write:
+    \begin{align*}
+        P_1 &= \sigma_1,\\
+        P_2 &= \sigma_1P_1 - 2\sigma_2,\\
+        P_3 &= \sigma_1P_2 - \sigma_2P_1 + 3\sigma_3,\\
+        P_4 &= \sigma_1P_3 - \sigma_2P_2 + \sigma_3P_1 - 4\sigma_4,\\
+        P_5 &= \sigma_1P_4 - \sigma_2P_3 + \sigma_3P_2 - \sigma_4P_1 + 5\sigma_5,\\
+        \vdots
+    \end{align*}
+    Here, $\sigma_n$ denotes the $n^{th}$ elementary symmetric sum as defined before.
+    \end{theorem}
+\end{tcolorbox}
+
+
+\begin{theorem}[Intermediate Value Theorem]
+    Consider a continuous function $f : I \to\mathbb R$ for some interval $I = [a, b]$ (with $a < b$). Then, for all $c \in (f(a), f(b))$, we can find some real number $k$ with $a < k < b$, such that $f(k) = c$.
+\end{theorem}
+
+
+\begin{theorem}[Descartes' Rule of Signs]
+    Consider a polynomial $P(x)$ of degree $n \geq 1$, and write
+    \[P(x) = a_n\epsilon_nx^n + a_{n-1}\epsilon_{n-1}x^{n-1} + \cdots + a_1\epsilon_1x + a_0\epsilon_0,\]
+    where $a_n > 0$ and $\epsilon_n \in \{-1, 0, 1\}$. Let $m$ be the number of times $\epsilon_k\epsilon_{k-1}=-1$. Then, the number of positive roots, say $p$, (counting multiplicities) is at most $m$, and furthermore leaves the same remainder as $m$ when divided by $2$.
+\end{theorem}
+
+\begin{corollary}[Number of Negative Roots]
+The number of negative roots can be found by applying Descartes' Rule of Signs on $f(-x)$ instead.
+\end{corollary}
+
+\begin{definition}[Discriminant of a Polynomial]
+    For a polynomial $P(x)$ of degree $n$, where
+    \[P(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0,\]
+    let $x_1,x_2,\ldots,x_n$ be the roots of $P(x)=0$. Define the discriminant $\Delta$ of $P(x)$ by
+    \begin{align*}
+        \Delta(P(x))=a_n^{2n-2} \prod_{1\leq i<j \leq n } (x_i-x_j)^2.
+    \end{align*}
+\end{definition}
+
+
+\begin{definition}[Matrix of Two Polynomials]
+    For any two polynomials $f(x)$ and $g(x)$, with $\deg f = m$ and $\deg g = n$, \textbf{the resultant} is the discriminant of the $(m + n) \times (m + n)$--matrix formed by writing $n$ times the coefficients of $f(x)$ and $m$ times the coefficients of $g(x)$.
+\end{definition}
+
+\begin{theorem}[Discriminant from Resultant]
+    The \textbf{discriminant} $\Delta$ of any polynomial $P(x)$ of degree $n$, where
+    \[P(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0,\]
+    is equal to
+    \begin{align*}
+        \Delta(P(x)) &= \frac{(-1)^{\binom{n}{2}}}{a_n}R(P(x), P'(x)),
+    \end{align*}
+    where $R(P(x),P'(x))$ is the \textbf{resultant} of the two polynomials $P(x)$ and its derivative $P'(x)$.
+\end{theorem}
+
+\begin{corollary}[Quadratic Discriminant]
+    Verify, by using the Discriminant from Resultant formula for $P(x)=ax^2+bx+c$ and $P'(x)=2ax+b$:
+    \[\frac{-1}{a}\begin{vmatrix}
+        a & b & c\\
+        2a & b & 0\\
+        0 & 2a & b
+    \end{vmatrix} = -\frac{ab^2+4a^2c-2ab^2}{a}=b^2-4ac,\]
+    that the discriminant of the quadratic polynomial $ax^2+bx+c$ is equal to $\Delta=b^2-4ac$.
+\end{corollary}
+
+
+\begin{corollary}[Cubic Discriminant]
+    Prove that the discriminant of the cubic polynomial $ax^3+bx^2+cx+d$ is equal to \[\Delta=b^{2}c^{2}-4ac^{3}-4b^{3}d-27a^{2}d^{2}+18abcd.\]
+\end{corollary}
+
+
+\begin{theorem}[Lagrange's Interpolation Theorem]
+    For any distinct complex numbers $x_0, x_1, \dots, x_n$ and any complex numbers $y_0, y_1, \dots, y_n$, there exists a unique polynomial $P(x)$ of degree less than or equal to $n$ such that for all integers $0 \leq i \leq n$, with $P(x_i) = y_i$, and this polynomial is
+    \[P(x) = \sum_{i=0}^{n}y_i \frac{(x-x_0) \cdots (x-x_{i-1}) (x-x_{i+1}) \cdots (x-x_n)}{(x_i-x_0) \cdots (x_i-x_{i-1}) (x_i - x_{i+1}) \cdots (x_i - x_n)}.\]
+\end{theorem}
+
+
+\begin{definition}[Finite Differences of Polynomials]
+    The finite difference of a polynomial $P(x)$ is $\Delta^1 P(x) = P(x + 1) - P(x)$.
+\end{definition}
+
+\begin{theorem}[Finite Difference $\Delta^1$ as a Linear Operator]
+    If $\Delta^1(P(x))$ is defined as the finite difference operator of polynomial $P(x)$, that is, $\Delta^1 P(x) = P(x + 1) - P(x)$, then $\Delta^1$ is a linear operator. That is,
+    \begin{align*}
+        \begin{cases}
+            \Delta^1\left(P_1(x)+P_2(x)\right) &= \Delta^1\left(P_1(x)\right)+\Delta^1\left(P_2(x)\right),\\
+            \Delta^1\left(k\cdot P(x)\right) &= k\cdot \Delta^1\left(P(x)\right).
+        \end{cases}
+    \end{align*}
+\end{theorem}
+
+
+\begin{definition}[$n^{th}$--degree Finite Differences of Polynomials]
+    The $n^{th}$--degree finite difference of a polynomial $P(x)$ is \[\Delta^n(P(x)) = \Delta^1\left(\Delta^{n-1}(P(x))\right) = \sum_{k=0}^n (-1)^{n-k} \binom{n}{k} P(x+k).\]
+\end{definition}
+
+\begin{theorem}[Finite Differences with Degrees]
+    Let $n$ be the degree of the polynomial $P(x)$. Then,
+    \begin{align*}
+        \Delta^{n}(P(x)) &= n!,\\
+        \Delta^{n+1}(P(x)) &= 0.
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}[Finite Difference Representation]
+    Every polynomial can be represented by each degree of its finite difference, that is,
+    we can write every polynomial $P(x)$ as
+    \begin{align*}
+        P(x) &= \sum_{m=0}^{\deg P} \binom{x-a}{m} \Delta^m(P(a)).
+    \end{align*}
+\end{theorem}
+
+
+\begin{theorem}[Polynomial Summation]
+    For all polynomials $P(x)$,
+    \begin{align*}
+        \sum_{k=1}^{n} P(k) &= \sum_{m=0}^{\deg P} \binom{n}{m+1} \Delta^m(P(1)).
+    \end{align*}
+\end{theorem}
+
+
+
+\begin{theorem}[Geometric Series Polynomial Summation]
+    For any polynomial $P(x)$ and constant $q$
+    \begin{align*}
+        \sum_{k=1}^{n} P(k) q^{k-1} &= f(n)q^n - f(0),
+    \end{align*}
+    where 
+    \begin{align*}
+        f(n) &= \frac{P(n)}{q-1} + \frac{1}{(q-1)^2} \sum_{k=1}^{\deg P} \frac{(-1)^kq^{k-1}}{(q-1)^{k-1}} \Delta^k(P(n))\\
+        &=  \frac{1}{q-1} \sum_{k=1}^{\deg P} \left(\frac{-q}{q-1}\right)^{k} \Delta^k(P(n+1)). 
+    \end{align*}
+\end{theorem}
+
+
+
+\begin{question}[name={2022 Brazil}]
+% https://artofproblemsolving.com/community/c6h2965514p26563712
+    Let $\{a_n\}_{n=0}^{\infty}$ be a sequence of integers numbers. Let $\Delta^1a_n=a_{n+1}-a_n$ for a non-negative integer $n$. Define $\Delta^Ma_n= \Delta^{M-1}a_{n+1}- \Delta^{M-1}a_n$. A sequence is \textit{patriota} if there are positive integers $k,l$ such that $a_{n+k}=\Delta^Ma_{n+l}$ for all non-negative integers $n$. Determine, with proof, whether exists a sequence that the last value of $M$ for which the sequence is \textit{patriota} is $2022$.
+\end{question}
+
+
+\begin{question}[name={1999 Brazil TST}]
+% https://artofproblemsolving.com/community/c6h2545984p21730029
+    A sequence $a_n$ is defined initially by $a_0=0$ and $a_1=3$, and then recursively for $n\geq 2$: $$a_n=8a_{n-1}+9a_{n-2}+16.$$ Find the least positive integer $h$ such that $a_{n+h}-a_n$ is divisible by $1999$ for all $n\ge0$.
+\end{question}
+
+
+\begin{question}[name={1983 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h16764p116034
+    Let $ \left(F_1,F_2,F_3,\dots\right)$ be the Fibonacci sequence, defined by the starting values $ F_1 = 1$ and $ F_2 = 1$ and the recurrence equation $ F_{n + 2} = F_{n + 1} + F_n$ for all $ n\geq 1$. Let $ P\left(x\right)$ be a polynomial of degree $ 990$ such that $ P\left(k\right) = F_k$ for all $ k \in\left\{ 992, 993, \dots , 1981, 1982\right\}$. Show that \[P\left(1983\right) = F_{1983} - 1.\]
+\end{question}
+
+
+
+\begin{question}[name={2004 Fourth Mathlinks Contest}]
+% https://artofproblemsolving.com/community/c6h20206p133891
+    Let $m \geq 2n$ be two positive integers. Find a closed form for the following expression:
+    \[E(m,n)=\sum_{k=0}^{n}(-1)^k\frac{(m-k)!}{n!(m-k-n)!}\frac{n!}{k!(n-k)!}.\]
+\end{question}
+
+
+
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h21548p139284
+    Assume that $m$ and $n$ are positive integers, and $1\leq m\leq \phi (m)+n$. Prove that \[m \mid \sum_{i=0}^{n} (-1)^i \binom{n}{i} i^m.\]
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h16482p114715
+    Assume $i\geq j\geq 1$. Prove that
+    \[\sum_{k=i}^{i+j} (-1)^k\frac{(k-1)!}{(k-i)!(k-j)!(i+j-k)!}=0.\]
+\end{question}
+
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h70637p412175
+    Prove that for all positive integers $n$, we have \[ \binom{n}{0} n^n - \binom{n}{1} (n-1)^n + \binom{n}{2} (n-2)^n - \ldots + (-1)^{n-1} \binom{n}{n-1} 1^n = n! \ .\]
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h41800p263633
+    Let $n$ be a natural number (i.e., a non-negative integer). Prove that \[\sum_{k = 1}^n \frac {\left( - 1\right)^k\cdot k}{2k - 1}\binom{n}{k}\binom{n + k - 1}{k - 1} = - \left(n\mod 2\right).\]
+    Here, for any integer $a$, the expression $a \mod 2$ means the remainder of $a$ upon division by $2$ (so, $a \mod 2 = 0$ if $a$ is even, and $a \mod 2 = 1$ if $a$ is odd).
+\end{question}
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h170517p945628
+    Prove that for any polynomial $ P\left(x\right)$ with degree $<n$, we have
+    \[\sum_{k = 0}^{n} \left( - 1\right)^n \frac {n!}{k!\left(n - k\right)!}P\left(k\right) = 0.\]
+\end{question}
+
+\begin{question}[name={10490 AMM}]
+% https://artofproblemsolving.com/community/c6h160313p896325
+    Prove that for all $ n\in\mathbb{N}$, 
+    \[\sum_{k = 1}^{n}\frac {\left( - 1\right)^{k - 1}}{k}\cdot \binom{n}{k}\sum_{j = 1}^{k}\frac {H_{j}}{j} = \sum_{k = 1}^{n}\frac {1}{k^{3}},\]
+    where, for every $ j\in\mathbb{N}$,
+    \[H_{j} = \frac {1}{1} + \frac {1}{2} + \cdots + \frac {1}{j}.\]
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h366958p2019638
+    Let $P$ be a polynomial of degree $n$ satisfying
+\[P(k) = \binom{n+1}{k}^{-1} \qquad \text{ for } k = 0, 1, . . ., n.\]
+Determine $P(n + 1).$
+\end{question}
+
+
+\begin{question}[name={2011 Ibero American}]
+% https://artofproblemsolving.com/community/c6h419580p2369338
+    This problem has two parts:
+    \begin{tasks}
+        \task Prove that, for any positive integers $m\le \ell$ given, there is a positive integer $n$ and positive integers $x_1,\dots,x_n,y_1,\dots,y_n$ such that the equality \[ \sum_{i=1}^nx_i^k=\sum_{i=1}^ny_i^k,\] holds for every $k=1,2,\dots,m-1,m+1,\dots,\ell$, but does not hold for $k=m$.
+        \task Prove that there is a solution of the problem, where all numbers $x_1,\dots,x_n,y_1,\dots,y_n$ are distinct.
+    \end{tasks}
+\end{question}
+
+
+
+
+\begin{question}[name={Komal}]
+% https://artofproblemsolving.com/community/c6h45699p289435
+    Prove that, for infinitely many positive integers $n$, there exists a polynomial $P(x)$ of degree $n$ with real coefficients such that $P(1), P(2), \dots, P(n+2)$ are different whole powers of $2$.
+\end{question}
+
+
+\begin{question}[name={Dadgarnia Finite Difference Identities}]
+% https://artofproblemsolving.com/community/c6h1096480p4916802
+These problems were posted on AoPS as proposed by Alireza Dadgarnia:
+\begin{tasks}
+\task Let $n>1$ and $0\leq m\leq n-2$ be integers. Prove that
+$$\sum_{i=1}^{n}(-1)^{n-i}\binom{n-1}{i-1}i^m=0.$$
+\task For all positive integers $n$, prove that
+$$\sum_{i=1}^{n}(-1)^{n-i}\binom{n-1}{i-1}i^{n-1}=(n-1)!.$$
+\task For all positive integers $n$, prove that
+$$\sum_{i=1}^{n}(-1)^{n-i}\binom{n-1}{i-1}i^{n}=\frac{(n+1)!}{2}.$$
+\task For all positive integers $n$, prove that
+$$\sum_{i=1}^{n}(-1)^{n-i}\binom{n-1}{i-1}i^{n+1}=\frac{(3n+1)(n+2)!}{24}.$$
+\task For all positive integers $n$, prove that
+$$\sum_{i=1}^{n}(-1)^{n-i}\binom{n-1}{i-1}i^{n+2}=\frac{n(n+1)(n+3)!}{48}.$$
+\end{tasks}
+\end{question}
+
+
+\begin{question}[name={Crux, by Max A. Alekseyev}]
+% https://artofproblemsolving.com/community/c6h1945591p13410168
+    For all integers $n>m\geq 0$, prove that: \[\sum_{k=0}^{n}\left(-1\right)^{k}\cdotp\left(_{n-k}^{2n+1}\right)\cdotp\left(2k+1\right)^{2m+1}=0.\]
+\end{question}
+
+\begin{question}[name={2020 Taiwan TST}]
+% https://artofproblemsolving.com/community/c6h2084089p15012900
+    Alice and Bob are stuck in quarantine, so they decide to play a game. Bob will write down a polynomial $f(x)$ with the following properties:
+    \begin{tasks}
+        \task for any integer $n$, $f(n)$ is an integer;
+        \task the degree of $f(x)$ is less than $187$.
+    \end{tasks}
+    Alice knows that $f(x)$ satisfies (a) and (b), but she does not know $f(x)$. In every turn, Alice picks a number $k$ from the set $\{1,2,\ldots,187\}$, and Bob will tell Alice the value of $f(k)$. Find the smallest positive integer $N$ so that Alice always knows for sure the parity of $f(0)$ within $N$ turns.
+\end{question}
+
+
+\begin{question}[name={2020 Tuymaada}]
+% https://artofproblemsolving.com/community/c6h2294581p18086890
+    The degrees of polynomials $P$ and $Q$ with real coefficients do not exceed $n$. These polynomials satisfy the identity \[ P(x) x^{n + 1} + Q(x) (x+1)^{n + 1} = 1.\] Determine all possible values of $Q \left( - \frac{1}{2} \right)$.
+\end{question}
+
+
+\begin{question}[name={2020 Indonesia}]
+% https://artofproblemsolving.com/community/c6h2304307p18257849
+    Determine all real-coefficient polynomials $P(x)$ such that
+    \[ P(\lfloor x \rfloor) = \lfloor P(x) \rfloor,\] for all real numbers $x$.
+\end{question}
+
+
+\begin{question}[name={2019 Latvian TST for Balkan}]
+% https://artofproblemsolving.com/community/c6h2126499p15509300
+Let $P(x)$ be a polynomial of degree $n$ with real coefficients. For all $0 \leq y \leq 1$, we know that $|P(y)| \leq 1$. Prove that \[P\left(-\frac{1}{n}\right) \leq 2^{n+1} -1.\]
+\end{question}
+
+
+\begin{question}[name={2021 USA TSTST}]
+% https://artofproblemsolving.com/community/c6h2759565p24130243
+    Let $q=p^r$ for a prime number $p$ and positive integer $r$. Let $\zeta = e^{\frac{2\pi i}{q}}$. Find the least positive integer $n$ such that \[\sum_{\substack{1\leq k\leq q\\ \gcd(k,p)=1}} \frac{1}{(1-\zeta^k)^n},\] is not an integer the sum is over all $1\leq k\leq q$ with $p$ not dividing $k$).
+\end{question}
+
+
+
+

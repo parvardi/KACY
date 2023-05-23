@@ -1,0 +1,316 @@
+\section{Number Theoretic Study of Polynomials}
+\subsection{Essential Number Theoretic Theorems}
+\begin{theorem}[Difference of Polynomials]
+Let $P(x)$ be a polynomial with integer coefficients. Then, for all integers $a$ and $b$ with $a\neq b$, we have \[a - b | P(a) - P(b).\]
+\end{theorem}
+
+\begin{question}[name={1962 Russia}]
+    Prove that there does not exist a polynomial $P(x)=ax^3+bx^2+cx+d$ with integer coefficients such that $P(19)=1$ and $P(62)=2$.
+\end{question}
+
+\begin{question}[name={1974 USA}]
+    For three distinct integers $a,b,c$ and a polynomial $P(x)$ with integer coefficients, prove that not all three of the following relations can hold at the same time:
+    \[P(a)=b, \quad P(b)=c, \quad P(c)=a.\]
+\end{question}
+
+
+
+\begin{question}[name={1975 USA}]
+    Find all polynomials $P(x)$ such that $P(0)=0$ and for all $x$,
+    \[P(x)=\frac{1}{2}\left(P(x+1)+P(x-1)\right).\]
+\end{question}
+
+\begin{question}
+    The polynomial $P(x)$ has degree $n$ and for the values of $x=0^2,1^2,\dots,n^2$, we know that $f(x)$ is an integer. Prove that $P(x)$ takes infinitely many integer values.
+\end{question}
+
+\begin{tcolorbox}[title={Eisenstein's Criterion \& Extension}]
+    \begin{theorem}[Eisenstein's Criterion]
+        Let $a_0, a_1, \dots ,a_n$ be integers. The Eisenstein's Criterion states that the polynomial \[a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0,\] cannot be factored into the product of two non--constant polynomials if all the following three conditions hold:
+        \begin{tasks}
+            \task $p$ is a prime which divides each of $a_0,a_1,a_2,\dots,a_{n-1}$;
+            \task $a_n$ is not divisible by $p$; and
+            \task $a_0$ is not divisible by $p^2$.
+        \end{tasks}
+    \end{theorem}
+
+    \begin{theorem}[Extended Eisenstein's Criterion]
+        Let $a_0, a_1, \dots ,a_n$ be integers. The Extended Eisenstein's Criterion states that the polynomial \[a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0,\]
+        has an irreducible factor of degree more than $k$ if:
+        \begin{tasks}
+            \task $p$ is a prime which divides each of $a_0,a_1,a_2,\dots,a_{k}$;
+            \task $a_{k+1}$ is not divisible by $p$; and
+            \task $a_0$ is not divisible by $p^2$.
+        \end{tasks}
+    \end{theorem}
+\end{tcolorbox}
+
+
+\begin{question}
+    Prove that $x^{1383}+2003$ is irreducible in $\mathbb Q[x]$.
+\end{question}
+
+\begin{question}
+    Prove that the polynomial $1+x+x^2+\cdots+x^{p-1}$, where $p>2$ is a prime number, is irreducible over $\mathbb Z[x]$.
+\end{question}
+
+\begin{question}[name={1997 Iran Third Round}]
+    Let $P(x)$ be a polynomial with integer coefficients such that for two distinct integers $a$ and $b$, we have \[P(a) \cdot P(b) = -(a-b)^2.\] Prove that $P(a)+P(b)=0$.
+\end{question}
+
+
+\begin{question}[name={1998 Romanian TST}]
+% https://artofproblemsolving.com/community/c6h14780p104962
+    Let $$f_n(X) = (X^2 + X)^{2^n} +1.$$ Prove, for all $n$, that $f_n (X)$ is irreducible over $\mathbb Z[X]$. If you can, prove Harazi's generalization as well: for any two integers $a$ and $b$  such that \[\left(b-\frac{a^{2}}{4}\right)^{2^{n}}+1 \qquad \text{is not a perfect square in } \mathbb Q,\] then $(X^{2}+aX+b)^{2^{n}}+1$ is irreducible in $\mathbb{Q}[X]$.
+\end{question}
+
+
+\begin{question}[name={2014 Putnam}]
+% https://artofproblemsolving.com/community/c7h616738p3674025
+    Show that for each positive integer $n,$ all the roots of the polynomial\[\sum_{k=0}^n 2^{k(n-k)}x^k\]are real numbers. 
+\end{question}
+
+
+\begin{tcolorbox}[title={Content of a Polynomial \& Gauss's Lemma}]
+    \begin{definition}
+        The \textbf{content} of a polynomial with integer coefficients is the greatest common divisor of the polynomial's coefficients. In other words, when $a_0, a_1, \dots ,a_n$ are integers and 
+        \[P(x)=a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0,\]
+        the content $c(P(x))$ is defined by
+        \[c(P) := \gcd(a_n,a_{n-1},\dots,a_1,a_0).\]
+        As an example, all monic polynomials have content equal to $1$ because their leading coefficient is $1$. Such polynomials $P(x)$ for which $c(P)=1$ are called \textbf{primitive polynomials}.
+    \end{definition}
+
+
+    \begin{theorem}
+        Let $P(x)$ and $Q(x)$ be polynomials with integer coefficients. Prove that the content of $P(x)Q(x)$ is equal to the product of contents of $P(x)$ and $Q(x)$.
+    \end{theorem}
+
+    \begin{theorem}[Gauss's Primitive Polynomial Lemma]
+        If $P(x)$ and $Q(x)$ are primitive polynomials with integer coefficients, their product $P(x)Q(x)$ is also a primitive polynomial.
+    \end{theorem}
+    
+    \begin{theorem}[Gauss's Lemma]
+        Let $P(x)$ be a polynomial with integer coefficients which cannot be factorized into a product of two polynomials with integer coefficients. Prove that $P(x)$ cannot be decomposed into a product of two polynomials with rational coefficients either. In other words, $P(x)$ is irreducible over $\mathbb Z[x]$ if and only if it is irreducible over $\mathbb Q[x]$.
+    \end{theorem}
+\end{tcolorbox}
+
+\begin{question}[name={2019 Iran Third Round}]
+% https://artofproblemsolving.com/community/c6h1896548p12955995
+    Call a polynomial $P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0$ with integer coefficients \textit{primitive} if and only if $\gcd(a_n,a_{n-1},\dots a_1,a_0) =1$.
+    \begin{tasks}
+        \task Let $P(x)$ be a primitive polynomial with degree less than $1398$ and $S$ be a set of primes greater than $1398$.Prove that there is a positive integer $n$ so that $P(n)$ is not divisible by any prime in $S$.
+        \task Prove that there exist a primitive polynomial $P(x)$ with degree less than $1398$ so that for any set $S$ of primes less than $1398$ the polynomial $P(x)$ is always divisible by product of elements of $S$.
+    \end{tasks}
+\end{question}
+
+
+\begin{question}[name={2010 Romania TST}]
+% https://artofproblemsolving.com/community/c6h495636p2782755
+    Let $p$ be a prime number,let $n_1, n_2, \ldots, n_p$ be positive integer numbers, and let $d$ be the greatest common divisor of the numbers $n_1, n_2, \ldots, n_p$. Prove that the polynomial
+    \[\dfrac{X^{n_1} + X^{n_2} + \cdots + X^{n_p} - p}{X^d - 1},\]
+    is irreducible in $\mathbb{Q}[X]$.
+\end{question}
+
+\subsection{Modular Arithmetic for Polynomials}
+
+\begin{tcolorbox}[title={Modular Arithmetic of Polynomials}]
+\begin{definition}[Polynomial Congruency]
+    Two polynomials $f(x)$ and $g(x)$ with integer coefficients are congruent modulo positive integer $m\geq 2$ if, assuming \[f(x)-g(x)=c_nx^n+\cdots+c_1x+c_0,\] we have $m\mid c_i$ for all $i=0,1,2,\dots,m$. In other words, we have $f(x) \equiv g(x) \pmod m$ if and only if $a_i \equiv b_i$ for all $i$, where $a_i$ and $b_i$ are corresponding coefficients in $f(x)$ and $g(x)$, respectively.
+\end{definition}
+
+\begin{definition}[Degree of Polynomial Modulo Integer]
+    Let $f(x)=a_nx^n+\cdots+a_0$ be a polynomial with integer coefficients and let $m\geq 2$ be an integer. The \textbf{degree} of $f(x) \pmod m$ is the largest $i$ such that $m \nmid a_i$.
+\end{definition}
+
+\begin{definition}[Roots of Polynomial Congruence Equations]
+    Let $f(x)$ be a polynomial with integer coefficients and let $m\geq 2$ be an integer. We say that $c$ is a root of $f(x) \pmod m$ if and only if $m \mid f(c)$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{theorem}
+    Let $p$ be a prime number and let $n$ be the degree of $f(x)$ modulo $p$. Then, the equation $f(x) \equiv 0 \pmod p$ has at most $n$ incongruent solutions modulo $p$.
+\end{theorem}
+
+\begin{theorem}[Hensel's Lemma]
+  Let $f(x)=a_nx^n+\cdots+a_0$ be a polynomial with integer coefficients and let $p> 2$
+be a prime. Also, let $P'(x)$ denote the derivative of $P(x)$. Suppose that $x_1$ is an integer such that $P(x_1)\equiv 0 \pmod{p}$ and $P'(x_1)\not \equiv 0 \pmod{p}$. Then, for any positive integer $k$, there exists an unique residue $x \pmod{p^k}$ such that $P(x_1^k)\equiv 0 \pmod{p^k}$ and $x  \equiv x_1 \pmod{p}$.
+\end{theorem}
+
+\begin{question}
+    Let $f(x)=a_nx^n+\cdots+a_0$ be a polynomial with integer coefficients where $|a_0|$ is a prime and
+    \[|a_0| > |a_1| + |a_2| + \cdots + |a_n|.\]
+    Prove that $f(x)$ is irreducible.
+\end{question}
+
+
+
+
+\begin{question}[name={Perron's Criterion}]
+    Let $P(x)=x^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ be a polynomial with integer coefficients where $a_0 \neq 0$, and
+    \[|a_{n-1}| > 1 + |a_{n-2}| +  \cdots + |a_1| + |a_0|.\]
+    Prove that $P(x)$ is irreducible.
+\end{question}
+
+
+
+\begin{question}[name={Cohn's Criterion}]
+    For a prime $p>2$ and an integer $b \geq 2$, let $p=(\overline{p_n\cdots p_1p_0})_b$ be the base--$b$ representation of $p$ (with $0 \leq p_i < b$ for $i=0,1,\dots,n$, and $p_n\neq 0$). Prove that the polynomial
+    \[f(x)=p_nx^n+p_{n-1}x^{n-1}+\cdots+p_1x+p_0,\]
+    is irreducible.
+\end{question}
+
+
+\begin{question}[name={2003 Serbia TST}]
+% https://artofproblemsolving.com/community/c6h193885p1064267
+    If $p(x)$ is a polynomial, denote by $p^n(x)$ the polynomial \[p(\dots(p(x))\dots),\] where $p$ is iterated $n$ times. Prove that the polynomial $p^{2003}(x)-2p^{2002}(x)+p^{2001}(x)$ is divisible by $ p(x)-x$.
+\end{question}
+
+
+
+\begin{question}[name={2013 Serbia TST}]
+% https://artofproblemsolving.com/community/c6h1092608p4870694
+    Let $A(x)$ and $B(x)$ be the polynomials \[A(x) = a_m x^m +\cdots +a_1 x+a_0 \qquad \text{and} \qquad B(x) = b_n x^n +\cdots+b_1 x+b_0,\]
+    where $a_m b_n \neq 0$. We say $A(x)$ and $B(x)$ are similar if the following conditions hold:
+    \begin{tasks}
+        \task $n=m$,
+        \task There is a permutation $\pi$ of the set $\{ 0, 1, \dots , n\}$ such that $b_i = a_{\pi (i)}$ for each $i \in {0, 1, \dots , n}$.
+    \end{tasks}
+    Let $P(x)$ and $Q(x)$ be similar polynomials with integer coefficients. Given that $P(16) = 3^{2012}$, find the smallest possible value of $|Q(3^{2012})|$.
+\end{question}
+
+\begin{question}[name={2007 China TST}]
+% https://artofproblemsolving.com/community/c6h248878p1365013
+    Prove that for any positive integer $n$, there exists only $n$ degree polynomial $f(x)$, satisfying $f(0) = 1$ and $(x + 1)[f(x)]^2 - 1$ is an odd function.
+\end{question}
+
+
+\begin{question}[name={2003 Romania TST}]
+% https://artofproblemsolving.com/community/c6h53271p334363
+    Let $f\in\mathbb{Z}[X]$ be an irreducible polynomial over the ring of integer polynomials, such that $|f(0)|$ is not a perfect square. Prove that if the leading coefficient of $f$ is 1 (the coefficient of the term having the highest degree in $f$) then $f(X^2)$ is also irreducible in the ring of integer polynomials.
+\end{question}
+
+
+\begin{question}[name={2000 Putnam}]
+% https://artofproblemsolving.com/community/c7h429340p2429216
+    Let $f(x)$ be a polynomial with integer coefficients. Define a sequence $a_0, a_1, \cdots $ of integers such that $a_0=0$ and $a_{n+1}=f(a_n)$ for all $n \ge 0$. Prove that if there exists a positive integer $m$ for which $a_m=0$ then either $a_1=0$ or $a_2=0$.
+\end{question}
+
+
+\begin{question}[name={Komal}]
+% https://artofproblemsolving.com/community/c6h40744p256002
+    Consider the coefficient $x_n$ of $x^n$ in $(x^2+x+1)^n$. Prove that for all primes $p$, we have $p^2$ dividing $x_p-1$.
+\end{question}
+
+\begin{question}[name={2007 MOP}]
+% https://artofproblemsolving.com/community/q1h1932452p13275948
+    Let $p(x)$ be a monic polynomial with integer coefficients. Show that there exist infinitely many positive integers $k$ such that $p(x)-k$ is irreducible.
+\end{question}
+
+
+\begin{question}[name={2007 Iran TST}]
+% https://artofproblemsolving.com/community/c6h149740p845756
+    Does there exist a a sequence $a_{0},a_{1},a_{2},\dots$ of positive integer, such that for each $i\neq j$, we have $\gcd(a_{i},a_{j})=1$, and for each $n$, the polynomial $\sum_{i=0}^{n}a_{i}x^{i}$ is irreducible over $\mathbb Z[x]$?
+\end{question}
+
+
+\begin{question}[name={1997 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h49788p315649
+    Let $ p$ be a prime number and $ f$ an integer polynomial of degree $ d$ such that $ f(0) = 0,f(1) = 1$ and $ f(n)$ is congruent to $ 0$ or $ 1$ modulo $ p$ for every integer $ n$. Prove that $ d\geq p - 1$.
+\end{question}
+
+
+\begin{question}[name={2005 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h90045p525979
+    Let $ a$, $ b$, $ c$, $ d$, $ e$, $ f$ be positive integers and let $ S = a+b+c+d+e+f$. Suppose that the number $ S$ divides $ abc+def$ and $ ab+bc+ca-de-ef-df$. Prove that $ S$ is composite.
+\end{question}
+
+\begin{question}[name={2002 IMO}]
+% https://artofproblemsolving.com/community/c6h17329p118695
+    Find all pairs of positive integers $m,n\geq3$ for which there exist infinitely many positive integers $a$ such that\[ \frac{a^m+a-1}{a^n+a^2-1},  \] is itself an integer.
+\end{question}
+
+\begin{question}[name={2002 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h17332p118702
+    Let $P$ be a cubic polynomial given by $P(x)=ax^3+bx^2+cx+d$, where $a,b,c,d$ are integers and $a\ne0$. Suppose that $xP(x)=yP(y)$ for infinitely many pairs $x,y$ of integers with $x\ne y$. Prove that the equation $P(x)=0$ has an integer root.
+\end{question}
+
+\begin{question}[name={2006 IMO}]
+% https://artofproblemsolving.com/community/c6h101487p572821
+    Let $P(x)$ be a polynomial of degree $n > 1$ with integer coefficients and let $k$ be a positive integer. Consider the polynomial $Q(x) = P(P(\ldots P(P(x)) \ldots ))$, where $P$ occurs $k$ times. Prove that there are at most $n$ integers $t$ such that $Q(t) = t$.
+\end{question}
+
+\begin{question}[name={2005 USA TST}]
+% https://artofproblemsolving.com/community/c6h44539p281962
+    We choose random a unitary polynomial of degree $n$ and coefficients in the set $1,2,\dots,n!$. Prove that the probability for this polynomial to be special is between $0.71$ and $0.75$, where a polynomial $g$ is called special if for every $k>1$ in the sequence $f(1), f(2), f(3),\dots$ there are infinitely many numbers relatively prime with $k$.
+\end{question}
+
+\begin{question}[name={2008 USA TST}]
+% https://artofproblemsolving.com/community/c6h224631p1247509
+    Let $ n$ be a positive integer. Given an integer coefficient polynomial $ f(x)$, define its signature modulo $ n$ to be the (ordered) sequence $ f(1), \ldots , f(n)$ modulo $ n$. Of the $ n^n$ such $ n$-term sequences of integers modulo $ n$, how many are the signature of some polynomial $ f(x)$ if
+    \begin{tasks}
+        \task $ n$ is a positive integer not divisible by the square of a prime.
+        \task $ n$ is a positive integer not divisible by the cube of a prime.
+    \end{tasks}
+\end{question}
+
+
+\begin{question}[name={2009 China TST}]
+% https://artofproblemsolving.com/community/c6h268921p1457430
+    Prove that for any odd prime number $p$, the number of positive integer $n$ satisfying $ p\mid n! + 1$ is less than or equal to $ cp^\frac{2}{3}$, where $c$ is a constant independent of $p.$
+\end{question}
+
+
+
+\begin{question}[name={2002 USA TST}]
+% https://artofproblemsolving.com/community/c6h5843p19346
+    Let $p>5$ be a prime number. For any integer $x$, define
+    \[{f_p}(x) = \sum_{k=1}^{p-1} \frac{1}{(px+k)^2}\]
+    Prove that for any pair of positive integers $x$, $y$, the numerator of $f_p(x) - f_p(y)$, when written as a fraction in lowest terms, is divisible by $p^3$.
+\end{question}
+
+\begin{question}[name={2006 APMO}]
+% https://artofproblemsolving.com/community/c6h80759p462321
+    Let $p\ge5$ be a prime and let $r$ be the number of ways of placing $p$ checkers on a $p\times p$ checkerboard so that not all checkers are in the same row (but they may all be in the same column). Show that $r$ is divisible by $p^5$. Here, we assume that all the checkers are identical.
+\end{question}
+
+\begin{question}[name={2004 Bay Area Math Olympiad}]
+% https://artofproblemsolving.com/community/c6h1843296p12395819
+    Find (with proof) all monic polynomials $f(x)$ with integer coefficients that satisfy the following two conditions:
+    \begin{tasks}
+        \task $f(0)=2004$;
+        \task If $x$ is irrational, then $f(x)$ is irrational.
+    \end{tasks}
+\end{question}
+
+\begin{question}[name={1997 USAMO}]
+% https://artofproblemsolving.com/community/c6h55345p343873
+    Prove that for any integer $n$, there exists a unique polynomial $Q$ with coefficients in $\{0,1,\ldots,9\}$ such that $Q(-2) = Q(-5) = n$.
+\end{question}
+
+\begin{question}[name={2007 USA TST}]
+% https://artofproblemsolving.com/community/c6h178058p982021
+    For a polynomial $ P(x)$ with integer coefficients, $r(2i - 1)$ (for $ i = 1,2,3,\dots,512$) is the remainder obtained when $ P(2i - 1)$ is divided by $ 1024$. The sequence
+    \[ (r(1),r(3),\dots,r(1023)),\]
+    is called the remainder sequence of $P(x)$. A remainder sequence is called complete if it is a permutation of $(1,3,5,\ldots,1023)$. Prove that there are no more than $ 2^{35}$ different complete remainder sequences.
+\end{question}
+
+\begin{question}[name={2008 Putnam}]
+% https://artofproblemsolving.com/community/c7h244053p1341797
+    Let $p$ be a prime number. Let $h(x)$ be a polynomial with integer coefficients such that $h(0),h(1),\dots, h(p^2-1)$ are distinct modulo $p^2$. Show that $h(0),h(1),\dots, h(p^3-1)$ are distinct modulo $p^3$.
+\end{question}
+
+\begin{question}[name={2013 EGMO}]
+% https://artofproblemsolving.com/community/c6h529188p3014762
+    Find all positive integers $a$ and $b$ for which there are three consecutive integers at which the polynomial\[ P(n) = \frac{n^5+a}{b}, \] takes integer values.
+\end{question}
+
+\begin{question}[name={2014 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h1113200p5083572
+    Let $a_1 < a_2 <  \cdots <a_n$ be pairwise coprime positive integers with $a_1$ being prime and $a_1 \ge n + 2$. On the segment $I = [0, a_1 a_2  \cdots a_n ]$ of the real line, mark all integers that are divisible by at least one of the numbers $a_1 ,   \ldots , a_n$ . These points split $I$ into a number of smaller segments. Prove that the sum of the squares of the lengths of these segments is divisible by $a_1$.
+\end{question}
+
+\begin{question}[name={2020 Iran TST}]
+% https://artofproblemsolving.com/community/c6h2028114p14282173
+    Let $p$ be an odd prime number. Find all integer $\frac{p-1}2$--tuples $\left(x_1,x_2,\dots,x_{\frac{p-1}2}\right)$ such that
+    $$\sum_{i = 1}^{\frac{p-1}{2}} x_{i} \equiv \sum_{i = 1}^{\frac{p-1}{2}} x_{i}^{2} \equiv \cdots \equiv \sum_{i = 1}^{\frac{p-1}{2}} x_{i}^{\frac{p - 1}{2}} \pmod p.$$
+\end{question}

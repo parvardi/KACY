@@ -1,0 +1,420 @@
+\documentclass[12pt,a4paper]{memoir}
+\maxtocdepth{subsubsection}
+\setsecnumdepth{subsubsection}
+%%% Wallpaper & quotes
+\usepackage{wallpaper}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{systeme}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+%\usepackage{esvect}
+\usepackage{amssymb, amsmath}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathdots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cancel}
+
+\usepackage{tikz}
+% \usepackage{forest}
+% \usetikzlibrary{arrows.meta}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usetikzlibrary{decorations.fractals}
+
+\DeclareUnicodeCharacter{670}{}
+
+
+\usepackage{systeme}
+\usepackage{geometry}
+\geometry{ margin=1in}
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\K{\mathbb{K}}
+\def\F{\mathbb{F}}
+\def\U{\mathcal{U}}
+\def\P{\mathcal{P}}
+\usepackage{lastpage}
+\theoremstyle{definition}
+%\newtheorem{question}{Question}
+\newtheorem*{definition}{Definition}
+%\newtheorem*{solution}{Solution}
+\newtheorem{answer}{Answer}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{google}{Google}
+\newtheorem*{claim}{Claim}
+\newtheorem*{hint}{Hint}
+\newtheorem{theorem}{Theorem}
+\newtheorem{tool}{Tool}
+\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+\newtheorem{identity}{Identity}
+
+\newcommand{\red}{\texr{red}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\setlength{\headheight}{15pt}
+
+%% For copyleft symbol
+\usepackage{textcomp}
+
+%%% Boxes around text
+\usepackage{tcolorbox}
+%%%% ExSheets package
+
+\usepackage{enumerate}
+\usepackage[auto-label]{exsheets}
+%\usepackage{paralist}
+\newcommand{\correct}{
+    \PrintSolutionsTF{%
+        \ref{ans:\CurrentQuestionID}%
+        }{%
+        \label{ans:\CurrentQuestionID}%
+        }%
+}
+\SetupExSheets{
+  headings = runin,
+  skip-below = 0.4em,
+  subtitle-format = {\bfseries} % default is \itshape
+}
+
+\SetupExSheets[solution]{print=false, name=Solution}
+\SetupExSheets[question]{type=exercise, name=Problem}
+
+
+%%%% 3D TikZ Settings
+
+
+%%% Lines of Latitude in Globe
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\newcommand\pgfmathsinandcos[3]{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % azimuth
+  \tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+
+\newcommand\LatitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % latitude
+  \pgfmathsetmacro\yshift{\cosEl*\sint}
+  \tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\NewLatitudePlane[4][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#3} % elevation
+  \pgfmathsinandcos\sint\cost{#4} % latitude
+  \pgfmathsetmacro\yshift{#2*\cosEl*\sint}
+  \tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircle[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+\newcommand\DrawLatitudeCircle[2][1]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+
+%%% Great circles
+% Style to set camera angle, like PGFPlots `view` style
+\tikzset{viewport/.style 2 args={
+    x={({cos(-#1)*1cm},{sin(-#1)*sin(#2)*1cm})},
+    y={({-sin(-#1)*1cm},{cos(-#1)*sin(#2)*1cm})},
+    z={(0,{cos(#2)*1cm})}
+}}
+
+% Convert from spherical to cartesian coordinates
+\newcommand{\ToXYZ}[2]{
+    {sin(#1)*cos(#2)}, % X coordinate
+    {cos(#1)*cos(#2)}, % Y coordinate
+    {sin(#2)}          % Z (vertical) coordinate
+}
+
+%%% Polar Triangles
+
+\usepackage    {tikz}
+\usetikzlibrary{3d}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\usepackage{tikz-3dplot}
+
+% isometric axes
+\pgfmathsetmacro\xx{1/sqrt(2)}
+\pgfmathsetmacro\xy{1/sqrt(6)}
+\pgfmathsetmacro\zy{sqrt(2/3)}
+
+% some functions (cross products)
+\tikzmath%
+{%
+  function crossx(\mx,\my,\mz,\nx,\ny,\nz)
+  {% cross product, x coordinate, normailized
+    \pxx = \my*\nz-\mz*\ny;
+    \pyy = \mz*\nx-\mx*\nz;
+    \pzz = \mx*\ny-\my*\nx;
+    return {\pxx/sqrt(\pxx*\pxx+\pyy*\pyy+\pzz*\pzz)};
+  };
+  function crossy(\mx,\my,\mz,\nx,\ny,\nz)
+  {% cross product, y coordinate, normailized
+    \pxx = \my*\nz-\mz*\ny;
+    \pyy = \mz*\nx-\mx*\nz;
+    \pzz = \mx*\ny-\my*\nx;
+    return {\pyy/sqrt(\pxx*\pxx+\pyy*\pyy+\pzz*\pzz)};
+  };
+  function crossz(\mx,\my,\mz,\nx,\ny,\nz)
+  {% cross product, z coordinate, normailized
+    \pxx = \my*\nz-\mz*\ny;
+    \pyy = \mz*\nx-\mx*\nz;
+    \pzz = \mx*\ny-\my*\nx;
+    return {\pzz/sqrt(\pxx*\pxx+\pyy*\pyy+\pzz*\pzz)};
+  };
+}
+
+\newcommand{\greatcircle}[6] % pole x, y, z, color, two orientation factors (+1/-1)
+{%
+  \coordinate (P)  at (#1,#2,#3);                  % pole
+  \coordinate (N)  at ($(0,0,0)!#6*1.25cm!(P)$);   % these points are
+  \coordinate (S)  at ($-1*(N)$);                  % used to clip the
+  \coordinate (E)  at ($(0,0,0)!-1.25cm!270:(P)$); % ellipses
+  \coordinate (W)  at ($-1*(E)$);                  % ...
+  \coordinate (NW) at ($(N)+(W)$);
+  \coordinate (NE) at ($(N)+(E)$);
+  \coordinate (SW) at ($(S)+(W)$);
+  \coordinate (SE) at ($(S)+(E)$);
+  \pgfmathsetmacro\ptheta{atan(#2/#1)} % pole, spherical coordinate theta
+  \pgfmathsetmacro\pphi  {#5*acos(#3)} % pole, spherical coordinate phi
+  \begin{scope}
+    % \clip (W) -- (SW) -- (SE) -- (E) -- cycle;
+    \draw[rotate around z=\ptheta,rotate around y=\pphi,%
+          canvas is xy plane at z=0,#4] (0,0) circle (1);
+  \end{scope}
+  \begin{scope}
+    % \clip (W) -- (NW) -- (NE) -- (E) -- cycle;
+    \draw[rotate around z=\ptheta,rotate around y=\pphi,%
+          canvas is xy plane at z=0,#4,densely dotted] (0,0) circle (1);
+  \end{scope}
+}
+
+\usepackage{pgfplots}
+\usetikzlibrary{calc,3d,intersections, positioning,intersections,shapes}
+\pgfplotsset{compat=1.11} 
+
+
+\newcommand{\InterSec}[3]{%
+  \path[name intersections={of=#1 and #2, by=#3, sort by=#1,total=\t}]
+  \pgfextra{\xdef\InterNb{\t}}; }
+
+
+
+
+\begin{document}
+\begin{titlingpage}
+	% \thispagestyle{Rplain}
+	\ThisCenterWallPaper{1.2}{Ganesha}
+	\author{\scalebox{2}{\fontsize{15pt}{0pt}\selectfont \textbf{\sffamily \color{red} Amir \color{red} Parvardi}}}
+	% \title{ \color{white} THE OLYMPIAD ALGEBRA BOOK (VOL I): \\ \color{white} 1220 Polynomials and Trigonometry Problems}
+	\title{\scalebox{2}{\fontsize{16pt}{0pt}\selectfont \textbf{\sffamily \color{lime} The \color{lime} Olympiad \color{white} Algebra Book}} \\ \scalebox{2}{\fontsize{13pt}{0pt}\selectfont \textbf{\scshape \color{white} VOLUME I:}} \\  \scalebox{2}{\fontsize{10pt}{0pt}\selectfont \textbf{\sffamily \color{teal} 1220 \color{lime} Polynomials \color{white} and Trigonometry Problems}}}
+	\date{\color{purple} \scshape First Draft: May 17, 2023}
+	
+	\maketitle
+\end{titlingpage}
+
+\frontmatter
+
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+\section*{Foreword}
+\textbf{Azermalohg} speaks to \textbf{Rima}:
+\begin{displayquote}
+	Why are you so afraid of the IllLyrans?\\
+	What has your fear had you achieved?\\
+	You have made yourself weary for lack of sleep,\\
+	You only fill your flesh with grief,\\
+	You only bring the distant days closer.\\
+	Humankind's fame is cut down\\
+	like reeds in a reed-bed.\\
+	A fine young man, a fine young girl... at grip of Death.\\
+	You have seen Death,\\
+	You have touched the face of Death,\\
+	You hear the voice of Death lamenting in your ears,\\
+	Savage Death just cuts humankind down.\\
+	Sometimes we have hope,\\
+	sometimes we make a wish,\\
+	but then our airplanes are shot in the air.\\
+	Sometimes there is hostility in the land,\\
+	but in the end, only the most benevolent will remain.\\
+	The ruthless IllLyrans bring Death with themselves;\\
+	but the merciful Lyrans will always prevail.\\
+	Remember, the night is darkest just before dawn.
+\end{displayquote}
+
+
+\newpage
+
+\section*{Synopsis}
+The Olympiad Algebra Book comes in two volumes. The first volume, dedicated to Polynomials and Trigonometry, is a collection of lesson plans containing $1220$ beautiful problems, around two-thirds of which are polynomial problems and one-third are trigonometry problems. The second volume of The Olympiad Algebra Book contains $1220$ Problems on Functional Equations and Inequalities, and I hope to finish it before the end of Summer 2023. I hope I can finish collecting the FE and INEQ problems by June $29^{th}$, as a reminder of the \href{https://www.academia.edu/29934442/1220_Number_Theory_Problems_J29_Project}{$1220$ Number Theory Problems} published as the first 1220 set of J29 Project. The current volumes has $843$ Polynomial problems and $377$ Trigonometry questions, the last $63$ of which are bizarre spherical geometry problems!
+
+\vspace{0.5em}
+
+This book is supposed to be a problem bank for Algebra, and it forms the resource for the first series of the KAYWAÑAN Algebra Contest. I suggest you start with Polynomials, and before you get bored or exhausted, also start solving Trigonometry problems. If you find these problems easy and not challenging enough, the Spherical Trigonometry lessons and problems are definitely going to be a must try!
+
+\begin{flushright}
+	Amir Parvardi,\\
+	Vancouver, British Columbia,\\
+	May 17, 2023
+\end{flushright}
+
+\tableofcontents\label{TOC}
+\listoffigures
+% \newpage
+% \listoftables
+% \cleardoublepage
+% \addcontentsline{toc}{chapter}{Index}
+% \printindex
+
+\mainmatter
+
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+\fancyfoot[LE,RO]{Amir Parvardi\hfill\thepage/\pageref{LastPage}\hfill KAYWAÑAN\textsuperscript{\textcopyleft}}
+\fancyhead[LE,RO]{Olympiad Algebra (Vol. I):\hfill 1220 Problems\hfill in Polynomials \& Trigonometry}
+% \lhead{Olympiad Algebra -- Vol. I}
+% \rhead{Polynomials \& Trigonometry}
+%\lhead{KAYWAÑAN\textsuperscript{\textcopyleft}}
+%\lfoot{Page \thepage/\pageref{LastPage}}
+
+% \rfoot{\href{https://parvardi.com}{parvardi.com}}
+
+
+% \noindent \textbf{Disclaimer}: Some problems have a \textit{CIP} tag, which is short for Crazy Invented Problem. I have no guarantee on the sanity of such problems, so solve them at your own risk!
+
+% \vspace*{1cm}
+
+% \noindent Sections~\ref{sec:Amir}, \ref{sec:Aryan}, \ref{sec:Parsa} were done by Amir Parvardi, Aryan Hemmati, and Parsa Daneshgar, respectively.
+
+
+
+\part{KAYWAÑAN Algebra Contest\\ Olympiad Algebra Book (Vol. I): \\ Polynomials \& Trigonometry}\label{part:VolI}
+\chapter{Olympiad Algebra 101:\\ Polynomials}\label{ch:POLY}
+\newpage
+\input{Vol_I/PreAlgebra}
+\newpage
+\input{Vol_I/Factorization}
+\newpage
+\input{Vol_I/Expressions}
+\newpage
+\input{Vol_I/PolyDiv}
+\newpage
+\input{Vol_I/AdvPoly}
+\newpage
+\input{Vol_I/Complex}
+\newpage
+\input{Vol_I/NTPOLY}
+\newpage
+\input{Vol_I/AlgSys}
+\newpage
+\input{Vol_I/NicePOLY}
+\chapter{Olympiad Algebra 201:\\ Trigonometry 101, 201, 301, 401, and Beyond}
+\newpage
+\input{Vol_I/Trig}
+
+
+% \chapter{Olympiad Algebra $301$:\\ Functional Equations}\label{ch:FE}
+% \chapter{Olympiad Algebra $401$:\\ Inequalities}
+
+
+% \part{NAPIRAÑAN Geometry Contest}
+
+% \chapter{Non-Euclidean Monstrosity:\\ Monster Trigonometry $101, 201, 301, 401$, and Further Treacheries}
+
+% \section{Monster Trigonometry $101$:\\Leaving the Flatland of Euclidean Trigonometry}
+
+
+% \section{Monster Trigonometry $201$:\\Enter the Elliptic Dragon: Spherical Trigonometry}
+
+
+% \section{Monster Trigonometry $301$:\\Journey thru Hyperbola: Hyperbolic Geometries}
+
+% \section{Monster Trigonometry $401$ and Further Treacheries:\\Where is the Dragon? Trigonometry of Forsaken Geometries}
+
+
+% \part{\ \ \ BAHRAMGAN Informatics Contest}
+
+% \part{\ \ \ MITHRAÑAN Number Theory Contest}
+
+% \part{\ \ \ TIRGAN Astronomy Contest}
+
+% \part{\ \ \ HORMOZDGAN Music Contest}
+
+% \part{\ \ \ NAHIDGAN Chemistry Contest}
+
+
+% \newpage
+
+% \section{Jason Fang --- FE2007}\label{sec:JasonFE}
+% \input{Book/JasonFE2007.tex}
+
+
+% \section{Amir Parvardi --- FE2010}\label{sec:AmirFE}
+% \input{Book/AmirFE2010.tex}
+
+% \section{Aryan Hemmati --- FE2011}\label{sec:AryanFE}
+% \input{Book/AryanFE2011.tex}
+
+% \section{Parsa Daneshgar --- FE2012}\label{sec:ParsaFE}
+% \input{Book/ParsaFE2012.tex}
+
+% \chapter{Polynomials}
+% \section{Amir Parvardi - POLY2010}\label{sec:AmirPOLY}
+% \input{Book/AmirPOLY2010.tex}
+
+\appendix 
+\part{\ \ \ Hints \& Select Solutions}
+
+\printsolutions
+
+\end{document}
+
+
