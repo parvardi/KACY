@@ -1,0 +1,946 @@
+\documentclass[12pt,a4paper]{memoir}
+\maxtocdepth{subsubsection}
+\setsecnumdepth{subsubsection}
+%%% Wallpaper & quotes
+\usepackage{wallpaper}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{systeme}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+%\usepackage{esvect}
+\usepackage{amssymb, amsmath}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{mathdots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cancel}
+
+\usepackage{tikz}
+% \usepackage{forest}
+% \usetikzlibrary{arrows.meta}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usetikzlibrary{decorations.fractals}
+
+\DeclareUnicodeCharacter{670}{}
+
+
+\usepackage{systeme}
+\usepackage{geometry}
+\geometry{ margin=1in}
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\K{\mathbb{K}}
+\def\F{\mathbb{F}}
+\def\U{\mathcal{U}}
+\def\P{\mathcal{P}}
+\usepackage{lastpage}
+\theoremstyle{definition}
+%\newtheorem{question}{Question}
+\newtheorem*{definition}{Definition}
+%\newtheorem*{solution}{Solution}
+\newtheorem{answer}{Answer}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{google}{Google}
+\newtheorem*{claim}{Claim}
+\newtheorem*{hint}{Hint}
+\newtheorem{theorem}{Theorem}
+\newtheorem{tool}{Tool}
+%\newtheorem{example}{Example}
+\newtheorem{corollary}{Corollary}
+\newtheorem{identity}{Identity}
+
+\newcommand{\red}{\texr{red}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\setlength{\headheight}{15pt}
+
+%% For copyleft symbol
+\usepackage{textcomp}
+
+%%% Boxes around text
+%\usepackage{tcolorbox}
+%%%% ExSheets package
+
+\usepackage{enumerate}
+\usepackage[auto-label]{exsheets}
+%\usepackage{paralist}
+\newcommand{\correct}{
+	\PrintSolutionsTF{%
+		\ref{ans:\CurrentQuestionID}%
+	}{%
+		\label{ans:\CurrentQuestionID}%
+	}%
+}
+\SetupExSheets{
+	headings = runin,
+	skip-below = 0.4em,
+	subtitle-format = {\bfseries}, % default is \itshape
+}
+
+
+\usepackage[skins]{tcolorbox}
+
+\tcbset{
+	% Defaults
+	my box/main style/.style={},
+	my box/title style/.style={},
+	% Use the 'append' variants if you want to add to the defaults instead of
+	% overriding them.
+	my box/main/.style={/tcb/my box/main style/.style={#1}},
+	my box/title/.style={/tcb/my box/title style/.style={#1}},
+	my box/append main/.style={/tcb/my box/main style/.append style={#1}},
+	my box/append title/.style={/tcb/my box/title style/.append style={#1}},
+	%
+	my box/.style={
+		my box/.cd, #1,
+		/tcb/.cd,
+		enhanced,
+		my box/main style,
+		attach boxed title to top left={xshift=0.2cm, yshift=-0.2cm},
+		boxed title style={
+			outer arc=0pt,
+			arc=0pt,
+			top=3pt,
+			bottom=3pt,
+			my box/title style,
+		},
+	},
+}
+
+\newtcolorbox{idea}[1][]{
+	my box={
+		main={colframe=blue, colback=gray!50!blue!10},
+		title={colback=blue!60, colframe=gray},
+	},
+	title={KACY Summer League},
+	#1,
+}
+
+
+\SetupExSheets[question]{
+	pre-hook = \begin{idea},
+		post-hook = \end{idea}}
+
+\SetupExSheets[solution]{print=false, name=Solution}
+\SetupExSheets[question]{type=exam, name=KACY--I}
+
+\NewQuSolPair{example}[name=Example]{exsol}
+%\SetupExSheets{counter-format=se.qu[1],counter-within=part}
+
+\SetupExSheets{totoc=true}
+
+%%%% 3D TikZ Settings
+
+
+%%% Lines of Latitude in Globe
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+\newcommand\pgfmathsinandcos[3]{%
+	\pgfmathsetmacro#1{sin(#3)}%
+	\pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+	\pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+	\pgfmathsinandcos\sint\cost{#3} % azimuth
+	\tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+
+\newcommand\LatitudePlane[3][current plane]{%
+	\pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+	\pgfmathsinandcos\sint\cost{#3} % latitude
+	\pgfmathsetmacro\yshift{\cosEl*\sint}
+	\tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\NewLatitudePlane[4][current plane]{%
+	\pgfmathsinandcos\sinEl\cosEl{#3} % elevation
+	\pgfmathsinandcos\sint\cost{#4} % latitude
+	\pgfmathsetmacro\yshift{#2*\cosEl*\sint}
+	\tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircle[2][1]{
+	\LongitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+	\draw[current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
+	\draw[current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+\newcommand\DrawLatitudeCircle[2][1]{
+	\LatitudePlane{\angEl}{#2}
+	\tikzset{current plane/.prefix style={scale=#1}}
+	\pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+	% angle of "visibility"
+	\pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+	\draw[current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
+	\draw[current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+
+%% document-wide tikz options and styles
+
+\tikzset{%
+	>=latex, % option for nice arrows
+	inner sep=0pt,%
+	outer sep=2pt,%
+	mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+		fill=black,circle}%
+}
+
+%%% Great circles
+% Style to set camera angle, like PGFPlots `view` style
+\tikzset{viewport/.style 2 args={
+		x={({cos(-#1)*1cm},{sin(-#1)*sin(#2)*1cm})},
+		y={({-sin(-#1)*1cm},{cos(-#1)*sin(#2)*1cm})},
+		z={(0,{cos(#2)*1cm})}
+}}
+
+% Convert from spherical to cartesian coordinates
+\newcommand{\ToXYZ}[2]{
+	{sin(#1)*cos(#2)}, % X coordinate
+	{cos(#1)*cos(#2)}, % Y coordinate
+	{sin(#2)}          % Z (vertical) coordinate
+}
+
+%%% Polar Triangles
+
+\usepackage    {tikz}
+\usetikzlibrary{3d}
+\usetikzlibrary{calc}
+\usetikzlibrary{math}
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\usepackage{tikz-3dplot}
+
+% isometric axes
+\pgfmathsetmacro\xx{1/sqrt(2)}
+\pgfmathsetmacro\xy{1/sqrt(6)}
+\pgfmathsetmacro\zy{sqrt(2/3)}
+
+% some functions (cross products)
+\tikzmath%
+{%
+	function crossx(\mx,\my,\mz,\nx,\ny,\nz)
+	{% cross product, x coordinate, normailized
+		\pxx = \my*\nz-\mz*\ny;
+		\pyy = \mz*\nx-\mx*\nz;
+		\pzz = \mx*\ny-\my*\nx;
+		return {\pxx/sqrt(\pxx*\pxx+\pyy*\pyy+\pzz*\pzz)};
+	};
+	function crossy(\mx,\my,\mz,\nx,\ny,\nz)
+	{% cross product, y coordinate, normailized
+		\pxx = \my*\nz-\mz*\ny;
+		\pyy = \mz*\nx-\mx*\nz;
+		\pzz = \mx*\ny-\my*\nx;
+		return {\pyy/sqrt(\pxx*\pxx+\pyy*\pyy+\pzz*\pzz)};
+	};
+	function crossz(\mx,\my,\mz,\nx,\ny,\nz)
+	{% cross product, z coordinate, normailized
+		\pxx = \my*\nz-\mz*\ny;
+		\pyy = \mz*\nx-\mx*\nz;
+		\pzz = \mx*\ny-\my*\nx;
+		return {\pzz/sqrt(\pxx*\pxx+\pyy*\pyy+\pzz*\pzz)};
+	};
+}
+
+\newcommand{\greatcircle}[6] % pole x, y, z, color, two orientation factors (+1/-1)
+{%
+	\coordinate (P)  at (#1,#2,#3);                  % pole
+	\coordinate (N)  at ($(0,0,0)!#6*1.25cm!(P)$);   % these points are
+	\coordinate (S)  at ($-1*(N)$);                  % used to clip the
+	\coordinate (E)  at ($(0,0,0)!-1.25cm!270:(P)$); % ellipses
+	\coordinate (W)  at ($-1*(E)$);                  % ...
+	\coordinate (NW) at ($(N)+(W)$);
+	\coordinate (NE) at ($(N)+(E)$);
+	\coordinate (SW) at ($(S)+(W)$);
+	\coordinate (SE) at ($(S)+(E)$);
+	\pgfmathsetmacro\ptheta{atan(#2/#1)} % pole, spherical coordinate theta
+	\pgfmathsetmacro\pphi  {#5*acos(#3)} % pole, spherical coordinate phi
+	\begin{scope}
+		% \clip (W) -- (SW) -- (SE) -- (E) -- cycle;
+		\draw[rotate around z=\ptheta,rotate around y=\pphi,%
+		canvas is xy plane at z=0,#4] (0,0) circle (1);
+	\end{scope}
+	\begin{scope}
+		% \clip (W) -- (NW) -- (NE) -- (E) -- cycle;
+		\draw[rotate around z=\ptheta,rotate around y=\pphi,%
+		canvas is xy plane at z=0,#4,densely dotted] (0,0) circle (1);
+	\end{scope}
+}
+
+\usepackage{pgfplots}
+\usetikzlibrary{calc,3d,intersections, positioning,intersections,shapes}
+\pgfplotsset{compat=1.11} 
+
+
+\newcommand{\InterSec}[3]{%
+	\path[name intersections={of=#1 and #2, by=#3, sort by=#1,total=\t}]
+	\pgfextra{\xdef\InterNb{\t}}; }
+
+
+
+
+\begin{document}
+	\begin{titlingpage}
+		% \thispagestyle{Rplain}
+		%\ThisCenterWallPaper{1.2}{Ganesha}
+		\author{\scalebox{2}{\fontsize{15pt}{0pt}\selectfont \textbf{\sffamily \color{red} Amir \color{red} Parvardi}}}
+		% \title{ \color{white} THE OLYMPIAD ALGEBRA BOOK (VOL I): \\ \color{white} 1220 Polynomials and Trigonometry Problems}
+		\title{\scalebox{2}{\fontsize{12pt}{0pt}\selectfont \textbf{\sffamily \color{teal} Summer Kaywañan  \color{black} Algebra Competitions}} \\ \scalebox{2}{\fontsize{13pt}{0pt}\selectfont \textbf{\scshape \color{teal} A.K.A.}} \\  \scalebox{2}{\fontsize{10pt}{0pt}\selectfont \textbf{\sffamily \color{teal} Summer  KACY}}\\ \color{lime}\texttt{KACY--I002}:\\ \color{teal}\textbf{Olympiad Pre-Algebra Contest 002}}
+		\date{\color{teal} \scshape June 17, 2023}
+		\maketitle
+	\end{titlingpage}
+	
+%	\frontmatter
+%	
+%	
+%	\chapter*{Preface}
+%	\addcontentsline{toc}{chapter}{Preface}
+%	\section*{Foreword}
+%	\Large
+%	\textbf{Azermalohg} speaks to \textbf{Rima}:
+%	\begin{displayquote}
+%		Why are you so afraid of the IllLyrans?\\
+%		What has your fear had you achieved?\\
+%		You have made yourself weary for lack of sleep,\\
+%		You only fill your flesh with grief,\\
+%		You only bring the distant days closer.\\
+%		Humankind's fame is cut down\\
+%		like reeds in a reed-bed.\\
+%		A fine young man, a fine young girl...\\
+%		at grip of Death.\\
+%		You have seen Death,\\
+%		You have touched the face of Death,\\
+%		You hear the voice of Death lamenting in your ears,\\
+%		Savage Death just cuts humankind down.\\
+%		Sometimes we have hope,\\
+%		sometimes we make a wish,\\
+%		but then our airplanes are shot in the air.\\
+%		Sometimes there is hostility in the land,\\
+%		but in the end, only the most benevolent will remain.\\
+%		The ruthless IllLyrans bring Death with themselves;\\
+%		but the merciful Lyrans will always prevail.\\
+%		Remember, the night is darkest just before dawn.
+%	\end{displayquote}
+%	
+%	
+%	\newpage
+	
+	\section*{Synopsis}
+		The Olympiad Algebra Book comes in two volumes. The first volume, dedicated to \href{https://www.academia.edu/101938068/The_Olympiad_Algebra_Book_Vol_I_1220_Polynomials_and_Trigonometry_Problems}{Polynomials and Trigonometry}, is a collection of lesson plans containing $1220$ beautiful problems, around two-thirds of which are polynomial problems and one-third are trigonometry problems. The second volume of The Olympiad Algebra Book contains $1220$ Problems on Functional Equations and Inequalities, and I hope to finish it before the end of Summer 2023. I hope I can finish collecting the FE and INEQ problems by June $29^{th}$, as a reminder of the \href{https://www.academia.edu/29934442/1220_Number_Theory_Problems_J29_Project}{$1220$ Number Theory Problems} published as the first 1220 set of J29 Project. The current volumes has $843$ Polynomial problems and $377$ Trigonometry questions, the last $63$ of which are bizarre spherical geometry problems! 
+		
+		
+		\vspace{0.5em}
+		
+		The Olympiad Algebra Book is supposed to be a problem bank for Algebra, and it forms the resource for the first series of the KAYWAÑAN Algebra Contest. I suggest you start with Polynomials, and before you get bored or exhausted, also start solving Trigonometry problems. If you find these problems easy and not challenging enough, the Spherical Trigonometry lessons and problems are definitely going to be a must try!
+		
+		
+		\vspace{0.5em}
+		
+		This booklet contains problems and solutions of $\texttt{KACY--I002}$ (Olympiad Pre--Algebra Contests), including the problems from the first book: $$\text{KACY--I}\left\{3,39,40,59,76,77,87,104,114\right\}.$$ The numbers referred here are the question number out of the 1220 questions labeled from \href{https://github.com/parvardi/KACY/blob/main/KACY-VOL-I.pdf}{1 to 1220}. The competition's full title is ``Kaywañan Olympiad Pre--Algebra Summer Contest 002,'' and it was held on Saturday June 17, 2023.
+%	
+%		\noindent ``Kaywañan Olympiad Pre--Algebra Summer Contest 001''
+%		\begin{tasks}
+%			\task $\texttt{KACY--I001}$: $\text{KACY--I}\left\{2,37,38,58,74,75,86,103,113\right\}$.
+%%			\task $\texttt{KACY--I002}$: $\text{KACY--I}\left\{3,39,40,59,76,77,87,104,114\right\}$.
+%%			\task $\texttt{KACY--I003}$: $\text{KACY--I}\left\{4,41,42,60,61,78,88,105,115\right\}$.
+%%			\task $\texttt{KACY--I004}$: $\text{KACY--I}\left\{5,43,44,62,79,89,90,106,116\right\}$.
+%%			\task $\texttt{KACY--I005}$: $\text{KACY--I}\left\{6,45,46,63,80,91,92,107,117\right\}$.
+%%			\task $\texttt{KACY--I006}$: $\text{KACY--I}\left\{13,47,64,81,93,95,108,109,118\right\}$.
+%%			\task $\texttt{KACY--I007}$: $\text{KACY--I}\left\{14,48,65,66,82,96,97,98,110,119\right\}$.
+%%			\task $\texttt{KACY--I008}$: $\text{KACY--I}\left\{32,49,67,68,83,84,99,100,111,120\right\}$.
+%%			\task $\texttt{KACY--I009}$: $\text{KACY--I}\left\{33,55,57,72,73,85,101,102,112,121\right\}$.
+%		\end{tasks}  
+%		Dates of \texttt{KACY--I001} to \texttt{KACY--I009}:
+%		\begin{enumerate}
+%			\item \texttt{KACY--I001}: June 3, 2023.
+%%			\item \texttt{KACY--I002}: June 10, 2023.
+%%			\item \texttt{KACY--I003}: June 17, 2023.
+%%			\item \texttt{KACY--I004}: June 24, 2023.
+%%			\item \texttt{KACY--I005}: July 1, 2023.
+%%			\item \texttt{KACY--I006}: July 8. 2023.
+%%			\item \texttt{KACY--I007}: July 15, 2023.
+%%			\item \texttt{KACY--I008}: July 22, 2023.
+%%			\item \texttt{KACY--I009}: July 29, 2023.
+%		\end{enumerate}  
+\Large
+		\begin{flushright}
+			Amir Parvardi,\\
+			Vancouver, British Columbia,\\
+			June 17, 2023
+		\end{flushright}
+	
+	\newpage
+	\normalsize
+	\tableofcontents\label{TOC}
+	%\listoffigures
+	% \newpage
+	% \listoftables
+	% \cleardoublepage
+	% \addcontentsline{toc}{chapter}{Index}
+	% \printindex
+	
+%	\mainmatter
+	\normalsize
+	\pagestyle{fancy}
+	\fancyhf{}
+	% \fancyhead[LE]{\nouppercase{\rightmark\hfill\leftmark}}
+	% \fancyhead[RO]{\nouppercase{\leftmark\hfill\rightmark}}
+	\fancyfoot[LE,RO]{Amir Parvardi\hfill\thepage/\pageref{LastPage}\hfill KAYWAÑAN\textsuperscript{\textcopyleft}}
+	\fancyhead[LE,RO]{Olympiad Algebra (Vol. I):\hfill 1220 Problems\hfill \texttt{KACY--I002} Booklet}
+
+\newpage
+
+	\begin{tcolorbox}
+		\begin{displayquote}
+			``Let No One Ignorant of Algebra Enter!''
+			\begin{flushright}
+				\LARGE \textsc{Kaywan}
+			\end{flushright}
+		\end{displayquote}
+	\end{tcolorbox}
+	
+	
+	The rules of the KACY Competitions are simple: 
+	\begin{idea}
+		\begin{tasks}
+			\task All problems whose titles contain \textbf{KACY--I} are questions of the Summer KACY Series, and all problems with a title containing \textbf{KACY--II} are questions of the Winter KACY Series.
+			\task This is the first volume of KACY, and it contains the SUMMER KACY questions. For the SUMMER KACY 2023 held weekly in Summer and Fall of 2023, only questions with title containing ``\textbf{KACY--I}'' are to be used in the actual KAYWAÑAN competitions.
+		\end{tasks}
+	\end{idea}
+	
+	\vspace{0.5em}
+	
+	This is because all the questions whose source does not contain \textbf{KACY--I} are either from a legit mathematical competition such as IMO, IMO Shortlist/Longlist, MAA Series (AMC, AIME, USAMO, USATST, USATSTST, USAMTS, etc.), National or Regional Olympiads (USA, APMC, Canada, etc.), or maybe from a book/paper I found and referenced in the question's title. 
+	
+	\vspace{0.5em}
+	
+	This assures that no famous problems are used in KACY, and that we actually identify and solve the non--KACY problems as exercises and examples in our journey of learning algebra during KAYWAÑAN Algebra Contest.
+	
+%
+%	\section*{Olympiad Algebra 001: Corollaries of Pre--Algebra}
+%	We begin by reminding ourselves of why polynomials are the first topic we need to study in Pre--Algebra. The study of the relationships between the roots of polynomials, a field whose master is undoubtedly Évariste Galois, is the hidden root of the stout tree of Algebra. We may begin stating the definitions of polynomials and how their roots are related to each other, involving the Fundamental Theorem of Algebra, which states that each polynomial $P(x)$ with complex coefficients has exactly $n$ roots in the complex plane. This ferocious fact about the roots of any polynomial is, indeed, the Most Fundamental Theorem in Algebra. 
+%	
+%%	\subsection{Introduction to Olympiad Algebra}
+%	
+%	
+%	In olympiad Algebra, starting from polynomials, we seek to find special examples of equations that have solutions that seem interesting in some way. For instance, regarding the Fundamental Theorem of Algebra just stated, we my ask special questions, for instance, \textit{Casus irreducibilis} (Latin for ``the irrational case''): can we solve all third-degree polynomials with real radicals? And the answer is no. For example,
+%	
+%	\begin{example}
+%		Prove that the cubic equation $2x^{3}-9x^{2}-6x+3=0$ has three real roots. You can check this by finding the discriminant $\Delta$, which is given by \[\Delta:={\bigl (}(x_{1}-x_{2})(x_{1}-x_{3})(x_{2}-x_{3}){\bigr )}^{2}=18abcd-4ac^{3}-27a^{2}d^{2}+b^{2}c^{2}-4b^{3}d,\]
+%		where $a,b,c,d$ must be replaced with the coefficients of our polynomial. Prove that if $\Delta>0$,  then $x_1,x_2,x_3$ would be three real roots, but, in the case of the three roots of our polynomial $2x^{3}-9x^{2}-6x+3=0$, they are not presentable in any real radical form and we require imaginary radicals to solve this specific equation [from \href{https://en.wikipedia.org/wiki/Casus_irreducibilis}{Wikipedia}] ``are given by: 
+%		\[{\displaystyle t_{k}={\frac {3-\omega _{k}{\sqrt[{3}]{39-26i}}-\omega _{k}^{2}{\sqrt[{3}]{39+26i}}}{2}}},\]
+%		for $k=1,2,3$. The solutions are in radicals and involve the cube roots of complex conjugate numbers.''
+%	\end{example}
+%	
+%	
+%	\begin{tcolorbox}[title={Definition of Polynomial and Roots}]
+%		We state the definition of a ``polynomial'' in the broadest form:
+%		\begin{definition}
+%			A function $P(x)$ defined over complex numbers by
+%			\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0, \qquad \text{for} \quad n \geq 0,\]
+%			where $a_0,a_1,\dots,a_n$ are complex numbers, is called a \textbf{polynomial of degree $n$} with complex \textbf{coefficients} $a_0,a_1,\dots,a_n$. We also write $\deg P := \deg(P(x)) = n$.
+%		\end{definition}
+%	\end{tcolorbox}
+%	
+%	However, in most cases, we are interested in polynomials with real, rational, integer, or natural coefficients. For the sake of completeness and self-containment of Kaywañan, we need to discuss the definition of complex numbers in details, though, and we will mention the most important definitions, theorems, and identities for complex numbers. Start by studying the different representations of a complex number in the complex plane, once assuming the plane is Cartesian, and once in the Polar Plane. The most important result, then, would be the \textbf{De Moivre's Formula}, which will be mentioned just enough not to spoil the fun for later trigonometry lessons in Olympiad Algebra $401$.
+%	
+%	
+%	\begin{tcolorbox}[title={Equivalent Polynomials, Monic Polynomials}]
+%		\begin{definition}
+%			Two polynomials $P(x)$ and $Q(x)$ are \textbf{equivalent} if and only if 
+%			\begin{tasks}
+%				\task They have equal degrees, i.e., $\deg(P(x))=\deg(Q(x))$; and
+%				\task All their corresponding coefficients are the same.
+%			\end{tasks}
+%			In other words, assuming
+%			\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad \text{and} \quad Q(x)=b_mx^m+b_{m-1}x^{m-1}\cdots+b_1x+b_0,\]
+%			we have $P(x) \equiv Q(x)$ if and only if $m=n$ and $a_i=b_i$ for all $i=1,2,\dots,n$.
+%		\end{definition}
+%		
+%		\begin{definition}
+%			Let $P(x)$ be a polynomial of degree $n$, defined by
+%			\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,\]
+%			Then we say $P(x)$ is a \textbf{monic polynomial} if and only if $a_n=1$.
+%		\end{definition}
+%		
+%		\begin{definition}
+%			We may introduce the derivative of polynomial $P(x)$ usually denoted $P'(x)$, where
+%			\begin{align*}
+%				P(x) &= a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,\\
+%				P'(x) &= na_nx^{n-1} + (n-1)a_{n-1}x^{n-2}+\cdots + 2a_2x+a_1.
+%			\end{align*}
+%		\end{definition}
+%	\end{tcolorbox}
+%	
+%	\begin{theorem}[Fundamental Theorem of Algebra]
+%		Any polynomial $P(x)$ with complex coefficients has precisely $\deg P$ complex roots.
+%	\end{theorem}
+%	
+%	
+%	\begin{corollary}
+%		Let $P(x)$ be a polynomial of degree $n$ with complex coefficients, defined by
+%		\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0.\]
+%		If the equation $P(x)=0$ has $n+1$ solutions in $\mathbb C$, then $P(x)\equiv 0$.
+%	\end{corollary}
+%	
+%	
+%	
+%%	\subsection{Essential Polynomial Theorems}
+%	
+%	Here are some theorems that you really need to prove on your own.
+%	
+%	
+%	\begin{theorem}
+%		For two polynomials
+%		\[A(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad \text{and} \quad B(x)=b_mx^m+b_{m-1}x^{m-1}\cdots+b_1x+b_0,\]
+%		assuming $n\geq m$, we have
+%		\begin{tasks}
+%			\task The polynomial $S(x)=A(x)+B(x)$ is a polynomial of degree at most $n$, whose coefficients are the sum of the corresponding coefficients of $A(x)$ and $B(x)$.
+%			\task The polynomial $\Pi(x) = A(x) \cdot B(x)$ is a polynomial of degree $m+n$ whose coefficients $\pi_0,\pi_1,\dots,\pi_{m+n}$, where
+%			\[\Pi(x) = \pi_{m+n}x^{m+n} + \cdots + \pi_1x+\pi_0,\]
+%			are calculated by
+%			\begin{align*}
+%				\pi_0 &= a_0b_0,\\
+%				\pi_1 &= a_0b_1 + a_1b_0,\\
+%				\pi_2 &= a_0b_2+a_1b_1+a_2b_0,\\
+%				\vdots &\phantom{=} \qquad \vdots\\
+%				\pi_{m+n-1} &= a_{n-1}b_m + a_nb_{m-1},\\
+%				\pi_{m+n} &= a_nb_m.
+%			\end{align*}
+%		\end{tasks}
+%	\end{theorem}
+%	
+%	
+%	\begin{theorem}[Polynomial Division Theorem]
+%		For two polynomials $A(x)$ and $B(x)$ with
+%		\[A(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad \text{and} \quad B(x)=b_mx^m+b_{m-1}x^{m-1}\cdots+b_1x+b_0,\]
+%		we can define the \textbf{quotient polynomial} $Q(x)$ and the \textbf{remainder polynomial} $R(x)$, assuming $n\geq m$, by
+%		\[A(x) = B(x) \cdot Q(x) + R(x), \qquad \text{and} \quad \deg R < \deg B.\]
+%		In the special case when the remainder is the zero polynomial, $R(x) \equiv 0$, we say $A(x)$ is divisible by $B(x)$. 
+%	\end{theorem}
+%	
+%	
+%	\begin{theorem}[Bézout's Theorem for Polynomials AKA Factor Theorem]
+%		As a special case of the Polynomial Division Theorem, in the polynomial division $A(x) = B(x) \cdot Q(x) + R(x)$, let $B(x)=x-x_0$, where $x_0 \in\mathbb R$. Then, $A(x_0)=R(x_0)$ and we may write:
+%		\[A(x)=(x-x_0)\cdot Q(x) + A(x_0).\]
+%		The factor theorem says $x-x_0$ is a factor of $A(x)$ if and only if $A(x_0)=0$.
+%	\end{theorem}
+%	
+%	\begin{theorem}[Unique Factorization Theorem]
+%		According to the Fundamental Theorem of Algebra, all polynomials $P(x)$ with complex coefficients in the form
+%		\[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0, \qquad \text{with} \quad a_n\neq 0.\]
+%		Let $x_0,x_1,\dots,x_n$ be the $n$ complex roots of $P(x)=0$. Then, 
+%		\[P(x)=a_n(x-x_1)(x-x_2)\cdots(x-x_n).\]
+%	\end{theorem}
+%	
+%	
+%	
+%%	\subsection{In Search of Rational Roots}
+%	
+%	\begin{tcolorbox}[title={Rational Root Theorem}]
+%		\begin{theorem}
+%			Let $P(x)$ be a polynomial with integer coefficients written as \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0, \qquad \text{with} \quad a_n\neq 0.\]. Show that $P(x)$ has a rational root $r=p/q$, where $p$ and $q$ are relatively prime positive integers, then $p$ is a divisor of $a_0$ and $q$ is a divisor of $a_n$.
+%		\end{theorem}
+%	\end{tcolorbox}
+%	
+%	\section*{KACY--I001 Problems}
+%	\begin{question}
+%		We call a polynomial \textbf{monic} if the coefficient of the highest exponent in the polynomial equals $1$. Consider the monic polynomial $P(x)$ with integer coefficients:
+%		\begin{align*}
+%			P(x)=x^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_2x^2+a_1x+a_0.
+%		\end{align*}
+%		\begin{enumerate}
+%			\item Prove that the equation $P(x)=0$ does not have any roots in the form $x=p/q$ where $p$ and $q$ are coprime integers and $|q|>1$.
+%			\item If the equation $P(x)=0$ has a rational root, then this root is an integer and it divides $a_0$.
+%			\item Let $x=\alpha$ be a non-zero integer root of the equation $P(x)=0$. Prove that $\alpha$ divides $a_1 + {a_0}/{\alpha}$.
+%			\item Let $x=\alpha$ be a non-zero integer root of the equation $P(x)=0$. Prove that the numbers $\alpha, \alpha^2, \dots, \alpha^n$ divide the following numbers, respectively:
+%			\begin{align*}
+%				a_0, \quad a_0+\alpha a_1, \quad a_0+\alpha a_1+\alpha^2 a_2, \quad\dots, \quad a_0+\alpha a_1+\cdots+\alpha^{n-1} a_{n-1}.
+%			\end{align*}
+%		\end{enumerate}
+%	\end{question}
+%
+%
+%	\begin{solution}
+%		This is the generalization of the Rational Root Theorem for monic polynomials:
+%		\begin{enumerate}
+%			\item Let $x=p/q$, where $p$ and $q$ are coprime integers, be a root of 
+%			\begin{align*}
+%				P(x)=x^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_2x^2+a_1x+a_0.
+%			\end{align*}
+%			Plug in $x=p/q$ to find
+%			\begin{align*}
+%				\left(\frac{p}{q}\right)^n + a_{n-1}\left(\frac{p}{q}\right)^{n-1} + \cdots + a_2\left(\frac{p}{q}\right)^2 + a_1\left(\frac{p}{q}\right) + a_0 = 0.
+%			\end{align*}
+%			Multiply both sides by $q^n$ to get rid of the fractions:
+%			\begin{align*}
+%				p^n + a_{n-1}p^{n-1}q + \cdots + a_2p^2q^{n-2} + a_1pq^{n-1} + a_0q^n = 0.
+%			\end{align*}
+%			All the terms on the left side except for the first term are divisible by $q$, and since the right side is zero, thus also divisible by $q$, we find that the term $p^n$ must be divisible by $q$, which is impossible because $p$ and $q$ are relatively prime and $|q|>1$. Therefore, the assumption was false and the polynomial does not have any rational (but non-integer) roots.
+%			\item Let $x=p/q$ be a rational root of the polynomial, but this time we allow it to be an integer (that is, we allow $|q|=1$ to happen). Do the same steps as in the first part to arrive at the equation
+%			\begin{align*}
+%				p^n + a_{n-1}p^{n-1}q + \cdots + a_2p^2q^{n-2} + a_1pq^{n-1} + a_0q^n = 0.
+%			\end{align*}
+%			Taking the latter equation modulo $q$, we will realize that there is a contradiction (the same as the one we found in the first part) unless $|q|=1$, which means that the root of the original monic polynomial must have been an integer ($x=\pm p$). Taking the latter equation modulo this root, we see that the first $n-1$ terms on the left are all divisible by $p$, so they are all multiples of the polynomial's root, and since they add up to zero, the last term, $|a_0|$, must be divisible by the root.
+%			\item Plug the integer root $x=\alpha \neq 0$ into the polynomial to find
+%			\begin{align*}
+%				\alpha^n + a_{n-1}\alpha^{n-1} + \cdots + a_2\alpha^2 + a_1\alpha + a_0 = 0.
+%			\end{align*}
+%			Divide both sides by $\alpha \neq 0$ to get
+%			\begin{align*}
+%				\alpha^{n-1} + a_{n-1}\alpha^{n-2} + \cdots + a_2\alpha + a_1 + \frac{a_0}{\alpha} = 0.
+%			\end{align*}
+%			Taking the final equation modulo $\alpha$ reveals that $a_1+a_0/\alpha$ must be divisible by $\alpha$.
+%			\item Plug in $x=\alpha$ again:
+%			\begin{align*}
+%				\alpha^n + a_{n-1}\alpha^{n-1} + \cdots + a_2\alpha^2 + a_1\alpha + a_0 = 0.
+%			\end{align*}
+%			Take the equation modulo $\alpha^k$ (with $k=1,2,\dots,n$) to find that 
+%			\begin{align*}
+%				a_0, \quad a_0+\alpha a_1, \quad a_0+\alpha a_1+\alpha^2 a_2, \quad\dots, \quad a_0+\alpha a_1+\cdots+\alpha^{n-1} a_{n-1},
+%			\end{align*}
+%			must be divisible by $\alpha, \alpha^2, \dots, \alpha^n$, respectively.
+%		\end{enumerate}
+%	\end{solution}
+%
+%	
+%	
+%	\setcounter{question}{36}
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			Factorize $2x^4 + x^3 + 4x^2 + x + 2$.
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		The answer is $(x^2+1)(2x^2+x+2)$. In order to get this factorization, we can pair up $x$ and $x^3$ to make $x(x^2+1)$. Then, what remains would be
+%		\begin{align*}
+%			2x^4+4x^2+2 = 2(x^4+2x^2+1) = 2(x^2+1)^2.
+%		\end{align*}
+%		Finally, we can factor $x^2+1$ to find the answer. 
+%	\end{solution}
+%	
+%	
+%	
+%	
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			Factorize $x^5+x^4+x^3+x^2+x+1$.
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		The answer is $(x+1)(x^2+x+1)(x^2-x+1)$. To arrive at this factorization, let us define
+%		\begin{align*}
+%			P(x) = x^5+x^4+x^3+x^2+x+1.
+%		\end{align*}
+%		Multiplying $P(x)$ by $x-1$, we get
+%		\begin{align*}
+%			(x-1)P(x) &= (x^6+x^5+x^4+x^3+x^2+x) - (x^5+x^4+x^3+x^2+x+1)\\
+%			&= x^6 - 1.
+%		\end{align*}
+%		We may now use the identity for the difference of squares to factorize $x^6 - 1 = (x^3-1)(x^3+1)$. We also know the identities for the sum and difference of two cubes, so we can finish off the factorization:
+%		\begin{align*}
+%			(x-1)P(x) = x^6-1 &= (x^3-1)(x^3+1)\\
+%			&= (x-1)(x^2+x+1) \cdot (x+1)(x^2-x+1).
+%		\end{align*}
+%		We will now cancel the factor $x-1$ from both sides (since $x=1$ is obviously not a root) to get 
+%		\begin{align*}
+%			x^5+x^4+x^3+x^2+x+1 = (x+1)(x^2+x+1)(x^2-x+1).
+%		\end{align*}
+%	\end{solution}
+%	
+%%	
+%	\setcounter{question}{73}
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			Factorize $y(x-2z)^2 + 8xyz + x(y-2z)^2 - 2z (x+y)^2$.
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		The answer is $(x-2y)(y-2z)(x+y)$. Let us call the given expression $P(x,y,z)$. The most important observation for solving the problem is that $P(x,-x,z)=0$ for all $x$ and $z$, so that we find $(x+y)$ is a factor of $P(x,y,z)$. The other two factors may be conjectured by plugging $x-2z=0$ and $y-2z=0$, which yield the final factorization
+%		\begin{align*}
+%			y(x-2z)^2 + 8xyz + x(y-2z)^2 - 2z (x+y)^2 = (x-2y)(y-2z)(x+y).
+%		\end{align*}
+%	\end{solution}
+%	
+%	
+%	
+%	
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			Factorize $(a+b+c)^3 - a^3 - b^3 - c^3$.
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		The answer is $3(a+b)(b+c)(c+a)$. We need to expand $(a+b+c)^3$ and cancel $a^3+b^3+c^3$ from the sum to arrive at
+%		\begin{align*}
+%			3 a^2 b + 3 a^2 c + 3 a b^2 + 6 a b c + 3 a c^2 + 3 b^2 c + 3 b c^2.
+%		\end{align*}
+%		The expression may be divided by $3$ for simplification, and it is easy to factor $(b+c)$ from the first two terms, the second two terms, etc. Because of the symmetry of the expression, we guess that the counterparts of $(b+c)$ must also be factors of this huge expression, so that $(a+b)$ and $(c+a)$ must also appear in the factorization:
+%		\begin{align*}
+%			(a+b+c)^3 - a^3 - b^3 - c^3 = 3(a+b)(b+c)(c+a).
+%		\end{align*}
+%	\end{solution}
+%	
+%	
+%%	
+%\setcounter{question}{85}
+%
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			Factorize $a^3(x-y) + x^3(a-y) + y^3(a-x)$.
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		The answer is $(x-y)(a-x)(a-y)(x+y+a)$. The form of the expression $a^3(x-y) + x^3(a-y) + y^3(a-x)$ suggests what the factors could be: we have $(x-y)$ in the first term, $(a-y)$ in the second term, and $(a-x)$ in the third term. We conjecture that if we multiply these factors together, we might find the hidden factor $P(a,x,y)$ such that
+%		\begin{align*}
+%			(x-y)(a-y)(a-x)\cdot P(a,x,y) &= a^3 (x-y) + x^3 (a-y) + y^3 (a-x)\\
+%			& =  a^3 x - a^3 y + a x^3 + a y^3 - x^3 y - x y^3\\
+%			& = (a^2 x - a^2 y - a x^2 + a y^2 + x^2 y - x y^2)(a+x+y). 
+%		\end{align*}
+%		Expanding $(x-y)(a-y)(a-x)$ would result in $a^2 x - a^2 y - a x^2 + a y^2 + x^2 y - x y^2$, which means we can divide both sides of the latter equation by this factor to find $P(a,x,y)=a+x+y$.  Finally,
+%		\begin{align*}
+%			a^3(x-y) + x^3(a-y) + y^3(a-x)(x-y)(a-x)(a-y)(x+y+a).
+%		\end{align*}
+%		
+%	\end{solution}
+%	
+%	
+%\setcounter{question}{102}
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			\begin{itemize}
+%				\item[(a)] Consider a linear function $f(x)=ax+b$. If the inputs $x=x_n$ (for $n=1,2,3,\dots$) of the function form an arithmetic progression, then what kind of progression do the outputs $y_n=f(x_n)$ form?
+%				\item[(b)] For $a>0$, consider an exponential function $f(x)=a^x$. If the inputs $x=x_n$ (for $n=1,2,3,\dots$) of the function form an arithmetic progression, then what kind of progression do the outputs $y_n=f(x_n)$ form?
+%			\end{itemize}
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		Answer: (a) Arithmetic, (b) Geometric.
+%		\begin{tasks}
+%			\task Let $x_1=i$ be the initial term of the sequence and $x_n=i+(n-1)d$ for all $n \geq 2$, where $d$ is the common difference of the arithmetic progression $\{x_n\}_{n=1}^{\infty}$, and then the use the elements of this sequence as input for the linear function $f(x)=ax+b$. The outputs $y_n=f(x_n)$ would be
+%			\begin{align*}
+%				y_1 = f(x_1)=f(i) &= ai+b,\\
+%				y_2 = f(x_2)=f(i+d) &= (ai+b)+ad,\\
+%				y_3 = f(x_3)=f(i+2d) &= (ai+b)+2ad,\\
+%				\quad \vdots \quad &= \quad \vdots \\
+%				y_n = f(x_n) = f(i+(n-1)d) &= (ai+b)+ (n-1)ad.
+%			\end{align*}
+%			It is clear that the sequence  $\{y_n\}_{n=1}^{\infty}$ is an arithmetic progression with initial term $y_1=ai+b$ and common difference $ad$.
+%			\task Let $x_1=i$ be the initial term of the sequence and $x_n=i+(n-1)d$ for all $n \geq 2$, where $d$ is the common difference of the arithmetic progression $\{x_n\}_{n=1}^{\infty}$, and then the use the elements of this sequence as input for the exponential function $f(x)=a^x$. The outputs $y_n=f(x_n)$ would be
+%			\begin{align*}
+%				y_1 = f(x_1)=f(i) &= a^i,\\
+%				y_2 = f(x_2)=f(i+d) &= (a^i) \cdot a^d,\\
+%				y_3 = f(x_3)=f(i+2d) &= (a^i) \cdot (a^d)^2,\\
+%				\quad \vdots \quad &= \quad \vdots \\
+%				y_n = f(x_n) = f(i+(n-1)d) &= (a^i) \cdot (a^d)^{n-1}.
+%			\end{align*}
+%			The sequence  $\{y_n\}_{n=1}^{\infty}$ is a geometric progression with initial term $y_1=a^i$ and common ratio $a^d$.
+%		\end{tasks}
+%	\end{solution}
+%	
+%	
+%\setcounter{question}{112}
+%
+%	\begin{tcolorbox}
+%		\SetupExSheets{headings=runin}
+%		\begin{question}
+%			If we know that
+%			\begin{align*}
+%				f\left(\frac{x+2}{x-2}\right) = \frac{x^2+4x+4}{8x},
+%			\end{align*}
+%			Find $f(x)$.
+%		\end{question}
+%	\end{tcolorbox}
+%	
+%	\begin{solution}
+%		The answer is $f(x) = {x^2}/{(x^2-1)}$. Start by noticing that $x^2+4x+4=(x+2)^2$ and that $8x = (x+2)^2 - (x-2)^2$. If we define $y=(x+2)/(x-2)$, then
+%		\begin{align*}
+%			f(y)=f\left(\frac{x+2}{x-2}\right) = \frac{x^2+4x+4}{8x} = \frac{(x+2)^2}{(x+2)^2 - (x-2)^2} = \frac{\left(\dfrac{x+2}{x-2}\right)^2}{\left(\dfrac{x+2}{x-2}\right)^2 - 1}= \frac{y^2}{y^2-1}.
+%		\end{align*}
+%	\end{solution}
+%	
+%	\newpage 
+%	\section*{KACY--I001 Solutions}
+%	
+%	\printsolutions
+	
+	
+\newpage
+
+\section*{KACY--I002 Problems}
+
+\setcounter{question}{2}
+	
+\begin{question}
+	Solve for $x$:
+	\begin{align*}
+		x^4+5x^3-2x^2-9x+5=0.
+	\end{align*}
+\end{question}
+
+\begin{solution}
+	Simplifies to $(x-1)(x+5)(x^2+x-1)=0$ which has rational solutions $x=1,-5$ and irrational solutions $(-1\pm\sqrt{5})/2$.
+\end{solution}
+
+
+
+
+
+\setcounter{question}{38}
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		Factorize $x^4-x^2+7$.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}%[name=Solution by Parviz Shahriari]
+	Answer: $$(x^2+\sqrt{2\sqrt{7}+1}x + \sqrt{7})(x^2-\sqrt{2\sqrt{7}+1}x + \sqrt{7}).$$
+\end{solution}
+
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		Factorize $x^4+4x-1$.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}%[name=Solution by Parviz Shahriari]
+	Answer: $(x^2+\sqrt{2}x + 1 - \sqrt{2})(x^2 - \sqrt{2}x+1 + \sqrt{2})$.
+\end{solution}
+
+
+\setcounter{question}{58}
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		Factorize $x^4+y^4+(x-y)^4$.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+	Answer: $2(x^2-xy+y^2)^2$.
+\end{solution}
+
+
+\setcounter{question}{75}
+
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		Factorize $(ab+bc+ca)(a+b+c)-abc$.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}%[name=Solution by Parviz Shahriari]
+	Answer: $(a+b)(b+c)(c+a)$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		Factorize $(xy^2+yz^2+zx^2)-(x^2y+y^2z+z^2x)$.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+	Answer: $(x-y)(y-z)(z-x)$.
+\end{solution}
+
+
+\setcounter{question}{86}
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		Factorize $a^2b^2(b-a) + b^2c^2(c-b) + c^2a^2(a-c)$.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}%[name=Solution by Parviz Shahriari]
+	Answer: $(a-b)(b-c)(c-a)(ab+bc+ca)$.
+\end{solution}
+
+\setcounter{question}{103}
+
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		For $a>0$, define
+		\begin{align*}
+			f(x)= \frac{1}{2}\left(a^{x}+a^{-x}\right).
+		\end{align*}
+		Find an alternative form for $f(x)+f(y)$ as a product.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}%[name=Solution by Parviz Shahriari]
+	Answer: $f(x)+f(y) = 2f(x)f(y)$.
+\end{solution}
+
+\setcounter{question}{113}
+
+
+\begin{tcolorbox}
+	\SetupExSheets{headings=runin}
+	\begin{question}
+		If we know that
+		\begin{align*}
+			f(x) &= \frac{4-x}{2x-4}, \text{ and}\\
+			f(\alpha+x) \cdot f(\alpha-x) &= \text{constant},
+		\end{align*}
+		Find $\alpha$ and the constant.
+	\end{question}
+\end{tcolorbox}
+
+\begin{solution}%[name=Solution by Parviz Shahriari]
+	Answer: $\alpha=3$ and $f(\alpha+x) \cdot f(\alpha-x) = \frac{1}{4}$.
+\end{solution}
+
+\section*{KACY--I002 Solutions}
+%	
+The problems and solutions of KACY--I002 are courtesy of Parviz Shahriari, and they are taken from his eternal two-volume Farsi contribution to mathematics:: ``Methods of Algebra.'' May he rest in peace!
+
+	\printsolutions
+\end{document}
+
+
