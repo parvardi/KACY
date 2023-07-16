@@ -14,3 +14,4 @@ Introduction to Olympiad Pre-Algebra (lecture notes provided in the first bookle
 * JUN 24: KACY--I003 Booklet: [Academia](https://www.academia.edu/103817920/KACY_I_003_Booklet) - [GitHub](https://github.com/parvardi/KACY/tree/main/KACY--I003-FULL) 
 - JUL 0 1: KACY--I004 Booklet: [Academia](https://www.academia.edu/104055925/KACY_I_004_Booklet) - [GitHub](https://github.com/parvardi/KACY/tree/main/KACY--I004-FULL) - [Google Forms](https://forms.gle/kncm2yQFUQ6R4rCh6)
 + JUL 0 8: KACY--I005 Booklet: [Academia](https://www.academia.edu/104371624/KACY_I_005_Booklet) - [GitHub](https://github.com/parvardi/KACY/tree/main/KACY--I005-FULL) 
+* JUL 1 5: KACY--I006 Booklet: [Academia](https://www.academia.edu/104600849/KACY_I_006_Booklet) - [GitHub](https://github.com/parvardi/KACY/tree/main/KACY--I006-FULL) 
