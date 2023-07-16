@@ -1,0 +1,425 @@
+\section{Olympiad Algebra 001:\\ Definitions \& Corollaries of Pre--Algebra}
+    We begin by reminding ourselves of why polynomials are the first topic we need to study in Pre--Algebra. The study of the relationships between the roots of polynomials, a field whose master is undoubtedly Évariste Galois, is the hidden root of the stout tree of Algebra. We may begin stating the definitions of polynomials and how their roots are related to each other, involving the Fundamental Theorem of Algebra, which states that each polynomial $P(x)$ with complex coefficients has exactly $n$ roots in the complex plane. This ferocious fact about the roots of any polynomial is, indeed, the Most Fundamental Theorem in Algebra. 
+
+\subsection{Introduction to Olympiad Algebra}
+
+\begin{tcolorbox}[title={Introduction to Olympiad Pre--Algebra}]
+In olympiad Algebra, starting from polynomials, we seek to find special examples of equations that have solutions that seem interesting in some way. For instance, regarding the Fundamental Theorem of Algebra just stated, we my ask special questions, for instance, \textit{Casus irreducibilis} (Latin for ``the irrational case''): can we solve all third-degree polynomials with real radicals? And the answer is no. For example,
+
+\begin{question}
+    Prove that the cubic equation $2x^{3}-9x^{2}-6x+3=0$ has three real roots. You can check this by finding the discriminant $\Delta$, which is given by \[\Delta:={\bigl (}(x_{1}-x_{2})(x_{1}-x_{3})(x_{2}-x_{3}){\bigr )}^{2}=18abcd-4ac^{3}-27a^{2}d^{2}+b^{2}c^{2}-4b^{3}d,\]
+    where $a,b,c,d$ must be replaced with the coefficients of our polynomial. Prove that if $\Delta>0$,  then $x_1,x_2,x_3$ would be three real roots, but, in the case of the three roots of our polynomial $2x^{3}-9x^{2}-6x+3=0$, they are not presentable in any real radical form and we require imaginary radicals to solve this specific equation [from \href{https://en.wikipedia.org/wiki/Casus_irreducibilis}{Wikipedia}] ``are given by: 
+    \[{\displaystyle t_{k}={\frac {3-\omega _{k}{\sqrt[{3}]{39-26i}}-\omega _{k}^{2}{\sqrt[{3}]{39+26i}}}{2}}},\]
+    for $k=1,2,3$. The solutions are in radicals and involve the cube roots of complex conjugate numbers.''
+\end{question}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Definition of Polynomial and Roots}]
+We state the definition of a ``polynomial'' in the broadest form:
+    \begin{definition}
+    A function $P(x)$ defined over complex numbers by
+    \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0, \qquad \text{for} \quad n \geq 0,\]
+    where $a_0,a_1,\dots,a_n$ are complex numbers, is called a \textbf{polynomial of degree $n$} with complex \textbf{coefficients} $a_0,a_1,\dots,a_n$. We also write $\deg P := \deg(P(x)) = n$.
+    \end{definition}
+\end{tcolorbox}
+
+However, in most cases, we are interested in polynomials with real, rational, integer, or natural coefficients. For the sake of completeness and self-containment of Kaywañan, we need to discuss the definition of complex numbers in details, though, and we will mention the most important definitions, theorems, and identities for complex numbers. Start by studying the different representations of a complex number in the complex plane, once assuming the plane is Cartesian, and once in the Polar Plane. The most important result, then, would be the \textbf{De Moivre's Formula}, which will be mentioned just enough not to spoil the fun for later trigonometry lessons in Olympiad Algebra $401$.
+
+
+\begin{tcolorbox}[title={Equivalent Polynomials, Monic Polynomials}]
+    \begin{definition}
+        Two polynomials $P(x)$ and $Q(x)$ are \textbf{equivalent} if and only if 
+        \begin{tasks}
+            \task They have equal degrees, i.e., $\deg(P(x))=\deg(Q(x))$; and
+            \task All their corresponding coefficients are the same.
+        \end{tasks}
+        In other words, assuming
+        \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad \text{and} \quad Q(x)=b_mx^m+b_{m-1}x^{m-1}\cdots+b_1x+b_0,\]
+        we have $P(x) \equiv Q(x)$ if and only if $m=n$ and $a_i=b_i$ for all $i=1,2,\dots,n$.
+    \end{definition}
+
+    \begin{definition}
+    Let $P(x)$ be a polynomial of degree $n$, defined by
+        \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,\]
+    Then we say $P(x)$ is a \textbf{monic polynomial} if and only if $a_n=1$.
+    \end{definition}
+
+    \begin{definition}
+        We may introduce the derivative of polynomial $P(x)$ usually denoted $P'(x)$, where
+        \begin{align*}
+            P(x) &= a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,\\
+            P'(x) &= na_nx^{n-1} + (n-1)a_{n-1}x^{n-2}+\cdots + 2a_2x+a_1.
+        \end{align*}
+    \end{definition}
+\end{tcolorbox}
+
+\begin{theorem}[Fundamental Theorem of Algebra]
+     Any polynomial $P(x)$ with complex coefficients has precisely $\deg P$ complex roots.
+\end{theorem}
+
+
+\begin{corollary}
+    Let $P(x)$ be a polynomial of degree $n$ with complex coefficients, defined by
+        \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0.\]
+        If the equation $P(x)=0$ has $n+1$ solutions in $\mathbb C$, then $P(x)\equiv 0$.
+\end{corollary}
+
+
+
+\subsection{Essential Polynomial Theorems}
+
+Here are some theorems that you really need to prove on your own.
+
+
+\begin{theorem}
+    For two polynomials
+        \[A(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad \text{and} \quad B(x)=b_mx^m+b_{m-1}x^{m-1}\cdots+b_1x+b_0,\]
+        assuming $n\geq m$, we have
+        \begin{tasks}
+            \task The polynomial $S(x)=A(x)+B(x)$ is a polynomial of degree at most $n$, whose coefficients are the sum of the corresponding coefficients of $A(x)$ and $B(x)$.
+            \task The polynomial $\Pi(x) = A(x) \cdot B(x)$ is a polynomial of degree $m+n$ whose coefficients $\pi_0,\pi_1,\dots,\pi_{m+n}$, where
+            \[\Pi(x) = \pi_{m+n}x^{m+n} + \cdots + \pi_1x+\pi_0,\]
+            are calculated by
+            \begin{align*}
+                \pi_0 &= a_0b_0,\\
+                \pi_1 &= a_0b_1 + a_1b_0,\\
+                \pi_2 &= a_0b_2+a_1b_1+a_2b_0,\\
+                \vdots &\phantom{=} \qquad \vdots\\
+                \pi_{m+n-1} &= a_{n-1}b_m + a_nb_{m-1},\\
+                \pi_{m+n} &= a_nb_m.
+            \end{align*}
+        \end{tasks}
+\end{theorem}
+
+
+    \begin{theorem}[Polynomial Division Theorem]
+        For two polynomials $A(x)$ and $B(x)$ with
+            \[A(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad \text{and} \quad B(x)=b_mx^m+b_{m-1}x^{m-1}\cdots+b_1x+b_0,\]
+            we can define the \textbf{quotient polynomial} $Q(x)$ and the \textbf{remainder polynomial} $R(x)$, assuming $n\geq m$, by
+            \[A(x) = B(x) \cdot Q(x) + R(x), \qquad \text{and} \quad \deg R < \deg B.\]
+            In the special case when the remainder is the zero polynomial, $R(x) \equiv 0$, we say $A(x)$ is divisible by $B(x)$. 
+    \end{theorem}
+    
+    
+    \begin{theorem}[Bézout's Theorem for Polynomials AKA Factor Theorem]
+        As a special case of the Polynomial Division Theorem, in the polynomial division $A(x) = B(x) \cdot Q(x) + R(x)$, let $B(x)=x-x_0$, where $x_0 \in\mathbb R$. Then, $A(x_0)=R(x_0)$ and we may write:
+        \[A(x)=(x-x_0)\cdot Q(x) + A(x_0).\]
+        The factor theorem says $x-x_0$ is a factor of $A(x)$ if and only if $A(x_0)=0$.
+    \end{theorem}
+    
+    \begin{theorem}[Unique Factorization Theorem]
+        According to the Fundamental Theorem of Algebra, all polynomials $P(x)$ with complex coefficients in the form
+        \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0, \qquad \text{with} \quad a_n\neq 0.\]
+        Let $x_0,x_1,\dots,x_n$ be the $n$ complex roots of $P(x)=0$. Then, 
+        \[P(x)=a_n(x-x_1)(x-x_2)\cdots(x-x_n).\]
+    \end{theorem}
+    
+
+
+\subsection{In Search of Rational Roots}
+
+\begin{tcolorbox}[title={Rational Root Theorem}]
+    \begin{theorem}
+        Let $P(x)$ be a polynomial with integer coefficients written as \[P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0, \qquad \text{with} \quad a_n\neq 0.\]. Show that $P(x)$ has a rational root $r=p/q$, where $p$ and $q$ are relatively prime positive integers, then $p$ is a divisor of $a_0$ and $q$ is a divisor of $a_n$.
+    \end{theorem}
+\end{tcolorbox}
+
+
+    \begin{question}
+        We call a polynomial \textbf{monic} if the coefficient of the highest exponent in the polynomial equals $1$. Consider the monic polynomial $P(x)$ with integer coefficients:
+        \begin{align*}
+            P(x)=x^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_2x^2+a_1x+a_0.
+        \end{align*}
+        \begin{enumerate}
+            \item Prove that the equation $P(x)=0$ does not have any roots in the form $x=p/q$ where $p$ and $q$ are coprime integers.
+            \item If the equation $P(x)=0$ has a rational root, then this root is an integer and it divides $a_0$.
+            \item Let $x=\alpha$ be an integer root of the equation $P(x)=0$. Prove that $\alpha$ divides $a_1 + \frac{a_0}{\alpha}$.
+            \item Let $x=\alpha$ be an integer root of the equation $P(x)=0$. Prove that the numbers $\alpha, \alpha^2, \dots, \alpha^n$ divide the following numbers, respectively:
+            \begin{align*}
+                a_0, \quad a_0+\alpha a_1, \quad a_0+\alpha a_1+\alpha^2 a_2, \quad\dots, \quad a_0+\alpha a_1+\cdots+\alpha^{n-1} a_{n-1}.
+            \end{align*}
+        \end{enumerate}
+    \end{question}
+
+
+    \begin{question}
+        Solve for $x$:
+        \begin{align*}
+            x^4+5x^3-2x^2-9x+5=0.
+        \end{align*}
+    \end{question}
+
+\begin{solution}
+    Simplifies to $(x-1)(x+5)(x^2+x-1)=0$ which has rational solutions $x=1,-5$ and irrational solutions $(-1\pm\sqrt{5})/2$.
+\end{solution}
+
+
+    \begin{question}
+        Solve for $x$:
+        \begin{align*}
+            2x^4+3x^3-10x^2-2x+3=0.
+        \end{align*}
+    \end{question}
+
+\begin{solution}
+    Simplifies to $(2x-1)(x+3)(x^2-x-1)=0$ which has rational solutions $x=1/2,-3$ and irrational solutions $(1\pm\sqrt{5})/2$.
+\end{solution}
+
+
+    \begin{question}
+        Solve for $x$:
+        \begin{align*}
+            x^4-5x^3+2x^2+20x-24=0.
+        \end{align*}
+    \end{question}
+
+\begin{solution}
+    Simplifies to $(x-2)^2(x+2)(x-3)=0$ which has solutions $x=\pm 2, 3$.
+\end{solution}
+
+
+    \begin{question}
+        Solve for $x$:
+        \begin{align*}
+            x^4-3x^3-8x^2+12x+16=0.
+        \end{align*}
+    \end{question}
+
+\begin{solution}
+    Simplifies to $(x - 4) (x - 2) (x + 1) (x + 2) =0$ which has solutions $x=-1,\pm 2, 4$.
+\end{solution}
+
+
+\begin{question}[name={2002 Croatia}]
+% https://artofproblemsolving.com/community/c6h2525494p21438989
+    Solve the equation $$\left(x^2+3x-4\right)^3+\left(2x^2-5x+3\right)^3=\left(3x^2-2x-1\right)^3.$$
+\end{question}
+
+\begin{question}[name={2019 Greece}]
+% https://artofproblemsolving.com/community/c6h1951436p13471659
+    Solve in $\mathbb{R}$ the following equation
+    \[108 (x-2)^4 + (4- x^2)^3 = 0.\]
+\end{question}
+
+\begin{question}[name={2018 Romanian District}]
+% https://artofproblemsolving.com/community/c6h1606038p10014013
+    Show that the number
+    \[\sqrt[n]{\sqrt{2019} + \sqrt{2018}} + \sqrt[n]{\sqrt{2019} - \sqrt{2018}}\]
+    is irrational for any $n\ge 2$.
+\end{question}
+
+
+\begin{question}[name={2017 Thailand}]
+% https://artofproblemsolving.com/community/c6h1996726p13936639
+    Let $p$ be a prime. Show that $\sqrt[3]{p} +\sqrt[3]{p^5} $ is irrational.
+\end{question}
+
+
+\begin{question}[name={2006 All--Russian}]
+% https://artofproblemsolving.com/community/c6h86559p504804
+    The sum and the product of two purely periodic decimal fractions $a$ and $b$ are purely periodic decimal fractions of period length $T$. Show that the lengths of the periods of the fractions $a$ and $b$ are not greater than $T$.\\
+    \textbf{Note}. A purely periodic decimal fraction is a periodic decimal fraction without a non-periodic starting part.
+\end{question}  
+
+
+\begin{question}[name={2006 Pan--African}]
+% https://artofproblemsolving.com/community/c6h532346p3042949
+    Let $a, b, c$ be three non-zero integers. It is known that the sums \[\frac{a}{b}+\frac{b}{c}+\frac{c}{a} \qquad \text{and} \qquad \frac{b}{a}+\frac{c}{b}+\frac{a}{c},\] are integers. Find these sums.
+\end{question}
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h354141p1919267
+    Let $p$ be a prime number. Prove that the polynomial
+    \[P(x)=x^{p-1}+2x^{p-2}+\ldots+(p-1)x+p,\]
+    is irreducible over $\mathbb Z[x]$.
+\end{question}
+
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h2630516p22742228
+    If $a$ and $b$ are real numbers such that \[\sqrt[3]a-\sqrt[3]b=12 \quad \text{and} \quad ab=\left(\frac{a+b+8}6\right)^3,\] find the value of $a-b$.
+\end{question}
+
+
+\begin{question}[name={2014 Poland}]
+% https://artofproblemsolving.com/community/c6h1883920p12828723
+    Let $x, y$ be positive integers such that \[\frac{x^2}{y}+\frac{y^2}{x},\] is an integer. Prove that $y\mid x^2$.
+\end{question}
+
+\begin{question}[name={2022 Thailand}]
+% https://artofproblemsolving.com/community/c6h2864191p25434100
+    Determine all possible values of $a_1$ for which there exists a sequence $a_1, a_2, \dots$ of rational numbers satisfying $$a_{n+1}^2-a_{n+1}=a_n,$$ for all positive integers $n$.
+\end{question}
+
+
+\begin{question}[name={2017 Romania TST}]
+% https://artofproblemsolving.com/community/c6h2465628p20593317
+    Determine all integers $n\geq 2$ such that $a+\sqrt{2}$ and $a^n+\sqrt{2}$ are both rational for some real number $a$ depending on $n$.
+\end{question}
+
+\begin{question}[name={2006 Romania TST}]
+% https://artofproblemsolving.com/community/c6h84391p488980
+    Let $p$ a prime number, $p\geq 5$. Find the number of polynomials of the form
+    \[ x^p + px^k + p x^l + 1, \quad k > l, \quad k, l \in \left\{1,2,\cdots,p-1\right\},\] which are irreducible in $\mathbb{Z}[X]$.
+\end{question}
+
+
+\begin{question}[name={2021 Saudi Arabia TST}]
+% https://artofproblemsolving.com/community/c6h2638196p22817617
+    For a non-empty set $T$ denote by $p(T)$ the product of all elements of $T$. Does there exist a set $T$ of $2021$ elements such that for any $a\in T$ one has that $P(T)-a$ is an odd integer? Consider two cases:
+    \begin{tasks}
+        \task All elements of $T$ are irrational numbers.
+        \task At least one element of $T$ is a rational number.
+    \end{tasks}
+\end{question}
+
+\begin{question}[name={2012 IMO Shortlist}]
+% https://artofproblemsolving.com/community/c6h546164p3160553
+    Let $f$ and $g$ be two nonzero polynomials with integer coefficients and $\deg f>\deg g$. Suppose that for infinitely many primes $p$ the polynomial $pf+g$ has a rational root. Prove that $f$ has a rational root.
+\end{question}
+
+\begin{question}[name={2003 Spain}]
+% https://artofproblemsolving.com/community/c6h1455794p8375108
+    Let ${x}$ be a real number such that ${x^3 + 2x^2 + 10x = 20.}$ Demonstrate that both ${x}$ and ${x^2}$ are irrational.
+\end{question}
+
+\begin{question}[name={1993 Italy}]
+% https://artofproblemsolving.com/community/c6h1997315p13944079
+    Find all pairs $(p,q)$ of positive primes such that the equation $3x^2 - px + q = 0$ has two distinct rational roots.
+\end{question}
+
+\begin{question}[name={2017 Romania}]
+% https://artofproblemsolving.com/community/c6h1525175p9137098
+    Define \[P(x)=x^2+\dfrac x 2 +b\quad \text{and} \quad Q(x)=x^2+cx+d,\] be two polynomials with real coefficients such that $P(x)Q(x)=Q(P(x))$ for all real $x$. Find all real roots of $P(Q(x))=0$.
+\end{question}
+
+\begin{question}[name={2008 Iran Third Round}]
+% https://artofproblemsolving.com/community/c6h223580p1241794
+    Let $(b_0,b_1,b_2,b_3)$ be a permutation of the set $\{54,72,36,108\}$. Prove that \[x^5+b_3x^3+b_2x^2+b_1x+b_0,\] is irreducible in $\mathbb Z[x]$.
+\end{question}
+
+
+\subsection{Viète's Formulas}
+
+\begin{tcolorbox}[title={Vieta's Formulas}]
+    \begin{theorem}[François Viète's Formulas AKA Vieta's Formulas]
+    For any polynomial $P(x)$ with complex coefficients, written as
+    \[P(x)=a_nx^n+a_{n-1}x^{n-1} + \cdots + a_1x + a_0,\]
+    imagine the $n$ roots are $x_1,x_2,\dots,x_n$. Prove that
+    \[
+        \begin{cases}
+            \displaystyle \sum_{i=1}^n x_i = x_1+x_2+\cdots+x_n &= \displaystyle -\frac{a_{n-1}}{a_n},\\
+            \displaystyle \sum_{i\neq j} x_ix_j = x_1x_2+\cdots+x_{n-1}x_n &= \displaystyle +\frac{a_{n-2}}{a_n},\\
+            \qquad \vdots &\phantom{=} \qquad \vdots\\
+            \displaystyle \prod_{i=1}^n x_i= x_1x_2\cdots x_{n-1}x_n &= \displaystyle (-1)^{n}\frac{a_0}{a_n}.
+        \end{cases}
+    \]
+\end{theorem}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Binomial Theorem}]
+\begin{theorem}[Binomial Theorem]
+    Prove that for all $x,y \in \mathbb C$, and positive integer $n$,
+    \begin{align*}
+        (x+y)^n &= x^n + \binom{n}{1}x^{n-1}y + \binom{n}{2}x^{n-2}y^2 + \cdots + \binom{n}{1}xy^{n-1} + y^n.
+    \end{align*}
+\end{theorem}
+\end{tcolorbox}
+
+\begin{question}[name={1993 AIME}]
+% https://artofproblemsolving.com/community/c4h80691p461986
+    Let $P_0(x) = x^3 + 313x^2 - 77x - 8$. For integers $n \ge 1$, define $P_n(x) = P_{n - 1}(x - n)$. What is the coefficient of $x$ in $P_{20}(x)$?
+\end{question}
+
+
+
+\begin{question}[name={1996 AIME}]
+% https://artofproblemsolving.com/community/c4h66813p394233
+    Suppose that the roots of $x^3+3x^2+4x-11=0$ are $a, b,$ and $c,$ and that the roots of $x^3+rx^2+sx+t=0$ are $a+b, b+c,$ and $c+a.$ Find $t$.
+\end{question}
+
+
+\begin{question}[name={2001 AIME}]
+% https://artofproblemsolving.com/community/c4h64586p384175
+    Find the sum of the roots, real and non-real, of the equation \[x^{2001}+\left(\frac 12-x\right)^{2001}=0,\] given that there are no multiple roots.	
+\end{question}
+
+\begin{question}[name={2005 AIME}]
+% https://artofproblemsolving.com/community/c4h60522p365560
+    The equation\[2^{333x-2}+2^{111x+2}=2^{222x+1}+1\]has three real roots. Given that their sum is $m/n$ where $m$ and $n$ are relatively prime positive integers, find $m+n$.
+\end{question}
+
+\begin{question}[name={2008 AIME}]
+% https://artofproblemsolving.com/community/c5h197925p1088467
+    Let $ r$, $ s$, and $ t$ be the three roots of the equation
+    \[ 8x^3+1001x+2008=0.\]Find $ (r+s)^3+(s+t)^3+(t+r)^3$.
+\end{question}
+
+
+\begin{question}[name={2014 AIME}]
+% https://artofproblemsolving.com/community/c5h582687p3444093
+    Real numbers $r$ and $s$ are roots of $p(x)=x^3+ax+b$, and $r+4$ and $s-3$ are roots of $q(x)=x^3+ax+b+240$. Find the sum of all possible values of $|b|$.	
+\end{question}
+
+\begin{question}[name={2015 AIME}]
+% https://artofproblemsolving.com/community/c5h1070282p4652179
+    Steve says to Jon, ``I am thinking of a polynomial whose roots are all positive integers. The polynomial has the form \[P(x)=2x^3-2ax^2+(a^2-81)x-c,\] for some positive integers $a$ and $c$. Can you tell me the values of $a$ and $c$?'' After some calculations, Jon says, ``There is more than one such polynomial.'' Steve says, ``You're right. Here is the value of $a$.'' He writes down a positive integer and asks, ``Can you tell me the value of $c$?'' Jon says, ``There are still two possible values of $c$.'' Find the sum of the two possible values of $c$.
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c4h2917457p26059207
+Define four real numbers $A,B,C,D$ by
+\begin{align*}
+    \begin{cases}
+        A &= +\sqrt 1+\sqrt 2+\sqrt 3+\sqrt 4,\\
+        B &= -\sqrt 1+\sqrt 2+\sqrt 3-\sqrt 4,\\
+        C &= +\sqrt 1-\sqrt 2+\sqrt 3+\sqrt 4,\\
+        D &= +\sqrt 1+\sqrt 2-\sqrt 3+\sqrt 4.
+    \end{cases}
+\end{align*}
+Prove that the product $ABCD$ of these four reals equals $8$.
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c4h14275p100982
+    How many numbers in the $100^{th}$ row of the Pascal triangle (the one starting with $1, 100, \dots$) are not divisible by $3$?
+\end{question}
+
+\begin{solution}[name=Solution by Boris]
+% https://artofproblemsolving.com/community/c4h14275p101907
+The answer is $12$. To find the numbers in the $100^{th}$ row of the Pascal triangle (the one starting with $1, 100, \dots$) that are not divisible by $3$, we need to find the number of coefficients in the polynomial
+\[ (1+x)^{100}= 1 + {100\choose 1}x + {100\choose 2}x^2 + \dots + x^{100}, \]
+which are not equal to $0$ modulo $3$. Note that by Binomial Theorem, and taking modulo $3$, one has,
+\[(1+x)^3= 1+ 3x+3x^2+ x^3 \equiv 1+x^3 \pmod 3.\]
+and so also
+\[(1+x)^9 \equiv (1+x^3)^3 \equiv 1+x^9 \pmod 3,\]
+and so on, for any power of $3$. Now, $100= 81+2\cdot 9 + 1$. Therefore, modulo $3$ one has
+\[ (1+x)^{100}= (1+x)^{81} \left((1+x)^9\right)^2 (1+x) =
+(1+x^{81}) (1+ 2x^{9} + x^{18}) (1+x). \]
+In this product all $2\cdot 3 \cdot 2=12 $ powers of $x$ are different (because every integer can be written in base $3$ in a unique way), and the coefficients are all nonzero modulo $3$. So, the answer is $12$.
+\end{solution}
+
+
+\begin{question}[name={2012 Serbia TST}]
+% https://artofproblemsolving.com/community/c6h480335p2689796
+    Let $P(x)$ be a polynomial of degree $2012$ with real coefficients satisfying the condition\[P(a)^3 + P(b)^3 + P(c)^3 \geq 3P(a)P(b)P(c),\] for all real numbers $a,b,c$ such that $a+b+c=0$. Is it possible for $P(x)$ to have exactly $2012$ distinct real roots?
+\end{question}
+
+
+\begin{question}[name={2014 USA TST}]
+% https://artofproblemsolving.com/community/c6h587303p3476290
+    Let $n$ be a positive even integer, and let $c_1, c_2, \dots, c_{n-1}$ be real numbers satisfying\[ \sum_{i=1}^{n-1} \left\lvert c_i-1 \right\rvert < 1. \] Prove that \[
+	2x^n - c_{n-1}x^{n-1} + c_{n-2}x^{n-2} - \dots - c_1x^1 + 2\] has no real roots.
+\end{question}
+
+
+\begin{question}[name={2014 India Regional}]
+% https://artofproblemsolving.com/community/c6h616651p3673423
+The roots of the equation
+\[ x^3-3ax^2+bx+18c=0, \]
+form a non-constant arithmetic progression and the roots of the equation
+\[ x^3+bx^2+x-c^3=0, \]
+form a non-constant geometric progression. Given that $a,b,c$ are real numbers, find all positive integral values $a$ and $b$.
+\end{question}

@@ -1,0 +1,3134 @@
+\section{Algebraic Systems}
+
+\subsection{Polynomial Equations}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+\begin{itemize}
+    \item[(a)] Find a way to solve $(x+a)^4+(x+b)^4=c$ for $x$.
+    \item[(b)] How many real values of $x$ satisfy $(x+1)^6+(x+5)^6=730$?
+    \item[(c)] Find a method to solve $(x+a)^{2n} + (x+b)^{2n}=c$, where $n$ is a positive integer, assuming we can solve any degree--$n$ polynomial equation.
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+\begin{itemize}
+    \item[(a)] The equation $(x+a)^4+(x+b)^4=c$ can be re-written as
+    \begin{align*}
+        \left[\left(x+\frac{a+b}{2}\right) + \frac{a-b}{2}\right]^4 + \left[\left(x+\frac{a+b}{2}\right) - \frac{a-b}{2}\right]^4 =c,
+    \end{align*}
+    which can be written as $(t + \alpha)^4 + (t - \alpha)^4 = c$, where $t = x + (a+b)/2$ and $\alpha = (a-b)/2$. The last equation expands to $2t^4 + 12\alpha^2t^2 + (2\alpha^4 - c) = 0$, which can be solved as a quadratic equation in $y=t^2$.
+    \item[(b)] Let $t=x+3$, so that the equation becomes $(t-2)^6 + (t+2)^6 = 730$. Expand to get $t^6+60t^4+240t^2-301=0$, which can be written as a cubic equation in $y=t^2$: $y^3+60y^2+240y-301=0$. Note that $y=1$ is the only positive solution to this equation (why?) which leads to $t= \pm 1$ and thus $x=-2$ and $x=-4$ are the only real solutions of the original equation.
+    \item[(c)] Use the same parameters $t = x + (a+b)/2$ and $\alpha = (a-b)/2$ in a similar way to arrive at a degree--$n$ polynomial equation.
+\end{itemize}
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+\begin{itemize}
+    \item[(a)] If $a+b=c+d$, find a way to solve $(x+a)(x+b)(x+c)(x+d)=m$ for $x$.
+    \item[(b)] Solve $(x^2+6x+8)(x^2-8x+15)=72$.
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+\begin{itemize}
+    \item[(a)] The equation $(x+a)(x+b)(x+c)(x+d)=m$ can be re-written as
+    \begin{align*}
+        (x^2+(a+b)x+ab)(x^2+(c+d)x+cd)=m,
+    \end{align*}
+    and since $a+b=c+d$, we can set $t = x^2+(a+b)x = x^2 + (c+d)x$ as the variable of the equation to obtain $(t+ab)(t+cd)=m$, which is a simple quadratic equation and easy to solve.
+    \item[(b)] Re-write the equation as $(x+2)(x+4)(x-3)(x-5)=72$, and since $2-3=4-5=-1$, rearrange it as $\left[(x+2)(x-3)\right] \left[(x+4)(x-5)\right]=72$. Write the last equation as $(x^2-x-6)(x^2-x-20)=72$, which after setting $t=x^2-x$ becomes $t^2-26t+48=0$. This has two solutions $t=2$ and $t=24$, which in turn give the following solutions for $x$:
+    \begin{align*}
+        -1, 2, \frac{1+\sqrt{97}}{2}, \frac{1-\sqrt{97}}{2}.
+    \end{align*}
+\end{itemize}
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+In an arithmetic progression with common difference $d$, we add $d^4$ to the product of four consecutive terms $a,a+d,a+2d$, and $a+3d$ in the progression. Find the square root of the result in terms of $a$ and $d$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+The answer is $\left(a^2 + 3ad\right)+d^2$. In the product of four terms, group $a$ with $a+3d$ and $a+d$ with $a+2d$ to find
+\begin{align*}
+    a(a+d)(a+2d)(a+3d) &= \left(a(a+3d)\right) \left((a+d)(a+2d)\right)\\
+                       &= \left(a^2 + 3ad\right)\left(a^2+3ad+2d^2\right)\\
+                       &= \left(a^2 + 3ad\right)^2 + 2d^2\left(a^2 + 3ad\right).
+\end{align*}
+It is clear now that if we add $d^4$ to the product it will be the square of $\left(a^2 + 3ad\right)+d^2$:
+\begin{align*}
+    \left(a^2 + 3ad\right)^2 + 2d^2\left(a^2 + 3ad\right) + d^4 = \left(a^2 + 3ad+d^2\right)^2.
+\end{align*}
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Find all $k$ such that the following equation has four simple real roots.
+\begin{align*}
+    (x+b)(x+a+b)(x+2a+b)(x+3a+b)=k.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+The answer is $k > 9a^4/16$. For simplicity, let $t=x+b$ to get
+\begin{align*}
+    t(t+a)(t+2a)(t+3a)=k,
+\end{align*}
+and add $a^4$ to both sides of the equation to find
+\begin{align*}
+    (t^2+3at+a^2)^2 = k+a^4,
+\end{align*}
+which results in the following four roots:
+\begin{align*}
+    x = -b + \frac{-3a \pm \sqrt{5a^2 \mp \sqrt{k+a^4}}}{2}.
+\end{align*}
+In order for all four roots to be real and simple (of multiplicity $1$), $5a^2 - \sqrt{k+a^4}$ must be positive, which leads to $k > 9a^4/16$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+How many real roots does this equation have? Find them.
+\begin{align*}
+    x(x-4)(x-2)(x-1)^2(x+2)+66=0.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+There are four real roots for the equation. To expand, group $x$ with $x-2$ and $x-4$ with $x+2$, so that we can set a new variable $t=x^2-2x$ and arrive at $t^3-7t^2-8t+66=0$. There are three values of $t$ that satisfy the equation: $t=-3$ leads to complex solutions for $x$ (roots of $x^2-2x+3=0$); $t=5 + \sqrt 3$ leads to $x=1 \pm \sqrt{6+\sqrt{3}}$; and $t=5 - \sqrt 3$ gives $x=1 \pm \sqrt{6-\sqrt{3}}$. Therefore, the real solutions are  $x=1 \pm \sqrt{6 \pm \sqrt{3}}$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If $a+c = \alpha$ and $b+d = \beta$, solve the equation
+\begin{align*}
+    (ax+b)^4 + (cx+d)^4 = (\alpha x + \beta)^4.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Add and subtract $2(ax+b)^2(cx+d)^2$ to the left side of the given equation to complete the square:
+\begin{align*}
+    \left((ax+b)^2 + (cx+d)^2\right)^2 - 2(ax+b)^2(cx+d)^2 = (\alpha x + \beta)^4.
+\end{align*}
+The first term on the left side of the above equation can be written as
+\begin{align*}
+    (ax+b)^2 + (cx+d)^2 &= \left(a+c)x + (b+d)\right)^2 - 2(ax+b)(cx+d)\\
+                        &= (\alpha x + \beta)^2 - 2(ax+b)(cx+d).
+\end{align*}
+After simplification, the equation becomes
+\begin{align*}
+    2(ax+b)(cx+d)\left((ax+b)(cx+d)-2(\alpha x + \beta)^2\right) = 0,
+\end{align*}
+which is easy to solve.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Solve for real $x$:
+\begin{align*}
+    (2-x)^4 + (2x-1)^4 = (x+1)^4.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+The equation can be written as $2(2-x)(2x-1)(4x^2-x+4)=0$, which has real roots $x=2$ and  $x=1/2$.
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+For what values of $a$ would all the roots of this equation be unreal?
+\begin{align*}
+    2x^4 + x^3 - (3a+2)x^2 + 2x + a^2 -1 = 0.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+The answer is $a<-5/4$. Since the equation is of degree $4$ in $x$ and hard to solve, we try to solve it as a quadratic equation in $a$. Write it as
+\begin{align*}
+    a^2 - 3x^2 \cdot a + (2x^4 +x^3-2x^2+2x-1)=0.
+\end{align*}
+We can use the quadratic formula to solve the above equation. We just need the $\Delta$:
+\begin{align*}
+    \Delta &= 9x^4 -4(2x^4 +x^3-2x^2+2x-1) \\
+           &= x^4 - 4x^3 + 8x^2 - 8x + 4\\
+           &= (x^2-2x+2)^2.
+\end{align*}
+Therefore, the solutions in terms of $a$ can be calculated from the quadratic formula as follows:
+\begin{align*}
+    a_{1,2} = \frac{3x^2 \pm (x^2 - 2x + 2)}{2}.
+\end{align*}
+These will lead to $a_1=x^2+x-1$ and $a_2=2x^2-x+1$, which can now be solved as quadratic equations in $x$:
+\begin{align*}
+    x^2 + x - (a+1) = 0 \qquad \text{and} \qquad 2x^2 - x + (1-a)=0.
+\end{align*}
+Thus, we get the four solutions
+\begin{align*}
+    x_{1,2} = \frac{-1 \pm \sqrt{4a+5}}{2} \qquad \text{and} \qquad x_{3,4} = \frac{1 \pm \sqrt{4a-3}}{2}.
+\end{align*}
+If we need all four roots not to be real, we need $a<-5/4$.
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Solve
+\begin{align*}
+    x^3 - (3+\sqrt{3})x + 3 = 0.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Let $a= \sqrt 3$ and write the equation as a quadratic in $a$:
+\begin{align*}
+    (1-x)a^2 - x \cdot a + x^3 =0.
+\end{align*}
+The solutions will be
+\begin{align*}
+    x_1 = \sqrt{3} \qquad \text{and} \qquad x_{2,3} = \frac{-\sqrt{3}\pm \sqrt{3+4\sqrt{3}}}{2}.
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Solve
+\begin{align*}
+    (ax^2+bx+c)^2 = x^2(x^2+bx+c).
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Let $bx+c= t$ and write the equation as a quadratic in $t$:
+\begin{align*}
+    t^2+x^2(a-1)t+x^4(a^2-1)=0.
+\end{align*}
+The solutions will be
+\begin{align*}
+    t_{1,2} = \frac{-x^2(2a-1)\pm x^2\sqrt{5-4a}}{2},
+\end{align*}
+which lead to
+\begin{align*}
+    (1 - 2a \pm \sqrt{5-4a})x^2-2bx-2c=0.
+\end{align*}
+\end{solution}
+
+\begin{question}
+    Solve the following nineteen polynomial equations in $x$:
+    \begin{enumerate}
+        \begin{multicols}{2}
+        \item $x^4 + (x+\sqrt 2)^4 = 68$,
+        \item $x^6 + (x+2)^6 = 2$,
+        \item $(x+3)^3+(x+5)^3=8$,
+        \item $(\sqrt x + 1)^4 + (\sqrt x - 3)^4 = 256$,
+        \item $(x^2+3x+2)(x^2+6x+12)=120$,
+        \item $x^4+2x^3+2x^2+x=42$,
+        \item $x^4+6x^3+7x^2-6x=1$,
+        \item $\displaystyle \frac{\sqrt[n]{a+x}}{a} + \frac{\sqrt[n]{a+x}}{x} = b\sqrt[n]{x}$,
+        \item $\sqrt[3]{a+\sqrt x} + \sqrt[3]{a-\sqrt x} =\sqrt[3]{b}$,
+        \item $(x^2+2x-12)^2=x^2(3x^2+2x-12)$,
+        \item $(2x^2-x-6)^2+3(2x^2+x-6)^2=4x^2$,
+        \item $\displaystyle \frac{(x^2+1)^2}{x(x+1)^2} = \frac{9}{2}$,
+        \item $3x^4-20x^3+45x^2-40x+12=0$,
+        \item $x^3-3abx+a^3+b^3=0$,
+        \item $(x^2-16)(x-3)^2+9x^2=0$.
+        \end{multicols}
+        \item $(x-2)(x+1)(x+6)(x+9)+108 = 0$,
+        \item $(x^2-4)(x+1)(x+4)(x+5)(x+8)+476=0$,
+        \item $\sqrt[m]{(x+1)^2} - \sqrt[m]{(x-1)^2} + \displaystyle \frac{3\sqrt[m]{x^2-1}}{2}=0$,
+        \item $(a^2-a)^2(x^2-x+1)^3 = (a^2-a+1)^3(x^2-x)^2$,
+    \end{enumerate}
+\end{question}
+
+\begin{solution}
+    We provide hints and final answers:
+    \begin{enumerate}
+        \item To solve $(x-2)(x+1)(x+6)(x+9)+108 = 0$, write it as $(x^2+7x-18)(x^2+7x+6)+108=0$ whose roots are $x=0,-7,\displaystyle\frac{-7\pm \sqrt{97}}{2}$.
+        \item For $x^4 + (x+\sqrt 2)^4 = 68$, write the equation as
+        \begin{align*}
+            \left[\left(x+\frac{\sqrt{2}}{2}\right) - \frac{\sqrt{2}}{2}\right]^2 + \left[\left(x+\frac{\sqrt{2}}{2}\right) + \frac{\sqrt{2}}{2}\right]^2 = 68,
+        \end{align*}
+        which has two real roots $x=\sqrt 2$ and $-2\sqrt 2$ as well as two imaginary roots.
+        \item Write $x^6 + (x+2)^6 = 2$ as $[(x+1)-1]^6 + [(x+1)+1]^6 = 2$, and show that there is only one real root $x=-1$ (which happens to be a double root) and four imaginary roots.
+        \item To solve $(x+3)^3+(x+5)^3=8$, let $x+4=t$ and the equation becomes $t^3+3t-4=0$, which can be written as $(t-1)(t^2+t+4)=0$. The real solution is $x=-3$ and there are two imaginary solutions.
+        \item For $(\sqrt x + 1)^4 + (\sqrt x - 3)^4 = 256$, choose $y=\sqrt x - 1$ to find the only real solution $x=9$.
+        \item For solving $(x^2+3x+2)(x^2+6x+12)=120$, factorize the left-hand side as $(x+1)(x+2)(x+3)(x+4)$ and rearrange the equation into $(x^2+5x+4)(x^2+5x+6)=120$ to find real roots $x=1$ and $6$, plus two imaginary roots.
+        \item For solving $x^4+2x^3+2x^2+x=42$, write it as $(x^2+x)^2+(x^2+x)-42=0$ and treat it as a quadratic in $x^2+x$. The solutions are $2, -3$, and $\displaystyle \frac{-1+3i\sqrt{3}}{2}$.
+        \item The equation $x^4+6x^3+7x^2-6x=1$ may be written as $(x^2+3x-1)^2 - 2=0$ which has the following solutions:
+        \begin{align*}
+            \frac{-3\pm \sqrt{13-4\sqrt{2}}}{2} \qquad \text{and} \qquad \frac{-3\pm \sqrt{13+4\sqrt{2}}}{2}.
+        \end{align*}
+        \item The common denominator may be taken in the left-hand side of the equation $\displaystyle \frac{\sqrt[n]{a+x}}{a} + \frac{\sqrt[n]{a+x}}{x} = b\sqrt[n]{x}$ to obtain $(a+x)\sqrt[n]{a+x}=abx\sqrt[n]{x}$. Raise both sides of the latter equation to power of $n$ to find $(a+x)^{n+1} = a^n b^n x^{n+1}$, and then take the $(n+1)^{th}$ root from both sides to find $x=\displaystyle\frac{a}{\sqrt[n+1]{a^nb^n}-1}$ for even $n$ and $x=\displaystyle\frac{a}{\pm\sqrt[n+1]{a^nb^n}-1}$ for odd $n$.
+        \item The solutions to $\sqrt[3]{a+\sqrt x} + \sqrt[3]{a-\sqrt x} =\sqrt[3]{b}$ is $x=a^2-\displaystyle\frac{(b-2a)^3}{271}$.
+        \item In order to solve $(x^2+2x-12)^2=x^2(3x^2+2x-12)$, let $t=2x-12$ and write the equation as a quadratic in $t$: $t^2 + x^2 \cdot t - 2x^4 =0$ with roots $t=x^2$ and $t=-2x^2$. The roots of the first equation are $1\pm i\sqrt{11}$ and the roots of the second one are $2$ and $-3$.
+        \item For solving $(2x^2-x-6)^2+3(2x^2+x-6)^2=4x^2$, let $t=2x^2-6$ and find the roots $-2, 3/2, \pm \sqrt 3$.
+        \item The equation $\displaystyle \frac{(x^2+1)^2}{x(x+1)^2} = \frac{9}{2}$ may be transformed to the positive reciprocal equation $2x^4-9x^3-14x^2-9x+2=0$ with solutions $3\pm 2\sqrt 2$ and $(-3+i\sqrt 7)/4$.
+        \item For solving $3x^4-20x^3+45x^2-40x+12=0$, divide both sides by $x^2$ and let $t=x+2/x$ to find solutions $x=1,2,3,2/3$.
+        \item Write $x^3-3abx+a^3+b^3=0$ as $x^3-3abx+(a+b)^3-3ab(a+b)=0$ to see clearly that one of the roots must be $x=-(a+b)$ with two other imaginary roots $(a+b\pm i\sqrt 3 (a-b))/2$.
+        \item It is clear that if $(x^2-16)(x-3)^2+9x^2=0$, then $x\neq 3$ and we can divide both sides of the equation by $(x-3)^2$ to find
+        \begin{align*}
+            x^2+\frac{(3x)^2}{(x-3)^2}=16 \implies \left(\frac{x^2}{x-3}\right)^2 - 6\left(\frac{x^2}{x-3}\right) - 16= 0,
+        \end{align*}
+        and find solutions $-1\pm \sqrt 7$ as well as $4\pm i2\sqrt 2$.
+        \item Write the equation $(x^2-4)(x+1)(x+4)(x+5)(x+8)+476=0$ as 
+        \begin{align*}
+            (x^2+6x-16)(x^2+6x-5)(x^2+6x+8)+476=0,
+        \end{align*}
+        and let $t=x^2+6x$ to arrive at $t^3-3t^2-168t-164=0$ which factorizes into $(t+1)(t^2-4t-164)=0$, so that the solutions must be the roots of the three equations $x^2+6x-t=0$ where $t=-1$ or $t=-2\pm\sqrt{168}$.
+        \item To solve $\sqrt[m]{(x+1)^2} - \sqrt[m]{(x-1)^2} + \displaystyle \frac{3\sqrt[m]{x^2-1}}{2}=0$, divide both sides by $\sqrt[m]{x^2-1}$ (assuming $m\neq \pm 1$) and let $y= \sqrt[m]{(x+1)/(x-1)}$ to obtain $2y^2+3y-2=0$ with roots $y=2$ and $y=-1/2$. If $y=2$, then $x=(2^m+1)/(2^m-1)$. If $y=-1/2$, then $m$ must be odd and we would have $x=(1-2^m)/(1+2^m)$. 
+        \item The roots of the equation $(a^2-a)^2(x^2-x+1)^3 = (a^2-a+1)^3(x^2-x)^2$, assuming $a\neq 0$ and $a\neq 1$ are given by
+        \begin{align*}
+            x \in \left\{a, \frac{1}{a}, 1-a, \frac{1}{1-a}, \frac{a-1}{a}, \frac{a}{a-1}\right\}.
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+    Given a real number $a$, solve the following equation for $x$:
+    \begin{align*}
+        x^4-10x^3-2(a-11)x^2+2(5a+6)x+2a+a^2=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The solutions are $x=3\pm\sqrt{a+9}$ and $2\pm\sqrt{a+6}$.
+\end{solution}
+
+\begin{question}
+    Solve $x^3+2\sqrt 3 x^2 + 3x + \sqrt 3 - 1 = 0$ for $x$.
+\end{question}
+
+\begin{solution}
+    Let $a=\sqrt 3$ and the equation becomes $x^3+2ax^2+a^2x+a-1=0$ which may be solved as a cubic equation in $a$, giving solutions $a=1-x$ and $-\dfrac{x^2+x+1}{x}$. The solutions for $x$ after plugging $a=\sqrt 3$ are $x=1-\sqrt 3$ and $\dfrac{-(\sqrt 3 + 1) \pm \sqrt{12}}{2}$.
+\end{solution}
+
+\begin{question}
+    Solve the quintic equation $x^5-5x^3+5x-1=0$.
+\end{question}
+
+\begin{solution}
+    The five answers are $x_1=3$, and
+    \begin{align*}
+        x_{2,3}=\frac{-1+\sqrt5 \pm \sqrt{30+6\sqrt{5}}}{4} \qquad \text{and} \qquad x_{4,5} = \frac{-1-\sqrt5 \pm \sqrt{30-6\sqrt{5}}}{4}.
+    \end{align*}
+\end{solution}
+
+\begin{question}
+    Let $a,b,c$ be given real numbers. Solve the following equation for $x$:
+    \begin{align*}
+        \frac{(x-a)^2+(x-a)(x-b)+(x-b)^2}{(x-a)^2-(x-a)(x-b)+(x-b)^2} = \frac{3c^2+1}{c^2+3}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Use the argument
+    \begin{align*}
+        \frac{u}{v} = \frac{t}{z} \iff \frac{u+v}{u-v} = \frac{t+z}{t-z}
+    \end{align*}
+    on the given expression to obtain
+    \begin{align*}
+        \frac{(x-a)^2+(x-b)^2}{2(x-a)(x-b)} = \frac{2c^2+2}{2c^2-2},
+    \end{align*}
+    and applying the same argument again implies
+    \begin{align*}
+        \frac{(x-a)^2+(x-b)^2+2(x-a)(x-b)}{(x-a)^2+(x-b)^2-2(x-a)(x-b)} = c^2.
+    \end{align*}
+    Simplify the latter equation after taking its square root to finally find the solutions
+    \begin{align*}
+        x_1 = \frac{ac-bc+a+b}{2} \qquad \text{and} \qquad x_2 = \frac{bc-ac+a+b}{2}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Given real numbers $a,b,c,d$, solve the following two equations:
+    \begin{tasks}
+    \task
+    \begin{align*}
+        \frac{(x+a+b)^5+(x+c+d)^5}{(x+a+c)^5+(x+b+d)^5} = \frac{(a+b+c+d)^2}{(a-b+c-d)^2}.
+    \end{align*}
+    \task 
+    \begin{align*}
+        \frac{(x+a+b)^5+(x+c+d)^5}{(x+a+c)^5+(x+b+d)^5} = \frac{(a+b-c-d)^5}{(a-b+c-d)^5}.
+    \end{align*}
+    \end{tasks}
+\end{question}
+
+\begin{solution}
+    We will use three variables $\alpha, \beta, \gamma$ defined by:
+    \begin{align*}
+        a+b=\alpha+\beta, \quad a+c=\alpha+\gamma,\\
+        c+d=\alpha-\beta, \quad b+d=\alpha-\gamma.
+    \end{align*}
+    Then,
+    \begin{align*}
+        \alpha = \frac{a+b+c+d}{2}, \quad \beta=\frac{a+b-c-d}{2}, \quad \gamma=\frac{a-b+c-d}{2}.
+    \end{align*}
+    \begin{tasks}
+        \task $y=x+\alpha$, so that the equation becomes
+        \begin{align*}
+            \frac{(y+\beta)^5+(y-\beta)^5}{(y+\gamma)^5+(y-\gamma)^5}=\frac{\alpha^2}{\gamma^2}.
+        \end{align*}
+        Since $y\neq 0$, this may be reduced to a quartic equation in $y$
+        \begin{align*}
+            (\gamma^2-\beta^2)y^4 + 5(\gamma^2\beta^4-\beta^2\gamma^4)=0,
+        \end{align*}
+        and assuming $\gamma \neq \pm \beta$, it gives $y^4=5\beta^2\gamma^2$. The solutions for $x$ are
+        \begin{align*}
+            x=-\frac{a+b+c+d}{2}\pm\frac{\sqrt[4]{5(a+b-d-d)^2(a-b+c-d)^2}}{2}.
+        \end{align*}
+        \task Let $y=x+\alpha$, so that the equation becomes
+        \begin{align*}
+            \frac{(y+\beta)^5+(y-\beta)^5}{(y+\gamma)^5+(y-\gamma)^5}=\frac{\beta^5}{\gamma^5}.
+        \end{align*}
+        Since $y\neq 0$, this may be reduced to a quartic equation in $y$
+        \begin{align*}
+            (\gamma^5-\beta^5)y^4 + 10(\gamma^3-\beta^3)\beta^2\gamma^2y^2+5(\gamma-\beta)\beta^4\gamma^4=0,
+        \end{align*}
+        which is in fact a quadratic equation in $y^2$, thus easy to solve with the quadratic formula.
+    \end{tasks}
+\end{solution}
+
+
+
+\begin{question}
+    Find the six roots of the sextic equation in the guise of a septic form: $$x^7+7^7=(x+7)^7.$$
+\end{question}
+
+\begin{solution}
+    The sextic equation $x^7+7^7=(x+7)^7$ factorizes into
+    \begin{align*}
+        x(x+7)(x^4+2\cdot 7x^3 + 3 \cdot 7^2x^2 + 2 \cdot 7^3x + 7^4)=0,
+    \end{align*}
+    whose six roots are $x_1=0$ and $x_2=-7$ (real roots), as well as two double imaginary roots:
+    \begin{align*}
+        x_3=x_4=\frac{7(-1+i\sqrt 3)}{2} \qquad \text{and} \qquad x_5=x_6=\frac{7(-1-i\sqrt 3)}{2}.
+    \end{align*}
+\end{solution}
+
+\begin{question}
+    Given real numbers $a$ and $b$ with $a\neq -b$, solve the following equation for $x$:
+    \begin{align*}
+        x^7+a^7+b^7 = (x+a+b)^7.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    We have seen this factorization before:
+    \begin{align*}
+        (x+y)^7-x^7-y^7 = 7xy(x+y)(x^2+xy+y^2)2.
+    \end{align*}
+    Writing the original equation as
+    \begin{align*}
+        \left[(x+a+b)^7 - x^7 - (a+b)^7\right] + \left[(a+b)^7-a^7-b^7\right]=0.
+    \end{align*}
+    Applying the mentioned identity on the last equation and heavily simplifying it results in a quadratic equation in $x^2+(a+b)x$ that is solvable:
+    \begin{align*}
+        [x^2+(a+b)x]^2 + (2a^2+3ab+2b^2)[x^2+(a+b)x] + (a^2+ab+b^2)^2=0.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Find the real roots of the sextic equation 
+    \begin{align*}
+        8x^6-16x^5+2x^4+12x^3-36x+27=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Divide both sides of the equation by $x^3$ and let $y=2x+3/x$ to obtain the equation $(y-3)(y-5)(y+4)=0$. Solving for $y$ and then for $x$, we find that the only real roots are $x=1$ and $3/2$. 
+\end{solution}
+
+\begin{question}
+    Solve the equation $(6x+7)^3(3x+4)(x+1)=6$ for $x$.
+\end{question}
+
+\begin{solution}
+    Define $y=6x+7$ and write the equation as a quartic equation in $y$: $y^4-y^2-72=0$. The final solutions are: real roots $x_1=-2/3$, $x_2=-5/3$, and imaginary roots
+    \begin{align*}
+        x_{3,4}=\frac{-7\pm 2i\sqrt{2}}{6}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}[name={Quartic Equations \& Completing the Squares}]
+    Solve the following three equations in $x$ by the method of completing the squares:
+    \begin{enumerate}
+        \item $\displaystyle x^2 + \left(\frac{x}{x-1}\right)^2 = 8$,
+        \item $x^2(1+x)^2 + x^2 = 8(1+x)^2$,
+        \item $(1+x^2)^2 = 4x(1-x^2)$.
+    \end{enumerate}
+\end{question}
+
+\begin{solution}
+    The solutions to the three equations are:
+    \begin{enumerate}
+        \item Write it as 
+        \begin{align*}
+            \left(\frac{x^2}{x-1}\right)^2-2\left(\frac{x^2}{x-1}\right)-8=0,
+        \end{align*}
+        whose four roots are $x_1=x_2=2$ and $x_{3,4}=-1\pm \sqrt{3}$.
+        \item Completing the square on the left-hand side of the equation and then factorizing it leads to $(x+2)^2(x^2-2x-2)=0$ whose roots are $x_1=x_2=-2$ and $x_{3,4}=1\pm \sqrt{3}$.
+        \item Again, the left-hand side must be completed to find the solutions $x_1=x_2=\sqrt 2 - 1$ and $x_3=x_4=-(\sqrt 2 + 1)$.
+    \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+    Solve $(x+1)^2+(x+2)^3+(x+3)^4=2$ for $x$.
+\end{question}
+
+\begin{solution}
+    Let $y=x+2$ and simplify the equation to find
+    \begin{align*}
+        y^4+5y^3+7y^2+2y=0,
+    \end{align*}
+    which factorizes into $y(y+2)(y^2+3y+1)$. The roots for $x$ are:
+    \begin{align*}
+        x_1=-2, \quad x_2=-4,\quad x_{3,4}=-\frac{7\pm\sqrt{5}}{2}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    For a positive integer $n$, solve the following equation for $x$:
+    \begin{align*}
+        (x-1)^3 + (x-2)^3 + \cdots + (x-n)^3 = 0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The equation after heavy simplification becomes
+    \begin{align*}
+        4x^3 - 6(n+1)x^2 + 2(n+1)(2n+1)x-n(n+1)^2=0,
+    \end{align*}
+    and by changing the variable to $y= x + (n+1)/2$, it becomes $4y^3 + (n^2-1)y=0$. The solutions for $x$ are (when $n>1$):
+    \begin{align*}
+        x_1 = \frac{n+1}{2} \qquad \text{and} \qquad x_{2,3}=\frac{n+1\pm\sqrt{1-n^2}}{2},
+    \end{align*}
+    where $x_1$ is real and $x_{2,3}$ are imaginary. For $n=1$, the equations has a triple root $x=1$.
+\end{solution}
+
+
+\begin{question}[name={2005 Switzerland TST}]
+    Let $n\geq 2$ be a positive integer. Prove that the polynomial
+    \[(x^2-1^2)(x^2-2^2)(x^2-3^2)\cdots (x^2-n^2)+1,\]
+    cannot be written as the product of two non-constant polynomials with integer coefficients.
+\end{question}
+
+
+\begin{question}[name={2008 Switzerland TST}]
+    Let $P(x)=x^4-2x^3+px+q$ be a polynomial with real coefficients whose roots are all real. Prove that the largest root of $P(x)=0$ lies in the interval $[1,2]$.
+\end{question}
+
+
+\begin{question}[name={2009 Switzerland TST}]
+    For which positive integers $n$ does there exist a polynomial $P(x)$ with integer coefficients such that $P(d)=(n/d)^2$ for all divisors $d$ of $n$?
+\end{question}
+
+
+\begin{question}[name={2010 Switzerland TST}]
+    Let $P(x)$ be a polynomial with real coefficients such that for all real $x$, we have \[P(x)=P(1-x).\] Prove that there exists a polynomial $Q(x)$ with real coefficients such that \[P(x)=Q\left(x(1-x)\right).\]
+\end{question}
+
+
+
+\begin{question}[name={2011 Switzerland TST}]
+    Find all non-zero polynomials $P(x)$ with real coefficients such that
+    \[P(P(k))=\left(P(k)\right)^2,\qquad \text{for} \quad k=0,1,2,\dots,(\deg P)^2.\]
+\end{question}
+
+
+
+\begin{question}[name={2011 Switzerland TST}]
+    Let $a>1$ be a positive integer, and let $f(x)$ and $g(x)$ be polynomials with integer coefficients. Suppose that there is a positive integer $n_0$ such that $g(n)>0$ for all $n\geq n_0$, and
+    \[f(n) \mid a^{g(n)}-1, \qquad \text{for all} \quad n \geq n_0.\]
+    Prove that $f$ must be a constant polynomial.
+\end{question}
+
+
+\begin{question}[name={2007 Ecuador TST}]
+    How many solutions to the equation \[x^7-1+x^3(x-1)=0,\] are not integers?
+\end{question}
+
+
+\subsection{Trigonometric Tricks for Solving Algebraic Systems}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+\begin{itemize}
+    \item[(a)] Solve
+\begin{align*}
+    \frac{3x-x^3}{1-3x^2} = \sqrt 3.
+\end{align*}
+    \item[(b)] Show that
+    \begin{align*}
+        3 \sqrt 3 &= \tan 20^\circ - \tan 40^\circ + \tan 80^\circ,\\
+        3 &= \tan 20^\circ \tan 40^\circ + \tan 40^\circ \tan 80^\circ - \tan 20^\circ\tan 80^\circ,\\
+        \sqrt 3 &= \tan 20^\circ \tan 40^\circ \tan 80^\circ.
+    \end{align*}
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+\begin{itemize}
+    \item[(a)] The fraction on the left side of the equation reminds us of the coefficients of $\tan 3\alpha$, thus making $x=\tan \alpha$ a plausible change of variables which would yield an equation for $\alpha$ in the form of $\alpha = k\pi/3 + \pi/9$. In short, since the function $\tan x$ is periodic with the least period $\pi$,
+    \begin{align*}
+        \frac{3\tan \alpha - \tan^3 \alpha}{1 - 3 \tan^2 \alpha} = \sqrt 3 &\implies \tan 3 \alpha = \sqrt 3 = \tan \frac{\pi}{3}\\ 3\alpha = k\pi + \frac{\pi}{3} &\implies \alpha = \frac{k\pi}{3}+\frac{\pi}{9}.
+    \end{align*}
+    The solutions will be
+    \begin{align*}
+        x=\tan\left(\frac{k\pi}{3}+\frac{\pi}{9}\right) \qquad \forall k \in \mathbb Z.
+    \end{align*}
+    Since the original equation is a third-degree polynomial in $x$, it has at most three real solutions in $x$ which will be found by plugging $k=0,1,2$ in the above equation. These are
+    \begin{align*}
+        k=0 & \implies x_1 = \tan 20^\circ,\\
+        k=1 & \implies x_2 = \tan 80^\circ,\\
+        k=2 &\implies x_3 = \tan 140^\circ = -\tan 40^\circ.
+    \end{align*}
+    \item[(b)] Using Vieta's formulas for sums and products related to the three roots $p,q,r$ of the polynomial equation $x^3 - 3\sqrt 3 x^2 - 3x + \sqrt 3 = 0$, we find the equations $p+q+r=3\sqrt 3$, $pq+qr+rp=3$, and $pqr=\sqrt 3$, and the values $\{p,q,r\}=x_{1,2,3}$ as calculated in part (a) would result in the trigonometric identities on the even multiples of $20^\circ$:
+    \begin{align*}
+        3 \sqrt 3 &= \tan 20^\circ - \tan 40^\circ + \tan 80^\circ,\\
+        3 &= \tan 20^\circ \tan 40^\circ + \tan 40^\circ \tan 80^\circ - \tan 20^\circ\tan 80^\circ,\\
+        \sqrt 3 &= \tan 20^\circ \tan 40^\circ \tan 80^\circ.
+    \end{align*}
+\end{itemize}
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+\begin{itemize}
+    \item[(a)] Solve
+\begin{align*}
+    32x^5 - 40x^3 + 10x = 1.
+\end{align*}
+    \item[(b)] Show that
+    \begin{align*}
+        0 &= \cos 12^\circ - \cos 24^\circ - \cos 48^\circ + \cos 60^\circ + \cos 84^\circ,\\
+        \frac{1}{32} &= \cos 12^\circ \cos 24^\circ \cos 48^\circ \cos 60^\circ \cos 84^\circ,\\
+        10 &= \frac{1}{\cos 12^\circ} -\frac{1}{\cos 24^\circ}-\frac{1}{\cos 48^\circ} + \frac{1}{\cos 60^\circ} +\frac{1}{\cos 84^\circ}.
+    \end{align*}
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+\begin{itemize}
+    \item[(a)] The fraction on the left side of the equation reminds us of the coefficients of $\cos 5\alpha$, thus making $x=\cos \alpha$ a plausible change of variables which would yield an equation for $\alpha$ in the form of $\alpha = 2k\pi/5 \pm \pi/15$. In short, since the function $\cos x$ is periodic with the least period $2\pi$,
+    \begin{align*}
+        2(16\cos^5 \alpha - 20\cos^3\alpha + 5\cos \alpha) = 1 &\implies 2\cos 5 \alpha = 1 = 2\cos \frac{\pm \pi}{3}\\ 5\alpha = 2k\pi \pm \frac{\pi}{3} &\implies \alpha = \frac{2k\pi}{5}\pm\frac{\pi}{15}.
+    \end{align*}
+    The solutions will be
+    \begin{align*}
+        x=\cos\left(\frac{2k\pi}{5}\pm\frac{\pi}{15}\right) \qquad \forall k \in \mathbb Z.
+    \end{align*}
+    Since the original equation is a fifth-degree polynomial in $x$, it has at most five real solutions in $x$ which will be found by plugging $k=0,1,2$ in the above equation. These are
+    \begin{align*}
+        k=0 & \implies x_1 = \cos 12^\circ,\\
+        k=1 & \implies \begin{cases}
+         x_2 &= \cos 84^\circ = \sin 6^\circ,\\
+         x_3 &= \cos 60^\circ = \frac{1}{2}.
+        \end{cases}\\
+        k=2 & \implies \begin{cases}
+         x_4 &= \cos 156^\circ = -\cos 24^\circ,\\
+         x_5 &= \cos 132^\circ = -\cos 48^\circ.
+        \end{cases}
+    \end{align*}
+    \item[(b)] Using Vieta's formulas for sums and products related to the five roots $p,q,r,s,t$ of the polynomial equation $32x^5 - 40x^3 + 10x-1 = 0$, we find the equations $p+q+r+s+t=0$, $pqrts=1/32$, and $1/p + 1/q + 1/r + 1/s + 1/t = (qrst+prst+pqst+pqrt+pqrs)/pqrst = 10$. The values $\{p,q,r,s,t\}=x_{1,2,3,4,5}$ as calculated in part (a) would result in the trigonometric identities on the first couple even and first couple odd multiples of $12^\circ$:
+    \begin{align*}
+        0 &= \cos 12^\circ - \cos 24^\circ - \cos 48^\circ + \cos 60^\circ + \cos 84^\circ,\\
+        \frac{1}{32} &= \cos 12^\circ \cos 24^\circ \cos 48^\circ \cos 60^\circ \cos 84^\circ,\\
+        10 &= \frac{1}{\cos 12^\circ} -\frac{1}{\cos 24^\circ}-\frac{1}{\cos 48^\circ} + \frac{1}{\cos 60^\circ} +\frac{1}{\cos 84^\circ}.
+    \end{align*}
+\end{itemize}
+\end{solution}
+
+
+\begin{tcolorbox}
+    \begin{question}
+        If $0<a<1$ is a real number, solve
+        \begin{align*}
+            \left(\frac{1+a^2}{2a}\right)^x-\left(\frac{1-a^2}{2a}\right)^x=1.
+        \end{align*}
+    \end{question}
+\end{tcolorbox}
+
+\begin{solution}
+    Divide both sides of the equation by the first term on the left hand side to find
+    \begin{align*}
+        \left(\frac{1-a^2}{1+a^2}\right)^x+\left(\frac{2a}{1+a^2}\right)^x=1.
+    \end{align*}
+    The trick is to set $a=\tan(\alpha/2)$ to get $(\cos \alpha)^x +  (\sin\alpha)^x=1$, whose only solution is clearly $x=2$.
+\end{solution}
+
+\begin{tcolorbox}
+    \begin{question}
+        Solve the following equation:
+        \begin{align*}
+            \cos^2\phi + \cos^2 2\phi - 2 \cos \phi \cos 2\phi \cos 4\phi = \frac{3}{4}.
+        \end{align*}
+    \end{question}
+\end{tcolorbox}
+
+\begin{solution}
+    If we define $z=\cos \phi + i\sin \phi$ where $i=\sqrt{-1}$, then it is easy to verify that $1/z = \cos \phi - i \sin \phi$, so that we can find $\cos\phi$ in terms of $z$:
+    \begin{align*}
+        \cos\phi=\frac{1}{2}\left(z+\frac{1}{z}\right).
+    \end{align*}
+    Using double-angle formulas, we can compute $\cos 2\phi$ and $\cos 4\phi$ as well:
+    \begin{align*}
+        \cos 2\phi &= 2\cos^2\phi -1 = \frac{1}{2}\left(z^2+\frac{1}{z^2}\right),\\
+        \cos 4\phi &= 2\cos^2 2\phi -1 = \frac{1}{2}\left(z^4+\frac{1}{z^4}\right).
+    \end{align*}
+    Thus, the problem reduces to solving the equation
+    \begin{align*}
+        \left(z+\frac{1}{z}\right)^2 + \left(z^2+\frac{1}{z^2}\right)^2 - \left(z+\frac{1}{z}\right)\left(z^2+\frac{1}{z^2}\right)\left(z^4+\frac{1}{z^4}\right) = 3.
+    \end{align*}
+    After simplification, this turns out to be $1+z^{15} + (z+1)(z^{13}+z)=0$ and finally $(1+z+z^2)(1+z^{13})=0$. If $1+z+z^2=0$, then $z=-1/2\pm i\sqrt 3/2$, which gives $\phi = 2k\pi\pm 2\pi/3$. Otherwise, $1+z^{13}=0$ and by De Moivre's formula, $\cos 13\phi + i\sin 13\phi = -1$, giving $\phi = 2k\pi + (2n+1)\pi/13$ for $0 \leq n < 12$ and $n\neq 6$.
+\end{solution}
+
+
+\begin{question}
+    Solve the following sine equation for $\alpha$:
+    \begin{align*}
+        \sin^2 \alpha + \frac{1}{4}\sin^2 3\alpha = \sin\alpha \sin^2 3\alpha.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The solutions are $\alpha=k\pi$ and $\alpha=k\pi+(-1)^k\pi/6$.
+\end{solution}
+
+
+\begin{question}
+    Let $x_1<x_2<x_3$ be the three roots of the cubic equation $x^3-3x+1=0$. Prove that $x_2^2-x_1=2$.
+\end{question}
+
+\begin{solution}
+    We may solve the equation $x^3-3x+1=0$ in two ways:
+    \begin{enumerate}
+        \item First, observe that $f(0)$ and $f(2)$ are positive, whereas $f(1)$ and $f(-2)$ are negative. Therefore, all three of equation's roots are real and they lie in intervals $(-2,0), (0,1), (1,2)$. Let $x_1$ be the smallest root and therefore in the interval $(-2,0)$. Note that
+        \begin{align*}
+            \left(\frac{1}{x_1-1}\right)^3 - 3\left(\frac{1}{x_1-1}\right) + 1 = \frac{-(x_1^3-3x_1+1)}{(1-x_1)^3}=0,
+        \end{align*}
+        so $1/(1-x_1)$ would be another root of the original equation. Since $-2< x_1 < 0$, we find that $1/3 < 1/(1-x_1) < 1$, which means that $1/(1-x_1) < x_3$, and so $x_2=1/(1-x_1)$ is the second largest root of the equation. Now,
+        \begin{align*}
+            x_2^2 - x_1 &= \frac{1}{(x_1-1)^2} - x_1 = \frac{1-x_1+2x_1^2-x_1^3}{(1-x_1)^2}\\
+            &= \frac{-x_1^3 + 3x_1 - 1 + 2(1-x_1)^2}{(1-x_1)^2}= 2.
+        \end{align*}
+        \item Let $x=2\cos\alpha$ and the equation becomes
+        \begin{align*}
+            x^3-3x+1 &= 8\cos^3 \alpha - 6\cos \alpha + 1 \\
+            &= 2\cos3\alpha + 1.
+        \end{align*}
+        So, $x^3-3x+1=0$ is equivalent to $\cos 3\alpha = -1/2$ with solutions $\alpha = 2k\pi/3 \pm 2\pi/9$. These will lead to the following solutions:
+        \begin{align*}
+            x_1 = -2\cos\frac{\pi}{9},\qquad x_2 = 2\cos\frac{4\pi}{9}, \qquad x_3=2\cos\frac{2\pi}{9}.
+        \end{align*}
+        Now we can calculate $x_2^2-x_1$ is
+        \begin{align*}
+            4\cos^2\frac{4\pi}{9} + 2\cos\frac{\pi}{9} = 2\left(1+\cos\frac{8\pi}{9}+\cos\frac{\pi}{9}\right) = 2.
+        \end{align*}
+    \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h66931p394743
+    The equation\[ x^{10}+(13x-1)^{10}=0 \]has 10 complex roots $r_1, \overline{r_1}, r_2, \overline{r_2}, r_3, \overline{r_3}, r_4, \overline{r_4}, r_5, \overline{r_5},$ where the bar denotes complex conjugation. Find the value of\[ \frac 1{r_1\overline{r_1}}+\frac 1{r_2\overline{r_2}}+\frac 1{r_3\overline{r_3}}+\frac 1{r_4\overline{r_4}}+\frac 1{r_5\overline{r_5}}. \]
+\end{question}
+
+\subsection{Irrational Equations}
+
+\begin{tcolorbox}
+    \begin{question}
+        Solve the following equation in $x$:
+        \begin{align*}
+            x^3-3x+(x^2-1)\sqrt{x^2-4}=2.
+        \end{align*}
+    \end{question}
+\end{tcolorbox}
+
+\begin{solution}
+    Expand $x^2-1$ and $x^2-4$, then write the equation as
+    \begin{align*}
+        (x^3-3x-2)+(x-1)(x+1)\sqrt{(x-2)(x+2)}.
+    \end{align*}
+    Now, $x^3-3x-2$ becomes zero for both $x=-1$ and $x=2$, and we may factorize it as $(x+1)^2(x-2)$. These two numbers turn out to be the only solutions to the original equation as well.
+\end{solution}
+
+
+\begin{question}
+    Prove that $\sqrt[ {5}]{2}-{\sqrt[ {5}]{2}}^{2}+{\sqrt[ {5}]{2}}^{3}-{\sqrt[ {5}]{2}}^{4}$ is a root of $x^{5}+20x^{3}+20x^{2}+30x+10$.
+\end{question}
+
+\begin{question}[name={1997 Switzerland TST}]
+    Let $v$ and $w$ be distinct, randomly chosen solutions to the equation $z^{1997}-1=0$. Determine the probability that \[\sqrt{2+\sqrt{3}} \leq |v+w|.\]
+\end{question}
+
+
+\begin{question}[name={2009 Ecuador TST}]
+    Let $a,b,c$ be distinct rational numbers. Prove that the expression
+    \begin{align*}
+        \sqrt{\dfrac{1}{(a-b)^2}+\dfrac{1}{(b-c)^2}+\dfrac{1}{(c-a)^2}},
+    \end{align*}
+    is rational.
+\end{question}
+
+
+
+\begin{question}[name={2009 Ecuador TST}]
+    Simplify the expression
+    \begin{align*}
+        \sqrt[3]{2+\sqrt{5}}+\sqrt[3]{2-\sqrt{5}}.
+    \end{align*}
+\end{question}
+
+
+
+\begin{question}[name={2008 Finland}]
+% https://maol.fi/app/uploads/2019/06/Lukion-matematiikkakilpailu-2008.pdf
+    Solve for $x$:
+    \[\sqrt{17+x-8\sqrt{x+1}} + \sqrt{5+x-4\sqrt{x+1}} = 6.\]
+\end{question}
+
+
+\begin{solution}
+    The answers are $x=-1$ and $x=35$.
+\end{solution}
+
+
+
+
+\begin{question}[name={2014 Finland}]
+% https://maol.fi/app/uploads/2019/06/Lukion-matematiikkakilpailu-2014.pdf
+    Assume that for real numbers $x$ and $y$,
+    \[(x+\sqrt{x^2+1})(y+\sqrt{y^2+1}) = 1.\]
+    What values can the expression $x + y$ assume?
+\end{question}
+
+\begin{solution}
+    The answer is $x+y=0$.
+\end{solution}
+
+
+\begin{question}[name={2016 Finland}]
+    % https://maol.fi/app/uploads/2019/06/Lukion-matematiikkakilpailu-2016.pdf
+    Solve the equation
+    \[\sqrt{2+4x-2x^2} + \sqrt{6+6x-3x^2} = x^2-2x+6.\]
+\end{question}
+
+
+\begin{question}[name={2017 Finland}]
+    % https://maol.fi/app/uploads/2019/06/Lukio-matematiikka_alkukilpailu_2017.pdf
+    Prove that if $a>0$, then $x=3a/4$ is a solution to \[x = a - \sqrt{a^2-x\sqrt{x^2+a^2}}.\]
+\end{question}
+
+
+
+\begin{tcolorbox}[title={Rationalizing Irrational Equations of the Form $\sqrt[3]{u} \pm \sqrt[3]{v} = a$}]
+    \begin{question}
+        Prove that $\sqrt[3]{u} \pm \sqrt[3]{v} = a$ is equivalent to $(u\pm v - a^3)^3 = \mp 27a^3uv$.
+    \end{question}
+
+\begin{solution}
+    Using the identity $(a\pm b)^3 = a^3 \pm b^3 \pm 3ab(a\pm b)$, we can raise both sides of the equation $\sqrt[3]{u} \pm \sqrt[3]{v} = a$ to the power of $3$ to arrive at the given expression.
+\end{solution}
+
+\begin{question}
+        Solve the irrational equation $\sqrt[3]{2x-3}+\sqrt[3]{3x+2}=3$ for $x$.
+\end{question}
+
+\begin{solution}
+    The two sides must be cubed and simplified to obtain $9\sqrt[3]{6x^2-5x-6}=28-5x$, which after being cubed again becomes $125x^3+2274x^2+8115x-26326=0$, whose only real solution is $x=2$.
+\end{solution}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[title={Review of Irrational Equations A--Z}]
+Review of Problems~\ref{p:irrational-A} to \ref{p:irrational-Z}:
+\begin{question}[name={Irrational Equations Collection}]\label{p:irrational-A}
+    The following is a review of the 26 irrational equations in $x$, labeled a) to z) for the twenty six letters of the English alphabet. Question a) (Problem~\ref{p:irrational-A}) is to solve for $x$ the irrational equation $\sqrt{a+x} = a - \sqrt{x}$ given an appropriate real number $a$.
+    \begin{tasks}(2)
+        \task $\sqrt{a+x} = a - \sqrt{x}$,
+        \task $\displaystyle \frac{\sqrt{a+x}}{a}+\frac{\sqrt{a+x}}{x}=\sqrt x$,
+        \task $\sqrt{x-1}+6\sqrt[4]{x-1}=16$,
+        \task $\sqrt[3]{x}+\sqrt[3]{2x-3}=\sqrt[3]{12(x-1)}$,
+        \task $\sqrt[3]{a-x}+\sqrt[3]{b-x}=\sqrt[3]{a+b-2x}$,
+        \task $\sqrt[3]{x}+2\sqrt[3]{x^2}=3$,
+        \task $\sqrt{a+x}-\sqrt[3]{a+x}=0$,
+        \task $\sqrt[5]{(7x-3)^3}+8\sqrt[5]{(3-7x)^{-3}}=7$,
+        \task $\displaystyle \frac{1-ax}{1+ax}\sqrt{\frac{1+bx}{1-bx}}=1$,
+        \task $\sqrt[5]{16+\sqrt{x}}+\sqrt[5]{16-\sqrt{x}}=2$,
+        \task $\sqrt[n]{a^kx^{n-k}}+\sqrt[n]{x^ka^{n-k}}=2\sqrt{bx}$,
+        \task $\displaystyle \frac{\sqrt[n]{a-x}}{x^2}-\frac{\sqrt[n]{a-x}}{a^2}=\sqrt[n]{\frac{x^2}{a+x}}$,
+        \task $\displaystyle \sqrt{\frac{\sqrt[n]{a}-\sqrt[n]{x}}{\sqrt[n]{x^2}}}-\sqrt{\frac{\sqrt[n]{a}-\sqrt[n]{x}}{\sqrt[n]{a^2}}}=\sqrt[2n]{x}$,
+        \task $\sqrt{p+x}+\sqrt{p-x}=x$,
+        \task $3+\sqrt{3+\sqrt{x}}=x$,
+        \task $\sqrt{\sqrt{5}+\sqrt{\sqrt{5}+x}}=x$,
+        \task $\sqrt[5]{a+\sqrt{x}}+\sqrt[5]{a-\sqrt{x}}=\sqrt[5]{2a}$,
+        \task $\sqrt[4]{a-x}+\sqrt[4]{b-x}=\sqrt[4]{a+b-2x}$,
+        \task $\sqrt{2x^2-1}+\sqrt{x^2-3x-2} = \sqrt{2x^2+2x+3}+\sqrt{x^2-x+2}$,
+        \task $\sqrt{2(1+x^2)}+2(x-1)=2a\sqrt{x}$,
+        \task $2\sqrt{x-1}+\sqrt{x+2}-4=0$,
+        \task $2x-\sqrt{3-2x}-3=0$,
+        \task $3\sqrt{x+6}-\sqrt{2-x}-4=0$,
+        \task $2\sqrt{x-1}+\sqrt[3]{x}-1=0$,
+        \task $\sqrt[4]{x-1}+2\sqrt[3]{3x+2}-\sqrt{3-x}=4$,
+        \task $\sqrt{2x-1}+\sqrt{x-2}-\sqrt{x+1}=0$.
+    \end{tasks}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+    After rationalizing the equation, the solution is $x=(a-1)^2/4$ when $a \geq 1$ and there are no solutions when $a<1$.
+\end{solution}
+
+\begin{question}\label{p:irrational-B}
+    Given an appropriate real number $a$, solve the irrational equation
+    \begin{align*}
+        \frac{\sqrt{a+x}}{a}+\frac{\sqrt{a+x}}{x}=\sqrt x.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    There are no solutions for $a<-1$ or $0 \leq a \leq 1$. Otherwise, when $-1<a<0$ or $a>1$, the solution is $x=a/(\sqrt[3]{a^2}-1)$.
+\end{solution}
+
+\begin{question}\label{p:irrational-C}
+    Solve the irrational equation $\sqrt{x-1}+6\sqrt[4]{x-1}=16$ for $x$.
+\end{question}
+
+\begin{solution}
+    The answer is $x=17$.
+\end{solution}
+
+\begin{question}\label{p:irrational-D}
+    Solve the irrational (third root) equation \[\sqrt[3]{x}+\sqrt[3]{2x-3}=\sqrt[3]{12(x-1)}.\]
+\end{question}
+
+\begin{solution}
+    After rationalizing, the equation becomes $(x-1)[12x(2x-3)-27(x-1)^2]=0$ whose solutions are $x=1$ and $x=3$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-E}
+    Given an appropriate real number $a$, solve the third root equation
+    \begin{align*}
+        \sqrt[3]{a-x}+\sqrt[3]{b-x}=\sqrt[3]{a+b-2x}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The solutions are $x_1=a$, $x_2=b$, and $x_3=(a+b)/2$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-F}
+    Solve the irrational (third root) equation $\sqrt[3]{x}+2\sqrt[3]{x^2}=3$ for $x$.
+\end{question}
+
+\begin{solution}
+    The solutions are $x_1=1$ and $x_2=-27/8$.
+\end{solution}
+
+\begin{question}\label{p:irrational-G}
+    Given an appropriate real number $a$, solve the irrational sixth root equation $\sqrt{a+x}-\sqrt[3]{a+x}=0$ for $x$.
+\end{question}
+
+\begin{solution}
+    The solutions are $x_1=-a$ and $x_2=1-a$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-H}
+    Solve the irrational fifth root equation $\sqrt[5]{(7x-3)^3}+8\sqrt[5]{(3-7x)^{-3}}=7$.
+\end{question}
+
+\begin{solution}
+    Let $y=\sqrt[5]{(7x-3)^3}$ to find the solutions $x_1=2/7$ and $x_2=5$.
+\end{solution}
+
+\begin{question}\label{p:irrational-I}
+    Given appropriate real numbers $a$ and $b$, solve the irrational square root equation
+    \begin{align*}
+        \frac{1-ax}{1+ax}\sqrt{\frac{1+bx}{1-bx}}=1.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    First, prove that $x^2<1/b^2$ and $x^2<1/a^2$ must happen for the equation to have a solution. In that case, the trivial solution is $x_1=0$, and if $1/2 \leq a/b < 1$, the other two roots are:
+    \begin{align*}
+        x_2 = \sqrt{\frac{2a-b}{a^2b}} \qquad \text{and} \qquad x_3 = -\sqrt{\frac{2a-b}{a^2b}}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:irrational-J}
+    Solve the irrational tenth root equation \[\sqrt[5]{16+\sqrt{x}}+\sqrt[5]{16-\sqrt{x}}=2,\] for real numbers $x$.
+\end{question}
+
+\begin{solution}
+    Let $\sqrt[5]{16+\sqrt{x}}=u$ and $\sqrt[5]{16-\sqrt{x}}=v$, so that $u+v=2$ and raising the equation to power of $5$ results in:
+    \begin{align*}
+        u^5+v^5+5uv(u+v)\left[(u+v)^2-3uv\right]+10u^2v^2(u+v)=32.
+    \end{align*}
+    Plug in $u+v=2$ and simplify to get $uv(4-uv)=0$, and the only real solution of the equation comes from $v=0$, giving $x=256$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-K}
+    Given appropriate real numbers $a$ and $b$, and positive integers $n>k\geq 2$, solve the irrational $n^{th}$ root equation $\sqrt[n]{a^kx^{n-k}}+\sqrt[n]{x^ka^{n-k}}=2\sqrt{bx}$.
+\end{question}
+
+\begin{solution}
+    The trivial solution is $x_1=0$ and the other two solutions (with appropriate $a$ and $b$) are
+    \begin{align*}
+        x_{2,3} = a^{2k/(2k-n)} \left(\sqrt{b}\pm \sqrt{b-a}\right)^{2n/(n-2k)}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:irrational-L}
+    Solve the irrational $n^{th}$ root equation
+    \begin{align*}
+        \sqrt{\frac{\sqrt[n]{a}-\sqrt[n]{x}}{\sqrt[n]{x^2}}}-\sqrt{\frac{\sqrt[n]{a}-\sqrt[n]{x}}{\sqrt[n]{a^2}}}=\sqrt[2n]{x}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    We divide the solutions in two cases:
+    \begin{itemize}
+        \item If $n$ is even, we must have $a>0$ and $-a< x \leq a$ and the solutions are
+        \begin{align*}
+            x=\pm\frac{a}{\sqrt{1+a^{2n/(n+1)}}}.
+        \end{align*}
+        \item If $n$ is odd, we must have $a \neq 0$ and the solutions are the same as before:
+        \begin{align*}
+            x=\pm\frac{a}{\sqrt{1+a^{2n/(n+1)}}}.
+        \end{align*}
+    \end{itemize}
+\end{solution}
+
+\begin{question}\label{p:irrational-M}
+    Solve the irrational equation 
+    \begin{align*}
+        \displaystyle \sqrt{\frac{\sqrt[n]{a}-\sqrt[n]{x}}{\sqrt[n]{x^2}}}-\sqrt{\frac{\sqrt[n]{a}-\sqrt[n]{x}}{\sqrt[n]{a^2}}}=\sqrt[2n]{x}
+    \end{align*}
+    for $x$.
+\end{question}
+
+\begin{solution}
+    The only solution is
+    \begin{align*}
+        x=\frac{a}{\left[1+a^{2n/3}\right]^n}.
+    \end{align*}
+\end{solution}
+
+\begin{question}\label{p:irrational-N}
+    Given an appropriate real number $p$, solve the square root equation
+    \begin{align*}
+        \sqrt{p+x}+\sqrt{p-x}=x.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    For $p\geq 2$, the solution is $x=2\sqrt{p-1}$ and there are no solutions when $p<2$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-O}
+    Solve the irrational equation $3+\sqrt{3+\sqrt{x}}=x$ for $x$.
+\end{question}
+
+\begin{solution}
+    Let $a=\sqrt 3$ and turn the equation into a quadratic in $a$:
+    \begin{align*}
+        a^2 - (2x+1)a + (x^2-\sqrt x)=0.
+    \end{align*}
+    The only solution is $x=(7+\sqrt{13})/2$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-P}
+    Solve the irrational equation $\sqrt{\sqrt{5}+\sqrt{\sqrt{5}+x}}=x$ for $x$.
+\end{question}
+
+\begin{solution}
+    Let $a=\sqrt 5$ and form a quadratic equation in $a$ like in Problem~\ref{p:irrational-O}. The only solution is
+    \begin{align*}
+        x = \frac{1+\sqrt{1+4\sqrt{5}}}{2}.
+    \end{align*}
+\end{solution}
+
+\begin{question}\label{p:irrational-Q}
+    Given an appropriate real number $a$, solve the fifth root equation
+    \begin{align*}
+        \sqrt[5]{a+\sqrt{x}}+\sqrt[5]{a-\sqrt{x}}=\sqrt[5]{2a}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Let $u=\sqrt[5]{a+\sqrt{x}}$ and $v=\sqrt[5]{a-\sqrt{x}}$ to arrive at $u^5+v^5=2a$. Reduce the equation to $uv(uv-\sqrt[5]{4a^2})=0$, implying either $uv=0$ or $uv=\sqrt[5]{4a^2}$. There is a real solution $x=a^2$ if $uv=0$ and the other case $uv=\sqrt[5]{4a^2}$ results in imaginary solutions for $x$.
+\end{solution}
+
+\begin{question}\label{p:irrational-R}
+    Given appropriate real numbers $a$ and $b$, solve the fourth root equation
+    \begin{align*}
+        \sqrt[4]{a-x}+\sqrt[4]{b-x}=\sqrt[4]{a+b-2x}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    If $a<b$, the only solution is $x=a$ and if $a>b$, the only solution is $x=b$.
+\end{solution}
+
+\begin{question}\label{p:irrational-S}
+    Solve the following irrational square root equation in $x$:
+    \begin{align*}
+        \sqrt{2x^2-1}+\sqrt{x^2-3x-2} = \sqrt{2x^2+2x+3}+\sqrt{x^2-x+2}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The only solution is $x=-2$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-T}
+    Given an appropriate real number $a$, solve the square root equation
+    \begin{align*}
+        \sqrt{2(1+x^2)}+2(x-1)=2a\sqrt{x}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Define $y$ so that $y\sqrt x = x-1$ to get the equation $x^2+1=x(y^2+2)$. Writing this as an equation in $y$, we find $\sqrt{2(y^2+2)}=2(a-y)$ for $a\geq y$. After rationalizing and solving the latter equation, we find that the only solution for the original equation is
+    \begin{align*}
+        x = \frac{1}{4}\left(2a - \sqrt{2(a^2+1)} +\sqrt{6a^2+6-4a\sqrt{2(a^2+1)}}\right).
+    \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:irrational-U}
+    Solve the irrational square root equation $2\sqrt{x-1}+\sqrt{x+2}-4=0$.
+\end{question}
+
+\begin{solution}
+    Rationalizing the equation results in $9x^2-196x+356=0$ whose solution $x=2$ is the only one that works in the original equation.
+\end{solution}
+
+\begin{question}\label{p:irrational-V}
+    Solve the irrational square root equation $2x-\sqrt{3-2x}-3=0$.
+\end{question}
+
+\begin{solution}
+    The answer is $x=3/2$.
+\end{solution}
+
+\begin{question}\label{p:irrational-W}
+    Solve the irrational square root equation $3\sqrt{x+6}-\sqrt{2-x}-4=0$.
+\end{question}
+
+
+\begin{solution}
+    The answer is $x=-2$.
+\end{solution}
+
+
+\begin{question}\label{p:irrational-X}
+    Solve the irrational sixth root equation $2\sqrt{x-1}+\sqrt[3]{x}-1=0$.
+\end{question}
+
+\begin{solution}
+    Prove that the function $f(x)=2\sqrt{x-1}+\sqrt[3]{x}$ is an increasing function, so that the equation has exactly one solution $x=1$. 
+\end{solution}
+
+
+\begin{question}\label{p:irrational-Y}
+    Solve the twelfth root equation
+    \begin{align*}
+        \sqrt[4]{x-1}+2\sqrt[3]{3x+2}-\sqrt{3-x}=4.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The answer is $x=2$.
+\end{solution}
+
+\begin{question}\label{p:irrational-Z}
+    Solve the irrational square root equation $\sqrt{2x-1}+\sqrt{x-2}-\sqrt{x+1}=0$.
+\end{question}
+
+
+\begin{solution}
+    The only solution is $x=2$.
+\end{solution}
+
+
+
+
+
+\subsection{Reciprocal Equations}
+
+\begin{tcolorbox}[title={Positive Reciprocal Equations}]
+    \begin{definition}
+        We call an equation such as $F(x)=0$ a \textbf{reciprocal equation} in two cases: $F$ is \textbf{positive reciprocal equation} if $F(\alpha)=F(1/\alpha)=0$, and it is a \textbf{negative reciprocal equation} if $F(\alpha)=F(-1/\alpha)=0$ for some $\alpha$. In other words,
+        \begin{align*}
+            \text{Positive Reciprocal} \iff \text{ Same When } x \to \phantom{-}\frac{1}{x},\\ \text{Negative Reciprocal} \iff \text{ Same When } x \to -\frac{1}{x},
+        \end{align*}
+    \end{definition}
+    \begin{question}
+        Prove that reciprocal equations of odd degree are not really interesting. In other words, prove that
+        \begin{enumerate}
+            \item A negative reciprocal polynomial equation cannot be of odd degree.
+            \item Any positive reciprocal polynomial equation of odd degree has a root of either $+1$ or $-1$ because $\pm 1$ are the only reals equal to their reciprocals.
+        \end{enumerate}
+    \end{question}
+    The previous question makes it clear that reciprocal equations of odd degree are not interesting, and we often mean a \textbf{reciprocal equation of even degree} when we speak of \textbf{reciprocal equations} in general.
+    \begin{definition}
+        A polynomial $P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ is \textbf{palindromic} if $a_i = a_{n-i}$ for $i = 0, 1, \dots, n$ and \textbf{antipalindromic} if $a_i = -a_{n-i}$ for $i = 0, 1, \dots, n$.
+    \end{definition}
+    \begin{question}
+        Prove that a positive reciprocal polynomial equation (of even degree) has its coefficients ordered in a palindromic way and the study the case for negative reciprocal equations.
+    \end{question}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title={Negative Reciprocal Equations}]
+    \begin{question}
+        Prove that for a negative reciprocal equation $P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$ (in which the same equation is obtained by changing $x$ to $-1/x$),
+        \begin{enumerate}
+            \item If $n$ is a multiple of $4$, then the coefficients of the even exponents form a palindrome, that is, $a_i=a_{n-i}$ for even $i$. Furthermore, prove that the coefficients of odd exponents form are antipalindromic, that is, $a_i=-a_{n-i}$ for odd $i$.
+            \item If $n$ is not divisible by $4$ (i.e. it leaves a remainder of $2$ in division by $4$), then the coefficients of the even exponents are antipalindromic and the coefficients of the odd exponents are palindromic.
+        \end{enumerate}
+    \end{question}
+\end{tcolorbox}
+
+
+\begin{question}
+    Solve the following palindromic equation in $x$:
+    \begin{align*}
+        2x^4-13x^3+24x^2-13x+2=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Dividing both sides of the equation by $x^2$ gives us an expression that has $x+\dfrac{1}{x}$ as a factor:
+    \begin{align*}
+        2\left(x^2+\frac{1}{x^2}\right) - 13\left(x+\frac{1}{x}\right) + 24 = 0.
+    \end{align*}
+    Choose $t=x+\dfrac{1}{x}$ to find $x^2+\dfrac{1}{x^2}=t^2-2$ and find $2(t^2-2)-13t+24=0$, which has solutions $t=4$ and $t=5/2$. The equation $x+\dfrac{1}{x}=4$ has real solutions $x=2\pm \sqrt 3$ and the roots of the equation $x+\dfrac{1}{x}=5/2$ are $2$ and $1/2$. 
+\end{solution}
+
+
+\begin{question}
+    Prove that $x^n\pm\dfrac{1}{x^n}$ can be written as a polynomial of degree $n$ of $x\pm \dfrac{1}{x}$, and that in the case of positive reciprocal equations, we need $x+\dfrac{1}{x}$ as the new variable, whereas for negative reciprocal equations, the variable would be $x-\dfrac{1}{x}$.
+\end{question}
+
+\begin{question}
+    Prove, using induction, that
+    \begin{align*}
+        \left(x-\frac{1}{x}\right)^2 + \left(x^2-\frac{1}{x^2}\right)^2 + \cdots + \left(x^n-\frac{1}{x^n}\right)^2 &= \frac{x^{2n+1}-\dfrac{1}{x^{2n}}}{x^2-1} - 2n-1.
+    \end{align*}
+\end{question}
+
+
+\begin{question}[name={2000 Denmark (Georg Mohr)}]
+    Determine all possible values of $x+\dfrac{1}{x}$, where the real $x$ satisfies the equation
+    \[x^4 + 5x^3 - 4x^2 + 5x + 1 = 0,\] and solve this equation.
+\end{question}
+
+
+
+
+\begin{question}
+    For a given real, non-zero number $a$, solve the following antipalindromic equation in $x$:
+    \begin{align*}
+        2ax^4-(2a^2+3a-2)x^3+(3a^2-4a-3)x+(2a^2+3a-2)x+2a=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    This is a negative reciprocal equation and it must be arranged as a polynomial in $x-\dfrac{1}{x}$. Dividing both sides of the original equation by $x^2$ and rearranging, we find 
+    \begin{align*}
+        2a\left(x^2+\frac{1}{x^2}\right) - (2a^2+3a-2)\left(x-\frac{1}{x}\right) + (3a^2-4a-3)=0.
+    \end{align*}
+    Choose $t=x-\dfrac{1}{x}$ to find $x^2+\dfrac{1}{x^2}=t^2+2$; yielding $2a(t^2+2)-(2a^2+3a-2)t+(3a^2-4a-3)=0$, which has solutions $t=3/2$ and $t=a-\dfrac{1}{a}$. The equation $x-\dfrac{1}{x}=\dfrac{3}{2}$ has real solutions $x=2$ and $x=-\dfrac{1}{2}$, and the roots of the equation $x-\dfrac{1}{x}=a-\dfrac{1}{a}$ are $a$ and $-\dfrac{1}{a}$. 
+\end{solution}
+
+
+\begin{question}
+    Solve the following equation in $x$:
+    \begin{align*}
+        2x^4-15x^3+35x^2-30x+8=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Dividing both sides of the original equation by $x^2$ and rearranging, we find 
+    \begin{align*}
+        2\left(x^2+\frac{4}{x^2}\right) - 15\left(x+\frac{2}{x}\right) + 35=0.
+    \end{align*}
+    Choose $t=x+\dfrac{2}{x}$ to find $x^2+\dfrac{4}{x^2}=t^2-4$; yielding $2(t^2-4)-15t+35=0$, which has solutions $t=9/2$ and $t=3$. The equation $x+\dfrac{2}{x}=\dfrac{9}{2}$ has real solutions $x=4$ and $x=\dfrac{1}{2}$, and the roots of the equation $x+\dfrac{2}{x}=3$ are $1$ and $2$. 
+\end{solution}
+
+
+\begin{question}
+    Solve the following equation in $x$:
+    \begin{align*}
+        2x^4+7x^3-34x^2-21x+18=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Dividing both sides of the original equation by $x^2$ and rearranging, we find 
+    \begin{align*}
+        2\left(x^2+\frac{9}{x^2}\right) + 7\left(x-\frac{3}{x}\right) - 34=0.
+    \end{align*}
+    Choose $t=x-\dfrac{3}{x}$ to find $x^2+\dfrac{9}{x^2}=t^2+6$; giving $2(t^2+6)+7t-34=0$, which has solutions $t=2$ and $t=-11/2$. The equation $x-\dfrac{3}{x}=2$ has real solutions $x=-1$ and $x=3$, and the roots of the equation $x-\dfrac{3}{x}=-\dfrac{11}{2}$ are $\dfrac{1}{2}$ and $-6$. 
+\end{solution}
+
+
+\begin{question}
+    Prove that the reciprocals of roots of the cubic equation $x^3-x+1=0$ are roots of the quintic equation $x^5+x+1=0$.
+\end{question}
+
+\begin{solution}
+    If $\alpha$ is a root of $x^3-x+1=0$, then it is easy to see that $1/\alpha$ must be a root of $x^3-x^2+1=0$, and also
+    \begin{align*}
+        x^5+x+1 = (x^3-x^2+1)(x^2+x+1).
+    \end{align*}
+\end{solution}
+
+
+
+\begin{question}[name={2008 Ecuador TST}]
+    If $z+\dfrac{1}{z}=1$, find the numerical value of \[z^{2008}+\frac{1}{z^{2008}}.\]
+\end{question}
+
+
+
+\subsection{Equations Containing the Floor \& Absolute Value Function}
+
+\begin{question}
+    Solve the equation $\lfloor x+2 \rfloor + \lfloor x \rfloor = 12$ for $x$.
+\end{question}
+
+\begin{solution}
+    The answer is $5\leq x < 6$.
+\end{solution}
+
+
+\begin{question}
+    Solve the equation $\lfloor 5x+3 \rfloor + \lfloor 7x+9 \rfloor = 18$ for $x$.
+\end{question}
+
+\begin{solution}
+    The answer is $\dfrac{4}{7}\leq x < \dfrac{3}{5}$.
+\end{solution}
+
+
+\begin{question}
+    Solve the equation in $x$:
+    \begin{align*}
+        \lfloor -x^2+3x \rfloor = \left\lfloor x^2+\frac{1}{2} \right\rfloor.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The answer is $\dfrac{\sqrt{6}}{2}\leq x < \dfrac{\sqrt{10}}{2}$.
+\end{solution}
+
+
+\begin{question}
+    Solve the following equation involving the floor function:
+    \begin{align*}
+        \lfloor x \rfloor = \left\lfloor \frac{x^3-2}{3}\right\rfloor.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    First, we will investigate in which intervals the equation cannot happen. Define $f(x)=(x^3-2)/3$. Clearly, if $f(x)\geq x+1$ or $f(x) \leq x-1$, the equation $\lfloor x \rfloor =  \lfloor f(x) \rfloor$ cannot happen. The inequality $f(x)\geq x+1$ simplifies to $x^2(x-3)\geq -3x^2+3x+5$, which has $x\geq 3$ in its solutions. The inequality $f(x) \leq x-1$ reduces to $x^2(x+2)\leq 2x^2+3x-1$ and it has $x\leq -2$ among its solutions. Therefore, the original equation can have its solutions in the interval $-2<x<3$:
+    \begin{align*}
+        -4< x< 0 \qquad \text{and} \qquad \sqrt[3]{5} < x < \sqrt[3]{11}.
+    \end{align*}
+\end{solution}
+
+\begin{question}
+    Solve the following equation involving the floor function for $x$ and $y$:
+    \begin{align*}
+        \frac{4x+3y}{2x} = \left\lfloor \frac{x^2+y^2}{x^2}\right\rfloor.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Let $k=3y/2x$ and observe that $k$ must be an integer, and the equation becomes
+    \begin{align*}
+        1+k = \left\lfloor \frac{4k^2}{9}\right\rfloor \implies 1+k \leq \frac{4k^2}{9} < 2+k.
+    \end{align*}
+    The solutions are $3\leq k <3.6$ and $-1.2 < k \leq 0.75$. Since $k$ must be an integer, $k=-1$ and $k=3$ are the only solutions, resulting in $y=2x$ and $y=-2x/3$.
+\end{solution}
+
+
+\begin{question}
+    Solve the following equation involving the floor function for $x$:
+    \begin{align*}
+        \frac{15x-7}{5} = \left\lfloor \frac{6x+5}{8}\right\rfloor.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The solutions are $x_1=7/15$ and $x_2=4/5$.
+\end{solution}
+
+
+\begin{question}
+    Solve the following equation in $x$:
+    \begin{align*}
+        \sqrt{(x+3)^2}+\sqrt{(x-2)^2} + \sqrt{(2x-8)^2}=9.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The given equation is the same as $|x+3|+|x-2|+|2x-8|=9$, and the short answer is $x\in [2,4]$.
+\end{solution}
+
+
+\begin{question}
+    Solve the following equation in $x$:
+    \begin{align*}
+        |x^2-4|+|x|+2x=2.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The answer is $x=-1$ and $x=-3$.
+\end{solution}
+
+
+\begin{question}
+    Solve the absolute value equation
+    \begin{align*}
+        |x-2| \cdot |x+3| \cdot |x+6| = |x+1| \cdot |x+4| \cdot |x+9|.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    We know that the product of absolute values of several terms is equal to the absolute value of the product of the same terms, so we multiply out the terms and expand to reach two possible equations:
+    \begin{align*}
+        x^3 + 7x^2 - 36 = \pm(x^3 + 14x^2 +49x + 36),
+    \end{align*}
+    whose five (two quadratic and three cubic) roots are
+    \begin{align*}
+        x_{1,2}=\frac{-49\mp\sqrt{385}}{14}, \quad x_3=0, \quad x_4=-7, \quad x_5=-\frac{7}{2}.
+    \end{align*}
+\end{solution}
+
+\subsection{Arithmetic of Polynomial Roots}
+
+\subsubsection{Miscellaneous Treacheries on Polynomial Roots}
+
+\begin{question}
+    What relationship must be happening between $a,b,c$ so that the roots of the cubic equation
+    \begin{align*}
+        x^3+ax^2+bx+c=0,
+    \end{align*}
+    be in an arithmetic progression.
+\end{question}
+
+\begin{solution}
+    Let the roots be $x_1,x_2,x-3$, so that their sum is $-a$. Furthermore, since the roots are in an arithmetic progression, $2x_2=x_1+x_3$. Therefore, $3x_2=-a$ and this means that $x_2=-a/3$ is a root of the equation. Plugging $x=-a/3$ in the equation yields the needed equation for $a,b,c$: 
+    \begin{align*}
+        2a^3-9ab+27c=0.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Prove that if $p^2<3q$, the equation $x^3+px^2+qx+r=0$ has only one real root.
+\end{question}
+
+\begin{solution}
+    Let the three roots of the cubic $x^3+px^2+qx+r=0$ be $x=\alpha, \beta, \gamma$, so that by Viète's Formulas, $\alpha+\beta+\gamma=-p$ and $\alpha\beta+\beta\gamma+\gamma\alpha=q$. Find the difference $p^2-3q$, which is said to be negative in the statement, in terms of $\alpha,\beta,\gamma$:
+    \begin{align*}
+        0 > p^2 - 3q &= (\alpha+\beta+\gamma)^2 - 3(\alpha+\beta+\gamma)\\
+        &= \alpha^2+\beta^2+\gamma^2-(\alpha+\beta+\gamma).
+    \end{align*}
+    Multiplying both sides of the inequality $\alpha^2+\beta^2+\gamma^2-(\alpha+\beta+\gamma) < 0$ by $2$, we obtain $(\alpha-\beta)^2+(\beta-\gamma)^2+(\gamma-\alpha)^2 < 0$, which cannot happen if $\alpha,\beta,\gamma$ are real numbers, so at least one of them is imaginary. Since imaginary roots of any polynomial equation are paired, the original equation has two imaginary roots and one real root.
+\end{solution}
+
+\begin{question}
+    You may use the first task to prove the second task:
+    \begin{tasks}
+        \task For a sequence $x_n$ of real numbers satisfying
+        \begin{align*}
+            \sqrt[n+1]{n+2} < x_{n+1} < \sqrt[n]{n+1} < x_n < \sqrt[n-1]{n},
+        \end{align*}
+        prove that $x_n$ is strictly decreasing with a limit of $1$.
+        \task Prove that the equation $x^n=x+n$, when $n$ is a positive integer, always has a solution for $x$ between $1$ and $2$, and when $n$ is increased, the root $x$ is decreased indefinitely with a limit of $1$.
+    \end{tasks}
+\end{question}
+
+\begin{solution}
+    The first task is just the cheat-code for the second one. For each positive integer $n$ in task b), define $f_n(x)=x^n-x-n$, and realize that $f_n(1)=-n<0$ whereas $f_n(2)>0$, so that the original equation has exactly one root in the interval $[1,2]$, which we may call $x_n$. Now follow task a) to finish the proof.
+\end{solution}
+
+\begin{question}
+    Prove that the quartic equation
+    \begin{align*}
+        x^4-4x^3+12x^2-24x+24=0
+    \end{align*}
+    does not have any real roots.
+\end{question}
+
+\begin{solution}
+    The trick is to write the polynomial as a sum of non-negative polynomials of lesser degrees. In particular for $x^4-4x^3+12x^2-24x+24$, we have
+    \begin{align*}
+        x^4-4x^3+12x^2-24x+24 = (x^2-2x)^2 + 8\left[\left(x-\frac{3}{2}\right)^2+\frac{3}{4}\right],
+    \end{align*}
+    whose first term is non-negative and the second term at least $3/4$, so their sum cannot be zero if $x$ is a real number.
+\end{solution}
+
+
+\begin{question}
+    Let $S$ be the area of a triangle whose heights are the roots of
+    \begin{align*}
+        x^3-kx^2+qx-z=0.
+    \end{align*}
+    Prove that if $4kqz > q^3 + 8z^2$,
+    \begin{align*}
+        S=\frac{z^2}{\sqrt{q(4kqz-q^3-8z^2)}}.
+    \end{align*}
+\end{question}
+
+
+\begin{solution}
+    If $a,b,c$ are the triangle's side-lengths and $h_a,h_b,h_c$ are the length of heights, we would have
+    \begin{align*}
+        \begin{cases}
+            h_a + h_b + h_c = k,\\
+            h_ah_b + h_bh_c + h_ch_a = q,\\
+            h_ah_bh_c = z.
+        \end{cases}
+    \end{align*}
+    Since the height-lengths are positive, so must be $k,q,z$. Moreover, we have $2S = ah_a=bh_b=ch_c$. Calculate the semiperimeter $p$:
+    \begin{align*}
+        p = \frac{a+b+c}{2} = S\left(\frac{1}{h_a}+\frac{1}{h_b}+\frac{1}{h_c}\right) = \frac{Sq}{z}.
+    \end{align*}
+    Using Heron's Formula $S=\sqrt{p(p-a)(p-b)(p-c)}$ and simplifying, we arrive at the required equation.
+\end{solution}
+
+
+\begin{question}
+    Find the angles of an isosceles triangle with base $a$ and legs $b$ such that
+    \begin{align*}
+        a^3-3ab^2+b^3\sqrt{3}=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    If $\alpha$ is the angle facing the base $a$, we would have $a= 2b \sin(\alpha/2)$. Simplifying, we get
+    \begin{align*}
+        2\left(4\sin^3 \alpha - 3\sin \frac{\alpha}{2}\right) + \sqrt{3} = 0,
+    \end{align*}
+    or simply $\sin(3\alpha/2)=\sqrt{3}/2$, which has solutions $\alpha=2\pi/9$ and $\alpha=4\pi/9$.
+\end{solution}
+
+\begin{question}
+    Prove that if the three side-lengths $a,b,c$ of a triangle satisfy the two equations
+    \begin{align*}
+        a^4 = b^4 + c^4 - b^2c^2 \qquad \text{and} \qquad b^4 = c^4 + a^4 - c^2a^2,
+    \end{align*}
+    then it must also satisfy
+    \begin{align*}
+        c^4=a^4+b^4-a^2b^2.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Adding up the given equations, we find $2c^4=c^2(a^2+b^2)$, or simply $c^2=(a^2+b^2)/2$. Substitute this for $c^2$ in $a^4 = b^4 + c^4 - b^2c^2$ to obtain
+    \begin{align*}
+        a^4 = b^4 + \frac{a^4+b^4+2a^2b^2}{4}-\frac{a^2b^2+b^4}{2}.
+    \end{align*}
+    Finally, the equation reduces to $a=b$ and similarly $a=c$, after which everything is trivial.
+\end{solution}
+
+
+\begin{question}
+    Let $n\geq 2$ be any integer. Prove that if $a,b,c$ are side-lengths of a triangle, then so are $\sqrt[n]{a}, \sqrt[n]{b}, \sqrt[n]{c}$.
+\end{question}
+
+\begin{solution}
+    Given $a<b+c$, we need to prove that $\sqrt[n]{a}<\sqrt[n]{b}+\sqrt[n]{c}$. Raising both sides of the latter inequality to power of $n$, we need to prove $a < \left(\sqrt[n]{b}+\sqrt[n]{c}\right)^n$. Now,
+    \begin{align*}
+        \left(\sqrt[n]{b}+\sqrt[n]{c}\right)^n = b+c + (\text{positive terms}) > b+c > a,
+    \end{align*}
+    as required.
+\end{solution}
+
+\begin{question}
+    Prove that if $p^3+q^3$ is divisible by $23$, then there are two roots of $x^3+px+q=0$ whose square of difference is also divisible by $23$.
+\end{question}
+
+\begin{solution}
+    The discriminant of the equation is $D=-4(p^3+q^3)-23q^2$, which would be divisible by $23$ if $p^3+q^3$ is a multiple of $23$. We know also that $D$ equals the square of the product of the pairwise difference of the roots, and since $D$ is divisible by the prime $23$, at least one of the elements in the product (square of difference of two roots) must be divisible by $23$.
+\end{solution}
+
+
+\begin{question}
+    Prove that the necessary and sufficient condition for the cubic equation
+    \begin{align*}
+        ax^3+bx^2+cx+d=0
+    \end{align*}
+    to have a purely imaginary root (in the form $x=\alpha i$ with $i=\sqrt{-1}$) is that $ad=bc$ and $ac>0$.
+\end{question}
+
+\begin{solution}
+    For the necessity condition, if we plug in a purely imaginary root $x=\alpha i$ into $f(x)=ax^3+bx^2+cx+d$, the real values and the coefficient of $i=\sqrt{-1}$ must be zero:
+    \begin{align*}
+        \begin{cases}
+            d-b\alpha^2=0,\\ c\alpha-a\alpha^3=0.
+        \end{cases}
+    \end{align*}
+    To prove that $ad=bc$ and $ac>0$ is sufficient for $f(x)$ to have a purely imaginary root, multiply both sides of the original equation by $a\neq 0$ and use $ad=bc$ to simplify the result into $(ax^2+c)(ax+b)=0$. The roots of $ax^2+c=0$ are purely imaginary: $x=\pm i\frac{\sqrt{ac}}{a}$. 
+\end{solution}
+
+\begin{question}
+    Prove that for all positive integers $n$, there is always a root $x_n$ in the interval $[0,1]$ for the equation
+    \begin{align*}
+        x^{n} + x^{n-1} + \cdots + x^2 + x = 1,
+    \end{align*}
+    and find the limit of $x_n$ as $n$ increases.
+\end{question}
+
+\begin{solution}
+    Define $f(x) = x^{n} + x^{n-1} + \cdots + x^2 + x - 1$ for $n\geq 2$ and note that $f(0)=-1<0$ and $f(1)=n-1>0$, so there must be a real root between $0$ and $1$, call it $x_n$. Furthermore, since $x_n<1$ for all $n\geq 2$ and the sum $x_n^{n} + x_n^{n-1} + \cdots + x_n^2 + x_n$ may be written as a geometric series with both initial term and the common ratio equal to $x_n<1$. According to the formula for infinite sum of geometric series with common ratio less than $1$, the limit of the series when $n\to \infty$ would be $x_n/(1-x_n)$, which must be equal to $1$ according to the original equation. This gives a limit of $1/2$ for $x_n$ as $n\to\infty$.
+\end{solution}
+
+
+\begin{question}
+    If $\alpha, \beta, \gamma$ are the roots of $x^3+px+q=0$, and $m,n$ are positive integers, find the sum
+    \begin{align*}
+        S = \frac{m\alpha + n}{m\alpha-n} + \frac{m\beta + n}{m\beta-n} + \frac{m\gamma + n}{m\gamma-n},
+    \end{align*}
+    in terms of $p,q,m,n$.
+\end{question}
+
+
+\begin{solution}
+    We will form a cubic equation whose roots are
+    \begin{align*}
+        y_1 = \frac{m\alpha + n}{m\alpha-n} ,\quad y_2= \frac{m\beta + n}{m\beta-n}, \quad y_3= \frac{m\gamma + n}{m\gamma-n}.
+    \end{align*}
+    If $y=(mx+n)/(mx-n)$, then $x=n(y+1)/(m(y-1))$. Simplifying, the equation becomes
+    \begin{align*}
+        n^3(y+1)^3 + pm^2n(y+1)(y-1)^2 + qm^3(y-1)^3=0.
+    \end{align*}
+    The required sum $S=y_1+y_2+y_3$ can then be calculated as
+    \begin{align*}
+        S = \frac{3qm^3+2pm^2n-3n^3}{n^3+pm^2n+qm^3}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Solve the following cubic equation if we know that one of its roots is double another root of the same equation:
+    \begin{align*}
+        x^3+21x^2+140x-300=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Define $f(x)=x^3+21x^2+140x-300$ and assume $f(\alpha)=f(2\alpha)=0$ for some $\alpha$. Simplifying the system of equations $f(\alpha)=0$ and $f(2\alpha)=0$, we find $\alpha=5$, so that the roots of the equation will be $x=5,6,10$.
+\end{solution}
+
+
+\begin{question}
+    Find $a$ such that the product of two roots of the equation
+    \begin{align*}
+        x^4-ax^3+23x^2+ax-168=0
+    \end{align*}
+    is $12$, and then solve the equation.
+\end{question}
+
+\begin{solution}
+    Using Viète's Formulas, we find $a=\pm 10$.
+\end{solution}
+
+
+\begin{question}
+    For a polynomial $f(x)$,
+    \begin{tasks}
+        \task If $f(x)=f(a-x)$ for some $a$, then show that $f(x)$ may be written as a sum of even powers of $2x-a$.
+        \task If 
+        \begin{align*}
+            f(x) = 16x^4 - 32x^3 - 56x^2 + 72x + 72,
+        \end{align*}
+        find $f(1-x)$ and solve $f(x)=0$.
+    \end{tasks}
+\end{question}
+
+\begin{solution}
+    The first part is easy to verify, and we may use it to write the polynomial in the second part as
+    \begin{align*}
+        f(x) = (2x-1)^4 - 20(2x-1)^2 + 91 = 0,
+    \end{align*}
+    whose roots are
+    \begin{align*}
+        x_{1,2} = \frac{1\pm\sqrt{7}}{2} \qquad \text{and} \qquad x_{3,4} = \frac{1\pm\sqrt{13}}{2}.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Find $m$ such that in the equation
+    \begin{align*}
+        x^4 - 8x^3 + mx^2 - 8x - 3 =0,
+    \end{align*}
+    the sum of two roots equals the third root, and then solve the equation.
+\end{question}
+
+\begin{solution}
+    Using Viète's Formulas, we find $m=18$, and the four roots $x_1,x_2,x_3,x_4$ may be calculated easily from  $x_1+x_2=4$, $x_1x_2=-1$ and $x_3+x_4=4$ and $x_3x_4=3$.
+\end{solution}
+
+\begin{question}
+    Without solving the equation, find the area of the triangle whose side-lengths are the roots of the cubic equation $x^3 - 12x^2 + 47x - 60 = 0$.
+\end{question}
+
+\begin{solution}
+    Let $a,b,c$ be the side-lengths of the triangle. By Viète's Formulas, we find
+    \begin{align*}
+        a+b+c=12, \quad ab+bc+ca = 47, \quad abc = 60.
+    \end{align*}
+    Using Heron's formula for the area of triangle, we can find the area:
+    \begin{align*}
+        S^2 &= p(p-a)(p-b)(p-c) \\
+        &= -p^4 + (ab+bc+ca)p^2 - abcp\\
+        &= -6^4 + 47\cdot 6^2 - 60\cdot 6  = 36.
+    \end{align*}
+    So, the area is $S=6$.
+\end{solution}
+
+
+\begin{question}[name={2017 Denmark (Georg Mohr)}]
+    Let $A,B,C,D$ denote the digits in a four-digit number $n=\overline{ABCD}$. Determine the least $n$ greater than $2017$ satisfying that there exists an integer $x$ such that \[x=\sqrt{A+\sqrt{B+\sqrt{C+\sqrt{D+x}}}}.\]
+\end{question}
+
+
+\begin{question}[name={1999 Switzerland TST}]
+    Prove that for every polynomial $P(x)$ of degree $10$ with integer coefficients, there is an infinite (in both directions) arithmetic progression of integers that contains none of the values $P(k)$, where $k\in\mathbb Z$.
+\end{question}
+
+
+\begin{question}[name={2003 Switzerland TST}]
+    Find all quadratic polynomials $Q(x)=ax^2+bx+c$ such that three different prime numbers $p_1, p_2, p_3$ exist with
+    \[|Q(p_1)|=|Q(p_2)|=|Q(p_3)|=11.\]
+\end{question}
+
+
+\begin{question}[name={2006 Switzerland TST}]
+    The polynomial $P(x)=x^3-2x^2-x+1$ has three real roots $a>b>c$. Find the value of the expression
+    \[a^2b+b^2c+c^2a.\]
+\end{question}
+
+
+\begin{question}[name={2007 Switzerland TST}]
+    A pair $(r, s)$ of positive integers is called \textit{good} if a polynomial $P(x)$ with integer coefficients and distinct integers $a_1, a_2,\dots , a_r$ and $b_1, b_2,\dots, b_s$ exist such that
+    \begin{align*}
+        P(a_1)=P(a_2)=\cdots = P(a_r) &= 2,\\
+        P(b_1)=P(b_2)=\cdots = P(b_s) &= 5.
+    \end{align*}
+    \begin{tasks}
+        \task Show that for every \textit{good} pair $(r, s)$ of positive integers, we have $r \leq 3$ and $s \leq 3$.
+        \task Find all \textit{good} pairs.
+    \end{tasks}
+\end{question}
+
+\begin{question}[name={2009 Ecuador TST}]
+    Let $a$ and $b$ be two coprime positive integers. It is known that the coefficients of $x^2$ and $x^3$ are equal in the expansion of $(ax+b)^{2009}$. Find $a+b$.
+\end{question}
+
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h1581671
+    Let $a,b,c$ be non-zero real numbers. Show that if the equation $ax^{2}+bx+c=0$ has a positive solution for $x$, then the polynomial $f(x)$ with real coefficients, defined by: 
+    \[f(x)=5ax^{4}+mx^{3}+3bx^{2}+nx+c,\] 
+    has at least two real roots.
+\end{question}
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h1634950
+    The polynomial $P(x)$ is such that the polynomials \[P(P(x)) \qquad \text{and} \qquad P(P(P(x))),\] are strictly monotone on the whole real $x$ axis. Prove that $P(x)$ is also strictly monotone on $\mathbb R$.
+\end{question}
+
+
+\subsubsection{Calculating Sum of Powers of the Roots}
+
+\begin{tcolorbox}[title={Sum $S_p$ of Powers of Quadratic \& Cubic Roots}]
+\begin{question}[name={Sum of Powers of Quadratic Roots}]\label{p:sum-of-powers-quadratic}
+    Let $x_1$ and $x_2$ be the roots of the quadratic equation $ax^2+bx+c=0$ and define $S_p=x_1^p+x_2^p$. Prove the recursive formula between the sum of powers of quadratic roots:
+    \begin{align*}
+        aS_n + bS_{n-1} + cS_{n-2} = 0.
+    \end{align*}
+    Conclude that
+    \begin{enumerate}
+        \item The sum $S_p(x_1,x_2)$ of the $p^{th}$ powers of quadratic roots $x_1$ and $x_2$, is calculable in terms of $a,b,c$, and
+        \item In order to find the sum of $n^{th}$ powers of quadratic roots, one needs both $(n-1)^{th}$ and $(n-2)^{th}$ powers of the roots.
+    \end{enumerate}
+\end{question}
+
+\begin{question}[name={Sum of Powers of Cubic Roots}]\label{p:sum-of-powers-cubic}
+    Let $x_1,x_2$ and $x_3$ be the roots of the cubic equation $ax^3+bx^2+cx+d=0$ and define $S_p=x_1^p+x_2^p+x_3^p$. Prove the recursive formula between the sum of powers of roots:
+    \begin{align*}
+        aS_n + bS_{n-1} + cS_{n-2} + cS_{n-2} + dS_{n-3} = 0.
+    \end{align*}
+    Conclude that
+    \begin{enumerate}
+        \item The sum $S_p(x_1,x_2,x_3)$ of the $p^{th}$ powers of the cubic roots $x_1,x_2$ and $x_3$, is calculable in terms of $a,b,c, d$, and
+        \item In order to find the sum of $n^{th}$ powers of cubic roots, one needs all three of $(n-1)^{th}$, $(n-2)^{th}$, and $(n-3)^{th}$ powers of the roots.
+    \end{enumerate}
+\end{question}
+\end{tcolorbox}
+
+\begin{question}
+    Find the sum of the fourth powers of the roots of $2x^2-4x+1=0$.
+\end{question}
+
+\begin{solution}
+    Note that $S_0=x_1^0+x_2^0=2$ and $S_1=x_1+x_2=2$, and the recursive formula for the sum of quadratic roots would be $2S_n-4S_{n-1}+S_{n-2}=0$. Plugging $n=2,3,4$ in the latter equation, we find $S_2=3, S_3=5$, and $S_4=17/2$, respectively. Therefore, the answer is $S_4=x_1^4+x_2^4=\frac{17}{2}$.
+\end{solution}
+
+
+\begin{question}
+    Find the sum of the sixth powers of the roots of $x^3-3x+1=0$.
+\end{question}
+
+\begin{solution}[name=Soluion by Parviz Shahriari]
+    The final answer is $57$. Let $x_1,x_2,x_3$ be the roots of the equation $x^3-3x+1=0$ and define $S_p=x_1^p+x_2^p+x_3^p$. First, multiply the equation by $x^3$ and sum it up when plugging $x=x_1,x_2,x_3$, to obtain $S_6=3S_4-S_3$, and second, multiply the equation by $x$ and sum it up to obtain $S_4=3S_2-S_1$. This last one can be written as
+    \begin{align*}
+        x_1^4+x_2^4+x_3^4 &= 3(x_1^2+x_2^2+x_3^2) - (x_1+x_2+x_3)\\
+        &= 3\left[(x_1+x_2+x_3)^2-2(x_1x_2+x_2x_3+x_3x_1)\right] - (x_1+x_2+x_3).
+    \end{align*}
+    Since $x_1+x_2+x_3=0$ and $x_1x_2+x_2x_3+x_3x_1=-3$, we find $S_4=18$ and finally $S_6=57$.
+\end{solution}
+
+\begin{question}
+    If $x_1,x_2,x_3$ are the roots of the cubic equation $x^3-x+1=0$, find the sum of fifth powers of the roots: $x_1^5+x_2^5+x_3^5$.
+\end{question}
+
+\begin{solution}
+    Multiplying the equation by $x^2$ will result in $x^5-x^3+x^2=0$, and if we add the three equations formed by plugging $x=x_1,x_2,x_3$ in the latter equation, we find
+    \begin{align*}
+        x_1^5+x_2^5+x_3^5 = (x_1^3+x_2^3+x_3^3) - (x_1^2+x_2^2+x_3^2).
+    \end{align*}
+    It is now easy to find from the original equation that $x_1^3+x_2^3+x_3^3=-3$ and $x_1^2+x_2^2+x_3^2=2$, so that the answer would be $x_1^5+x_2^5+x_3^5=-5$.
+\end{solution}
+
+
+\begin{question}
+    If $x_1,x_2,x_3$ are the roots of $x^3-1=0$, prove that
+    \begin{align*}
+        x_1^n+x_2^n+x_3^n = x_1^nx_2^n + x_2^nx_3^n + x_3^nx_1^n.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Assuming $x_1=1$, we would have $x_1x_2=x_3$, $x_2x_3=x_1$, and $x_1x_2=x_3$ and the given equality is obvious.
+\end{solution}
+
+
+\begin{question}
+    Find the values of real numbers $a,b,p,q$ such that the equation
+    \begin{align*}
+        (2x-1)^{20} - (ax+b)^{20} = (x^2+px+q)^{10}
+    \end{align*}
+    becomes an identity  (true for all $x$).
+\end{question}
+
+\begin{solution}
+    The answer is:
+    \begin{align*}
+        a= \sqrt[20]{2^{20}-1}, \quad b=-\frac{\sqrt[20]{2^{20}-1}}{2}, \quad p=-1, \quad q=\frac{1}{4}.
+    \end{align*}
+\end{solution}
+
+\begin{question}
+    Find the sum of the eleventh powers of the roots of the equation 
+    \begin{align*}
+        x^3+x+1=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+    Using the trick of Sum of Powers of Cubic Roots (Problem~\ref{p:sum-of-powers-cubic}, if we define $S_p=x_1^p+x_2^p+x_3^p$, then $S_{n+3}+S_{n+1}+S_{n}=0$. In order to find $S_{11}$, we put $n=0,1,2,\dots,8$ into the latter equation, initiating with $S_0=x_1^0+x_2^0+x_3^0=3$, $S_1=x_1+x_2+x_3=0$, and $S_2 = x_1^2+x_2^2+x_3^2=-2(x_1x_2+x_2x_3+x_3x_1)=-2$. We can find $S_3,S_4,\dots,S_9$ from the equations $S_{n+3}+S_{n+1}+S_{n}=0$ with appropriate $n$, calculated below:
+    \begin{align*}
+        S_3 = -3, \quad S_4=2, \quad S_5 = 5, \quad S_6=1, \quad S_7=-7, \quad S_8=-6, \quad S_9=6.
+    \end{align*}
+    Finally, for $n=8$, we have $S_{11}+S_9+S_8=0$. Since $S_9+S_8=0$, we have $S_{11}=0$ and we are done.
+\end{solution}
+
+
+\begin{question}
+% https://artofproblemsolving.com/community/c6h3071917p27731902
+This was the seventh problem on 2023 Indian Statistical Institute UGB 2023 and it comes in two parts:
+    \begin{tasks}
+        \task Let $n \geq 1$ be an integer. Prove that $X^n+Y^n+Z^n$ can be written as a polynomial with integer coefficients in the variables $\alpha=X+Y+Z$, $\beta= XY+YZ+ZX$ and $\gamma = XYZ$.
+        \task Let $G_n=x^n \sin(nA)+y^n \sin(nB)+z^n \sin(nC)$, where $x,y,z, A,B,C$ are real numbers such that $A+B+C$ is an integral multiple of $\pi$. Using (a) or otherwise show that if $G_1=G_2=0$, then $G_n=0$ for all positive integers $n$.
+    \end{tasks}
+\end{question}
+
+
+
+
+\subsubsection{Forming Equations Given the Roots}
+
+\begin{tcolorbox}[title={Forming Equations A.K.A. Reverse Viète}]
+    \begin{question}
+        Concerning the polynomial equation
+        \begin{align*}
+            a_nx^n+a_{n-1}x^{n-1} + \cdots + a_1x + a_0 = 0,
+        \end{align*}
+        we can divide everything by $a_n\neq 0$ and apply Viète's Formula's in reverse to write the equation as
+        \begin{multline*}
+            x^n - \left(\sum x_1\right) x^{n-1} + \left(\sum x_1x_2\right) x^{n-2} - \left(\sum x_1x_2x_3\right)x^{n-3} +\\ \cdots + (-1)^n (x_1x_2\cdots x_n)=0.
+        \end{multline*}
+    \end{question}
+\end{tcolorbox}
+
+\begin{question}
+    Form the polynomial equation whose roots are the squares of the roots of the following equation:
+    \begin{align*}
+        x^3+2x^2-x+5=0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The easiest way is to set $y=x^2$ or $x=\pm \sqrt{y}$ into the equation:
+    \begin{align*}
+        (\sqrt{y})^3+2(\sqrt{y})^2-\sqrt{y}+5=0,
+    \end{align*}
+    which simplifies to $\sqrt{y}(1-y) = 5+2y$. Squaring both sides and writing in descending powers of $y$,
+    \begin{align*}
+        y^3-6y^2-19y-25=0.
+    \end{align*}
+    The more tiresome and time-consuming method would be to find $y_1+y_2+y_3, y_1y_2+y_2y_3+y_3y_1$, and $y_1y_2y_3$ in terms of the same functions in $x_i$, assuming $y_i=x_i^2$ for $i=1,2,3$. 
+\end{solution}
+
+
+
+\begin{question}
+    Let $x_1,x_2,x_3$, and $x_4$ be the roots of the equation $x^4-4x^2+x+3=0$. Find the sum
+    \begin{align*}
+        S = \frac{1}{2x_1-1}+\frac{1}{2x_2-1}+\frac{1}{2x_3-1}+\frac{1}{2x_4-1}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Define $y_i=1/(2x_i-1)$ and create a degree--$4$ polynomial equation in $y$ with roots $y_i$ for $i=1,2,3,4$. If $y=1/(2x-1)$, then $x=(y+1)/(2y)$. Plugging this last expression into the given equation,
+    \begin{align*}
+        \frac{(y+1)^4}{16y^4}-\frac{4(y+1)^2}{4y^2} + \frac{y+1}{2y} + 3 = 0.
+    \end{align*}
+    This will become, after simplification, 
+    \begin{align*}
+        41y^4-20y^3-10y^2+4y+1=0.
+    \end{align*}
+    The required sum $S=\sum_{i=1}^4 y_i$ equals the sum of roots of the above equation: $S=20/41$.
+\end{solution}
+
+
+
+\begin{question}
+    Let $x_1,x_2,\dots,x_n$ be the roots of the equation
+    \begin{align*}
+        x^n + x^{n-1} + x^{n-2} + \cdots + x + 1 =0.
+    \end{align*}
+    Find the sum
+    \begin{align*}
+        S = \frac{1}{x_1-1}+\frac{1}{x_2-1}+\cdots + \frac{1}{x_n-1}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    If $y=1/(x-1)$, then $x=(y+1)/y$. Plugging this change of variable into the original equation and simplifying, we arrive at
+    \begin{align*}
+        (y+1)^n + y(y+1)^{n-1} + y^2(y+1)^{n-2} + \cdots + y^{n-1}(y+1)+y^n=0.
+    \end{align*}
+    The coefficient of $y^{n-1}$ in the above polynomial is $n(n+1)/2$ and the coefficient of $y^n$ is $n+1$, so that the required sum in question is equal to $-(n+1)/2$.
+\end{solution}
+
+
+
+\begin{question}
+    Let $x_1,x_2$, and $x_3$ be the roots of the equation $x^3-3x^2-x-7=0$. Find the sum
+    \begin{align*}
+        S = \frac{1}{x_1^2-1}+\frac{1}{x_2^2-1}+\frac{1}{x_3^2-1}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    We need to form a polynomial whose roots are $y_i=1/(x_i^2-1)$ for $i=1,2,3$, and it is easy to find the polynomial by the change of variable $x=\sqrt{(y+1)/y}$ in the original equation. The new polynomial would be
+    \begin{align*}
+        100y^3 + 60y^2 + 8y - 1 =0,
+    \end{align*}
+    so that the sum of the roots of the equation is $S=-3/5$.
+\end{solution}
+
+\begin{question}
+    Let $\alpha$ be a root of the equation $x^{13}-1=0$. Find a polynomial with rational coefficients such that it has $\alpha^4 + \alpha^6 + \alpha^7 + \alpha^9$ among its roots.
+\end{question}
+
+\begin{solution}
+    The general answer is 
+    \begin{align*}
+        (y-4)(y^3+y^2-4y+1).
+    \end{align*}
+    If $\alpha=1$, then $\alpha^4 + \alpha^6 + \alpha^7 + \alpha^9=4$ and the linear equation $y-4=0$ is the solution. If $\alpha \neq 1$, since $\alpha^{13}-1=0$, we have
+    \begin{align*}
+        \alpha^{12} + \alpha^{11} + \cdots + \alpha^2 + \alpha + 1 = 0.
+    \end{align*}
+    Define
+    \begin{align*}
+        \begin{cases}
+            y_1 &= \alpha^4 + \alpha^6 + \alpha^7 + \alpha^9,\\
+            y_2 &= \alpha^2 + \alpha^3 + \alpha^{10} + \alpha^{11},\\
+            y_3 &= \alpha + \alpha^5 + \alpha^8 + \alpha^{12}.
+        \end{cases}
+    \end{align*}
+    It is easy to see that $y_1+y_2+y_3=-1$ and that $y_1y_2=-1+y_1$, $y_2y_3=-1+y_2$, and $y_3y_1=-1+y_3$. Therefore, $y_1y_2+y_2y_3+y_3y_1=-4$. Finally, we can find the product
+    \begin{align*}
+        y_1y_2y_3=(-1+y_1)y_3=-y_3+y_1y-3 = -y_3 + (-1+y_3) = -1.
+    \end{align*}
+    Finally, the equation with $y_1,y_2,y_3$ as its roots is obtained:
+    \begin{align*}
+        y^3+y^2-4y+1=0.
+    \end{align*}
+\end{solution}
+
+\begin{question}
+    Find the quadratic equation whose roots are fourth powers of the roots of $ax^2+bx+c=0$.
+\end{question}
+
+\begin{solution}
+    Let $x_1$ and $x_2$ be the roots of $ax^2+bx+c=0$. We need $x_1^4+x_2^4$ and $x_1^4x_2^4$. For the sum of fourth powers of the roots,
+    \begin{align*}
+        x_1^4 + x_2^4 &= (x_1+x_2)^4 - 2x_1x_2(2x_1^2+3x_1x_2+2x_2^2)\\
+        &= \frac{b^4}{a^4} - \frac{4b^2c}{a^3} + \frac{2c^2}{a^2}.
+    \end{align*}
+    Also, $x_1^4x_2^4=c^4/a^4$, and the quadratic equation that has $x_1^4$ and $x_2^4$ would be
+    \begin{align*}
+        a^4x^2 - (b^4-4ab^2c+2a^2c^2)x + c^4 = 0.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Find a cubic polynomial whose roots are
+    \begin{align*}
+        \cos\frac{\pi}{7}, \qquad \cos\frac{3\pi}{7}, \qquad \cos\frac{5\pi}{7}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    We need to find the sum of the roots, sum of their pairwise product, and their product. Divide and multiply the sum by $2\sin(\pi/7)$ to find
+    \begin{align*}
+        \cos\frac{\pi}{7}+ \cos\frac{3\pi}{7}+ \cos\frac{5\pi}{7} = \frac{1}{2}.
+    \end{align*}
+    To find the sum of pairwise product of the roots, use the product to sum trigonometric formulas to obtain
+    \begin{align*}
+        \cos\frac{\pi}{7}\cos\frac{3\pi}{7}+ \cos\frac{3\pi}{7}\cos\frac{5\pi}{7}+ \cos\frac{5\pi}{7}\cos\frac{\pi}{7} = -\frac{1}{2}.
+    \end{align*}
+    It is also not difficult to see that the product of the roots is $-1/8$. So, the cubic equation is
+    \begin{align*}
+        8x^3 - 4x^2 - 4x + 1 = 0.
+    \end{align*}
+\end{solution}
+
+\begin{question}
+    Find a quartic polynomial whose roots are the square of the roots of the following equation:
+    \begin{align*}
+        x^4 + 2x^3 + x^2 - 3x + 5 = 0.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Let $y$ be the variable for the required quartic polynomial, so that we can assume $y=x^2$ or $x=\pm \sqrt{y}$ and plug in $x=\sqrt y$ in the given equation, rationalize and simplify to find
+    \begin{align*}
+        y^4 - 2y^3 + 23y^2 + y + 25 = 0.
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Let $x_1=1$, $x_2,\dots, x_n$ be the roots of $x^n-1=0$. Find $(1-x_2)(1-x_3)\cdots (1-x_n)$.
+\end{question}
+
+\begin{solution}
+    If we remove $x=1$ from the roots of $x^n-1$, we find that $x_2,x_3,\dots,x_n$ would be the roots of 
+    \begin{align*}
+        x^{n-1} + x^{n-2} + \cdots + x+ 1 = 0,
+    \end{align*}
+    which means
+    \begin{align*}
+        x^{n-1} + x^{n-2} + \cdots + x+ 1 = (x-x_2)(x-x_3)\cdots (x-x_n).
+    \end{align*}
+    Plugging $x=1$, we find that the answer is $n$.
+\end{solution}
+
+
+\subsubsection{Common Roots of Equations}
+
+\begin{question}
+    Find the relationship between $p,q,p',q'$, such that the two equations
+    \begin{align*}
+        \begin{cases}
+            x^2+px+q &= 0,\\x^2+p'x+q' &= 0.
+        \end{cases}
+    \end{align*}
+    have a common root $x=\alpha$, and then find the quadratic equation that has uncommon roots $x=\beta$ and $x=\beta'$ of the equations.
+\end{question}
+
+\begin{solution}
+    The main equation is $(p-p')(p'q-pq')=(q-q')^2$, and the required quadratic equation is
+    \begin{align*}
+        (p'q-pq')x^2+(q^2-q'^2)x+qq'(p-p')=0.
+    \end{align*}
+\end{solution}
+
+
+
+\begin{question}
+    Find the condition for existence of a common root of these equations:
+    \begin{align*}
+        \begin{cases}
+            x^3+px+q &=0,\\x^3+p'x+q &=0.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+\begin{solution}
+    The common root can be found by subtracting one equation from the other: $x=-(q-q')/(p-p')$. Plugging in this root, we find the relationship between $p,q,p',q'$:
+    \begin{align*}
+        (q-q')^3 = (p-p')^2 (pq'-p'q).
+    \end{align*}
+\end{solution}
+
+
+
+\begin{question}
+    Find $m$ such that one of the roots of the equation $x^2-x-m=0$ is double one of the roots of the equation $x^2-(m+2)x+3=0$.
+\end{question}
+
+\begin{solution}
+    The answer is $m=2$. Put $x=\alpha$ in $x^2-(m+2)x+3=0$ and its double $x=2\alpha$ would be a root of $x^2-x-m=0$. So, $4\alpha^2-2\alpha-m=0$ and $\alpha^2-(m+2)\alpha+3=0$. This will lead to two equations
+    \begin{align*}
+        \alpha = \frac{m+12}{4m+6} \quad \text{and} \quad \alpha^2=\frac{m^2+2m+6}{4m+6}.
+    \end{align*}
+    Conclude that
+    \begin{align*}
+        \left(\frac{m+12}{4m+6}\right)^2 = \frac{m^2+2m+6}{4m+6},
+    \end{align*}
+    which leads to $4m^3+13m^2+12m-108=0$, having only $m=2$ as a real root.
+\end{solution}
+
+\begin{tcolorbox}
+    \begin{question}
+        If the greatest common factor of polynomials $f(x)$ and $g(x)$ is a polynomial of degree $n$, prove that it means that the equations $f(x)=0$ and $g(x)=0$ have $n$ common roots.
+    \end{question}
+\end{tcolorbox}
+
+
+\begin{question}
+    Find the common roots of these two equations:
+    \begin{align*}
+        \begin{cases}
+            2x^4-x^3-4x^2+1&=0,\\x^4+x^3-4x^2-x+1&=0.
+        \end{cases}
+    \end{align*}
+    Furthermore, solve each equation separately. 
+\end{question}
+
+\begin{solution}
+    Once the greatest common factor is found to be $x^2-x-1$,  it is easy to solve the problem:
+    \begin{align*}
+        \begin{cases}
+            (x^2-x-1)(2x^2+x-1)&=0,\\(x^2-x-1)(x^2+2x-1)&=0.
+        \end{cases}
+    \end{align*}
+    The common roots are $\frac{1\pm\sqrt{5}}{2}$ and the first equation has two more roots $-1$ and $1/2$, whereas the second equation has $-1\pm\sqrt{2}$. 
+\end{solution}
+
+
+\begin{question}
+    Find $m$ such that the following two equations have three roots in common, and then solve them separately.
+    \begin{align*}
+        \begin{cases}
+            f(x)=2x^4-7x^3-2x^2+(7m-2)x+2&=0,\\g(x)=x^4-7x^3+13x^2-x-6&=0.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The final remainder of division of $f$ by the greatest common factor would be $(1-m)x^2+3(m-1)x$, which would be zero iff $m=1$, leading to the cubic equation $x^3-4x^2+x+2=0$ whose roots are the common roots of $f(x)=0$ and $g(x)=0$. It is not difficult to simplify the equations to find the roots:
+    \begin{align*}
+        \begin{cases}
+            (x-1)(x-3)(x^2-3x-2)&=0,\\(x-1)(2x+1)(x^2-3x-2)&=0.
+        \end{cases}
+    \end{align*}
+\end{solution}
+
+
+\begin{question}
+    Find the common roots of the following quartic equations:
+    \begin{align*}
+        \begin{cases}
+            x^4-3x^3+4x^2-5x-3 &=0,\\x^4+x^3-5x^2-7x-2 &=0.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The common roots are $1 \pm \sqrt{2}$.
+\end{solution}
+
+\subsubsection{Number Theoretic Wizardry on Polynomial Roots}
+
+\begin{question}
+    Prove that if the three-digit decimal $\overline{abc}$ is a prime number, then the roots of the quadratic $ax^2+bx+c=0$ are irrational.
+\end{question}
+
+\begin{solution}
+    Let us assume, in hope of reaching a contradiction, that $b^2-4ac=d^2$, where $d$ is a non-negative integer. Since $a$ and $c$ are positive, it means $d<b$. Therefore, we can write
+    \begin{align*}
+        4a \cdot \overline{abc} &= 4a(100a+10b+c)=400a^2+40ab+4ac\\
+        &= (20a+b)^2 - (b^2-4ac) = (20a+b)^2 - d^2\\
+        &= (20a+b+d)(20a+b-d).
+    \end{align*}
+    By Euclid's lemma in number theory if a prime $p$ divides a product $xy$, then $p$ divides either $x$ or $y$ (or both). Since $\overline{abc}$ is a prime that divides the product $(20a+b+d)(20a+b-d)$, we must have either $\overline{abc} \mid 20a+b+d$ or $\overline{abc} \mid 20a+b-d$. In either case, the coefficient of $a$ in $\overline{abc}$ is $100$ whereas it is $20$ in both $20a+b\pm d$, and it is trivial that $\overline{abc}$ cannot divide any of those two numbers. This is the contradiction we were looking for, and the proof is complete.
+\end{solution}
+
+\begin{question}
+    Prove that the sum of cubes of the roots of the equation $x^3+px+q=0$ with integer coefficients $p$ and $q$ is an integer divisible by $3$.
+\end{question}
+
+\begin{solution}
+    Let $\alpha,\beta,\gamma$ be the three roots of $x^3+px+q=0$. We can use the well-known identity
+    \begin{align*}
+        \alpha^3+\beta^3+\gamma^3 = (\alpha+\beta+\gamma)(\alpha^2+\beta^2+\gamma^2-\alpha\beta-\beta\gamma-\gamma\alpha)+3\alpha\beta\gamma.
+    \end{align*}
+    Since the $x^2$ is missing, the sum of the roots $\alpha+\beta+\gamma$ will be zero, and because the constant term is $q$, the product of the roots $\alpha\beta\gamma$ will be $-q$. As a result,
+    \begin{align*}
+        \alpha^3+\beta^3+\gamma^3 = 3\alpha\beta\gamma=-3q,
+    \end{align*}
+    and the sum of cubes of roots $\alpha^3+\beta^3+\gamma^3$ is in fact divisible by $3$.
+\end{solution}
+
+\begin{question}
+    For what positive integer values of $n$ is $n^2+(n+1)^2+(n+2)^2+(n+3)^2$ divisible by $10$?
+\end{question}
+
+\begin{solution}
+    We may write $n^2+(n+1)^2+(n+2)^2+(n+3)^2$ in two ways:
+    \begin{enumerate}
+        \item Expand it as $2(2n^2+6n+7)$. If this equals a multiple of $10$, say $10k$, then we need to solve the quadratic $2n^2+6n+7=5k$ in $n$. The determinant of this equation would be an integer only when $n$ leaves a remainder of $1$ in division by $5$.
+        \item Complete the square and write the given sum as $(2n+3)^2+5$. If this number is divisible by $10$, then the last digit of $2n+3$ must be $5$, that is, $2n+3=10t+5$ for some non-negative integer $t$. This also simplifies to the same solution $n=5t+1$.
+    \end{enumerate}
+\end{solution}
+
+\subsection{Using Viète's Formulas to Solve Systems of Equations}
+
+\begin{question}
+Given real numbers $a,b,c$, solve the following system of equations for $x,y,z$:
+    \begin{align*}
+        \begin{cases}
+            (a-1)x-a(a-1)y-(a^2+1)z+a^3 &= 0,\\(b-1)x-b(b-1)y-(b^2+1)z+b^3 &= 0,\\(c-1)x-c(c-1)y-(c^2+1)z+c^3 &= 0.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Write the system of equations in order of descending powers of $a,b,c$:
+    \begin{align*}
+        \begin{cases}
+            a^3-(y+z)a^2+(x+y)a-(x+z) &= 0,\\b^3-(y+z)b^2+(x+y)b-(x+z) &= 0,\\c^3-(y+z)c^2+(x+y)c-(x+z) &= 0.
+        \end{cases}
+    \end{align*}
+        So, $u=a,b,c$ would be the roots of $u^3-(y+z)u^2+(x+y)u-(x+z)=0$, and Viète's Formulas result in
+        \begin{align*}
+            \begin{cases}
+                y+z &= a+b+c,\\ x+y &= ab+bc+ca,\\ z+x &= abc. 
+            \end{cases}
+        \end{align*}
+        All three of these equations add up to $2(x+y+z)$, so that we find
+        \begin{align*}
+            x+y+z = \frac{1}{2}\left(a+b+c+ab+bc+ca+abc\right),
+        \end{align*}
+        and it is easy to calculate $x,y,z$ by subtracting $y+z, z+x, x+y$ from $x+y+z$:
+        \begin{align*}
+            \begin{cases}
+                x &= \frac{1}{2}\left(-a-b-c+ab+bc+ca+abc\right),\\
+                y &= \frac{1}{2}\left(+a+b+c+ab+bc+ca-abc\right),\\
+                z &= \frac{1}{2}\left(+a+b+c-ab-bc-ca+abc\right).
+            \end{cases}
+        \end{align*}
+\end{solution}
+
+\begin{tcolorbox}
+    \begin{definition}
+        We call a system of equations \textbf{symmetric} if the swapping of any of its two variables with each other would not change the system. For instance, these systems are symmetric:
+        \begin{align*}
+            \begin{cases}
+                x^2+y^2 &=\frac{7}{3},\\x^3+y^3 &=-3.
+            \end{cases}; \qquad
+            \begin{cases}
+                x+y+z &= 2a,\\ x^2+y^2+z^2 &=6a^2,\\ x^3+y^3+z^3 &= 8a^3.
+            \end{cases}
+        \end{align*}
+    \end{definition}
+\end{tcolorbox}
+
+\begin{question}
+    Solve the symmetric equation
+    \begin{align*}
+            \begin{cases}
+                x^2+y^2=\dfrac{7}{3},\\x^3+y^3=-3.
+            \end{cases}
+        \end{align*}
+    for $x$ and $y$.
+\end{question}
+
+\begin{solution}
+    If $x$ and $y$ are the roots of a quadratic equation, in order to form that equation we need $S=x+y$ and $P=xy$. Then, the given system of equations becomes
+    \begin{align*}
+        \begin{cases}
+            S^2-2P=\dfrac{7}{3},\\ S^3-3PS = -3.
+        \end{cases}
+    \end{align*}
+    Plug $P$ from the first equation into the second equation to obtain a cubic equation in $S$: $S^3-7S-6=0$, giving $S=-1,-2,3$. 
+    \begin{itemize}
+        \item When $S=-1$, we have $P=-\dfrac{2}{3}$ and $x,y = \dfrac{-3\pm\sqrt{33}}{6}$,
+        \item When $S=-2$, we have $P=\dfrac{5}{6}$ and $x,y = \dfrac{-6\pm\sqrt{6}}{6}$,
+        \item When $S=3$, we have $P=\dfrac{10}{3}$ and $x,y$ will be roots of $3v^2-9v+10=0$ which are imaginary.
+    \end{itemize}
+\end{solution}
+
+
+\begin{question}
+    Solve the symmetric equation
+    \begin{align*}
+            \begin{cases}
+                x+y+z &= 2a,\\ x^2+y^2+z^2 &=6a^2,\\ x^3+y^3+z^3 &= 8a^3.
+            \end{cases}
+        \end{align*}
+    for $x,y$ and $z$.
+\end{question}
+
+
+\begin{solution}
+    If $x,y$ and $z$ are the roots of a cubic equation, in order to form that equation we need $S=x+y+z$, $P=xy+yz+zx$, and $Q=xyz$. Then, the given system of equations becomes
+    \begin{align*}
+        \begin{cases}
+            S=x+y+z &= 2a,\\ P=xy+yz+za&=-a^2,\\ Q=xyz &= -2a^3.
+        \end{cases}
+    \end{align*}
+    As a result, $u=x,y,z$ are the roots of the equation $u^3-2au^2-a^2u+2a^3=0$. It is then easy to find $u=\pm a, 2a$.
+\end{solution}
+
+\subsection{Homogeneous Equations}
+
+\begin{tcolorbox}[title={Homogeneous Equations}]
+    \begin{definition}
+        We call a system of equations \textbf{homogeneous} if each of its equations is a \textbf{homogeneous polynomial} in the unknowns. In simpler words, that is, the the terms containing unknowns are of the same degree. For instance, the system of equations
+    \begin{align*}
+        \begin{cases}
+            ax^2+by^2+cxy=d,\\a'x^2+b'y^2+c'xy=d'.
+        \end{cases}
+    \end{align*}
+    is homogeneous with respect to $x$ and $y$ since all the terms containing $x,y$ in the system are of degree $2$. 
+    \end{definition}
+    \begin{question}
+        In order to solve the following homogeneous system of equations in $x$ and $y$,
+        \begin{align*}
+            \begin{cases}
+                ax^2+by^2+cxy &= d,\\a'x^2+b'y^2+c'xy &=d'.
+            \end{cases}
+        \end{align*}
+        assume that the ratio of $y$ over $x$ equals $\lambda$, or simply $y=\lambda x$, then solve for $\lambda$.
+        \begin{definition}
+            We call a system of linear equations \textbf{linearly homogeneous} if there are no constant terms and the degree of all terms containing unknowns is $1$. For instance, the two systems of equations
+            \begin{align*}
+                \begin{cases}
+                    ax+by &= 0,\\a'x+b'y &= 0.
+                \end{cases} \qquad
+                \begin{cases}
+                ax+by+cz &= 0,\\a'x+b'y+c'z &= 0,\\ a''x+b''y+c''z &=0.
+                \end{cases}
+            \end{align*}
+            are \textbf{linearly homogeneous} systems of equations with respect to $x$ and $y$ since all right sides are zero and all the terms containing $x,y$ in the system are of degree $1$.
+        \end{definition}
+    \end{question}
+\end{tcolorbox}
+
+\begin{question}
+    Solve the following homogeneous equations in $x$ and $y$:
+    \begin{enumerate}
+        \item 
+        \begin{align*}
+            \begin{cases}
+                2x^2+5y^2-3xy &= 7,\\3x^2-2y^2+xy &= 12.
+            \end{cases}
+        \end{align*}
+        \item
+        \begin{align*}
+            \begin{cases}
+                x^3+3x^2y-y^3 &= 3,\\2x^3-xy^2+y^3 &= 2.
+            \end{cases}
+        \end{align*}
+    \end{enumerate}
+\end{question}
+
+\begin{solution}
+    The answers are:
+    \begin{enumerate}
+        \item Here, $\lambda=y/x$ could be either $1/2$ or $3/37$, with $\lambda=1/2$ resulting in $(x,y)=(2,1), (-2,-1)$ and $\lambda=3/37$ yielding
+        \begin{align*}
+            (x,y)=\left(\pm\frac{37}{2}\sqrt{\frac{7}{779}},\pm\frac{3}{2}\sqrt{\frac{7}{779}}\right).
+        \end{align*}
+        \item This would lead to $\lambda=1$ (giving $x=y=1$) or $\lambda=\frac{-1\pm\sqrt{21}}{5}$ (yielding $x=\frac{5}{\sqrt{170\mp\sqrt{21}}})$.
+    \end{enumerate}
+\end{solution}
+
+
+\begin{question}
+    Find $m$ such that the following system of equations has a non-zero solution:
+    \begin{align*}
+        \begin{cases}
+            (m-2)x+(m-1)y &=0,\\mx+2(2m-3)y &=0.
+        \end{cases}
+    \end{align*}
+\end{question}
+\begin{solution}
+    In case
+    \begin{align*}
+        \frac{m-2}{m}\neq\frac{m-1}{2(2m-3)},
+    \end{align*}
+    then the only solution would be $x=y=0$. However, if the equality is at work, we would have other solutions as well: the equation would be $3m^2-13m+12=0$ with roots $m=3$ and $m=4/3$. If $m=3$, then $x+2y=0$; and if $m=4/3$, then $2x-y=0$.
+\end{solution}
+
+\begin{question}
+    Solve the following linearly homogeneous system of equations in $x,y,z$:
+    \begin{align*}
+        \begin{cases}
+            x+ay+a^2z=0,\\x+by+b^2z=0,\\x+cy+c^2z=0.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    If $a\neq b$, $b\neq c$, and $c\neq a$, then $x=y=z=0$. Otherwise, if two are equal, say, $a=b$, we have $x=cz$ and $y=-(a+c)z$, where $z$ can be anything. Finally, in the case when $a=b=c$, we have $z=-(x+ay)/a^2$, where $x$ and $y$ are arbitrary.
+\end{solution}
+
+
+\subsection{Miscellaneous Systems of Equations}
+
+\begin{question}
+    Find all solutions $x,y$ that satisfy both $x^{x-y}=2y-1$ and
+    \begin{align*}
+        \sqrt{x^2+5x+2y-3}+\sqrt{x^2+x+y+2} = \sqrt{x^2+4x+3y-2}+\sqrt{x^2+2y+3}.
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    The equation containing square roots can be written as
+    \begin{align*}
+        \sqrt{A+(x-y-z)} + \sqrt{B + (x-y-1)} = \sqrt{A} + \sqrt{B},
+    \end{align*}
+    where $A=x^2+4x+3y-2$ and $B=x^2+2y+3$. It is easy to see that $x-y-1=0$, and the only solution to the system of equations is $(x,y)=(3,2)$.
+\end{solution}
+
+\begin{question}
+    Given real numbers $a,b$, solve the system of equations for $x,y$:
+    \begin{align*}
+        \begin{cases}
+            x^3=ax+by,\\ y^3 = bx+ay.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+\begin{solution}
+    Adding and subtracting the two equations, we arrive at another system of equations:
+    \begin{align*}
+        (x+y)(x^2-xy+y^2-a-b)=0,\\ (x-y)(x^2+xy+y^2-a+b)=0.
+    \end{align*}
+    This can be turned into four systems of equations which are all easy to solve:
+    \begin{tasks}(2)
+        \task $\begin{cases}
+            x+y=0,\\x-y=0.
+        \end{cases}$
+        \task $\begin{cases}
+            x+y=0,\\ x^2+xy+y^2=a-b.
+        \end{cases}$
+        \task $\begin{cases}
+            x-y=0,\\ x^2 - xy + y^2 = a+b.
+        \end{cases}$
+        \task $\begin{cases}
+            x^2-xy+y^2 = a+b,\\ x^2+xy+y^2 = a-b.
+        \end{cases}$
+    \end{tasks}
+\end{solution}
+
+\begin{question}
+    If $x=y^3-y$ and $y=3x-x^3$, find all such $x$ and $y$.
+\end{question}
+
+\begin{solution}
+    The equations are $y^3=x+3y$ and $x^3=3x-y$. The trivial solution is $x=y=0$. When $x\neq 0$, we have $y\neq 0$, and assuming $y=tx$, the equations become
+    \begin{align*}
+        \frac{y^3}{x^3}= \frac{x+3y}{3x-y} \implies t^3 = \frac{1+3t}{3-t}.
+    \end{align*}
+    So, we find a quartic equation in $t$:
+    \begin{align*}
+        t^4-3t^3+3t+1=0,
+    \end{align*}
+    which may be written as a quadratic in $t^2-1$:
+    \begin{align*}
+        (t^2-1)^2 -3t(t^2-1) + 2t^2 = 0.
+    \end{align*}
+    The four solutions for $t$ are $t=1\pm \sqrt{2}$ and $t=(1\pm\sqrt{5})/2$. Since $x^3=3x-tx$ but $x\neq 0$, we may find $x$ and $y$ in terms of $t$: $x=\pm\sqrt{3-t}$ and $y=\pm t\sqrt{3-t}$. There are a total of $8$ solutions which are all described above.
+\end{solution}
+
+
+
+\begin{question}
+    Remove $x$ and $y$ from the equations of the following system:
+    \begin{align*}
+        \begin{cases}
+            x + y &= p + qxy,\\ 2x &=s+tx^2,\\ 2y &=s+ty^2.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+\begin{question}
+    Prove that if $a^3 \neq 3ab-2c$, then the following system of equations is inconsistent (does not have solutions):
+    \begin{align*}
+        \begin{cases}
+            x+y &= a,\\ x^2+y^2 &= b,\\ x^3+y^3 &= c.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+\begin{question}
+    Let $N>1$ be a positive integer. Define
+    \begin{align*}
+        p=\sqrt[3]{\log N^{p-3}}, \qquad q=\sqrt[3]{\log N^{q-3}}, \qquad r=\sqrt[3]{\log N^{r-3}}.
+    \end{align*}
+    Find $\displaystyle \frac{1}{p}+\frac{1}{q}+\frac{1}{r}$.
+\end{question}
+
+\begin{solution}
+    It is easy to manipulate the given equations and see that $t=p,q,r$ are the roots of
+    \begin{align*}
+        t^3 - t\log N + 3\log N = 0,
+    \end{align*}
+    so that $pq+qr+rp=\log N$ and $pqr=-3\log N$. Finally, the sum of reciprocals of $p,q,r$ equals $(pq+qr+rp)/pqr=-1/3$.
+\end{solution}
+
+
+\begin{tcolorbox}
+    \begin{question}\label{p:sys-eq-A}
+        Solve the following systems of equations for $x,y,z,t$, assuming $a,b,c,d$ are appropriate given real numbers. Problems a) through j) are listed separately in from Problem~\ref{p:sys-eq-A} to Problem~\ref{p:sys-eq-J} to give them proper importance in Kaywañan.
+        \begin{tasks}(2)
+            \task $\begin{cases}
+                x+xy+y &= 11,\\xy^2+x^2y &= 30.
+            \end{cases}$
+            \task $\begin{cases}
+                x^2-xy+y^2 &= 7,\\x^3+y^3 &=35.
+            \end{cases}$
+            \task $\begin{cases}
+                x^3+y^3 &=7,\\ xy(x+y) &= -2.
+            \end{cases}$
+            \task $\begin{cases}
+                x^4+y^4 &= a^4,\\ x+y &= b.
+            \end{cases}$
+            \task $\begin{cases}
+                x^5+y^5 &= a^5,\\ x+y &= a.
+            \end{cases}$
+            \task $\begin{cases}
+                x+y+z &= 0,\\ \dfrac{x^2+y^2+z^2}{x^3+y^3+z^3} &= 1,\\xyz &= 2.
+            \end{cases}$
+            \task $\begin{cases}
+                x+y+z &=a,\\x^2+y^2+z^2 &=a^2,\\x^3+y^3+z^3 &=a^3.
+            \end{cases}$
+            \task $\begin{cases}
+                x-ay-a^2z-a^3t &=a^4,\\x-by-b^2z-b^3t &=b^4,\\x-cy-c^2z-c^3t &=c^4,\\x-dy-d^2z-d^3t &=d^4.
+            \end{cases}$
+            \task $\begin{cases}
+                x\sin a + y\sin 2a + z\sin 3a = \sin 4a,\\ x\sin b + y\sin 2b + z\sin 3b = \sin 4b,\\ x\sin c + y\sin 2c + z\sin 3c = \sin 4c.
+            \end{cases}$
+            \task $\begin{cases}
+                \displaystyle \frac{x^2}{a^2}+\frac{xy}{ab}+\frac{y^2}{b^2} &=3,\\ \\b^2x^2+xy-a^2y^2 &=ab.
+            \end{cases}$
+        \end{tasks}
+    \end{question}
+\end{tcolorbox}
+
+
+% \begin{solution}
+%     \begin{tasks}
+%         \task Write the system as
+%         \begin{align*}
+%             xy+(x+y) &= 11,\\xy(x+y) &=30.
+%         \end{align*}
+%         From here one can find $x+y$ and $xy$ and eventually $x$ and $y$:
+%         \begin{align*}
+%             (x,y) = (3,2), (2,3), (1,5), (5,1).
+%         \end{align*}
+%         \task The solutions are $(x,y)=(2,3)$ and $(3,2)$.
+%         \task Add three times the second equation to the first equation to find $x+y$. The solutions are $(x,y)=(-1,2)$ and $(2,-1)$.
+%         \task Write the first equation as $(x^2+y^2)^2-2x^2y^2=a^4$ and substitute $x^2+y^2=b^2-2xy$ from the second equation into the first equation. The result will be a quadratic equation in $xy$:
+%         \begin{align*}
+%             2(xy)^2 - 4b^2\cdot xy + (b^4-a^4)=0.
+%         \end{align*}
+%         \task The solutions are
+%         \begin{align*}
+%             (x,y) = (a,0), (0,a), \left(a\frac{1\pm i\sqrt{3}}{2},a\frac{1\mp i\sqrt{3}}{2}\right).
+%         \end{align*}
+%         \task Using the identity
+%         \begin{align*}
+%             x^3+y^3+z^3=(x+y+z)(x^2+y^2+z^2-xy-yz-zx)+3xyz,
+%         \end{align*}
+%         we can reduce the equations to
+%         \begin{align*}
+%             x^2+y^2+z^2=6 \implies xy+yz+zx=-3.
+%         \end{align*}
+%         Now, $t=x,y,y$ are the roots of $t^3-3t-2=0$:
+%         \begin{align*}
+%             (x,y,z)=(2,-1,-1), (-1,2,-1), (-1,-1,2).
+%         \end{align*}
+%         \task Solutions are $(x,y,z)=(a,0,0), (0,a,0), (0,0,a)$.
+%         \task Note that $u=a,b,c,d$ are the four roots of
+%         \begin{align*}
+%             u^4+tu^3+zu^2+yu-x=0.
+%         \end{align*}
+%         The relationship between the roots of this polynomial gives us the solutions to the system of equations:
+%         \begin{align*}
+%             \begin{cases}
+%                 x=-abcd,\\y=-(abc+abd+bcd+acd),\\z=ab+ac+ad+bc+bd+cd,\\t=-(a+b+c+d).
+%             \end{cases}
+%         \end{align*}
+%         \task Assuming $a,b,c \neq k\pi$, we can divide both sides of the first equation by $\sin a$, second equation by $\sin b$, and third by $\sin c$. As a result, we find that $u=\cos a,\cos b, \cos c$ are the roots of 
+%         \begin{align*}
+%             8u^3-4zu^2-2(y+2)u+(z-x)=0.
+%         \end{align*}
+%         This simplifies to
+%         \begin{align*}
+%             \begin{cases}
+%                 \cos a + \cos b + \cos c =\displaystyle \frac{z}{2},\\ \cos a \cos b + \cos b  \cos c + \cos c \cos a = \displaystyle -\frac{y+2}{4},\\ \cos a \cos b \cos c = \displaystyle \frac{x-z}{8}.
+%             \end{cases} 
+%         \end{align*}
+%         and so the solutions are
+%         \begin{align*}
+%             \begin{cases}
+%                 x= 8 \cos a \cos b \cos c + 2 (\cos a + \cos b + \cos c),\\ y=-4(\cos a \cos b + \cos b  \cos c + \cos c \cos a)-2,\\ z = 2 (\cos a + \cos b + \cos c).
+%             \end{cases}
+%         \end{align*}
+%         \task Let $y=mx$ and simplify the system into
+%         \begin{align*}
+%             \begin{cases}
+%                 b^2x^2+abmx^2+a^2m^2x^2=3a^2b^2,\\b^2x^2+mx^2-a^2m^2x^2=ab.
+%             \end{cases}
+%         \end{align*}
+%         Dividing the first equation by the second, we arrive at a quadratic equation in $m$:
+%         \begin{align*}
+%             a^2(3ab+1)m^2-2abm-b^2(3ab-1)=0.
+%         \end{align*}
+%         The roots for $m$ are $m=b/a$ and $m=b(1-3ab)/(a(1+3ab))$, so that the final solutions would be
+%         \begin{align*}
+%             (x,y)=(a,b),(-a,-b),\left(\pm a\sqrt{\frac{3ab+1}{3ab-1}}, \pm b\sqrt{\frac{3ab-1}{3ab+1}}\right).
+%         \end{align*}
+%     \end{tasks}
+% \end{solution}
+
+
+\begin{solution}
+    Write the system as
+        \begin{align*}
+            xy+(x+y) &= 11,\\xy(x+y) &=30.
+        \end{align*}
+        From here one can find $x+y$ and $xy$ and eventually $x$ and $y$:
+        \begin{align*}
+            (x,y) = (3,2), (2,3), (1,5), (5,1).
+        \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-B}
+    Solve the symmetric system of equations $$\begin{cases}
+        x^2-xy+y^2 &= 7,\\x^3+y^3 &=35.
+    \end{cases}$$ for $x$ and $y$.
+\end{question}
+
+
+\begin{solution}
+    The solutions are $(x,y)=(2,3)$ and $(3,2)$.
+\end{solution}
+
+
+
+\begin{question}\label{p:sys-eq-C}
+    Solve the homogeneous system of equations $$\begin{cases}
+        x^3+y^3 &=7,\\ xy(x+y) &= -2.
+    \end{cases}$$ for $x$ and $y$.
+\end{question}
+
+
+\begin{solution}
+    Add three times the second equation to the first equation to find $x+y$. The solutions are $(x,y)=(-1,2)$ and $(2,-1)$.
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-D}
+    Solve the symmetric system of equations $$\begin{cases}
+        x^4+y^4 &= a^4,\\ x+y &= b.
+    \end{cases}$$ for $x$ and $y$, where $a$ and $b$ are appropriate coefficients. 
+\end{question}
+
+
+\begin{solution}
+    Write the first equation as $(x^2+y^2)^2-2x^2y^2=a^4$ and substitute $x^2+y^2=b^2-2xy$ from the second equation into the first equation. The result will be a quadratic equation in $xy$:
+        \begin{align*}
+            2(xy)^2 - 4b^2\cdot xy + (b^4-a^4)=0.
+        \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-E}
+    Solve the symmetric system of equations $$\begin{cases}
+         x^5+y^5 &= a^5,\\ x+y &= a.
+    \end{cases}$$ for $x$ and $y$.
+\end{question}
+
+
+\begin{solution}
+    The solutions are
+        \begin{align*}
+            (x,y) = (a,0), (0,a), \left(a\frac{1\pm i\sqrt{3}}{2},a\frac{1\mp i\sqrt{3}}{2}\right).
+        \end{align*}
+\end{solution}
+
+
+
+\begin{question}\label{p:sys-eq-F}
+    Solve the symmetric system of equations $$\begin{cases}
+        x+y+z &= 0,\\ \dfrac{x^2+y^2+z^2}{x^3+y^3+z^3} &=1,\\xyz &=2.
+    \end{cases}$$ for $x,y,z$.
+\end{question}
+
+
+\begin{solution}
+    Using the identity
+        \begin{align*}
+            x^3+y^3+z^3=(x+y+z)(x^2+y^2+z^2-xy-yz-zx)+3xyz,
+        \end{align*}
+        we can reduce the equations to
+        \begin{align*}
+            x^2+y^2+z^2=6 \implies xy+yz+zx=-3.
+        \end{align*}
+        Now, $t=x,y,y$ are the roots of $t^3-3t-2=0$:
+        \begin{align*}
+            (x,y,z)=(2,-1,-1), (-1,2,-1), (-1,-1,2).
+        \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-G}
+    For an appropriate real number $a$, solve the symmetric system of equations 
+    \begin{align*}
+        \begin{cases}
+            x+y+z &=a,\\x^2+y^2+z^2 &=a^2,\\x^3+y^3+z^3 &=a^3.
+        \end{cases}
+    \end{align*}
+    for $x,y$, and $z$.
+\end{question}
+
+
+\begin{solution}
+    The solutions are $(x,y,z)=(a,0,0), (0,a,0), (0,0,a)$.
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-H}
+Given real numbers $a,b,c,d$, solve the system of equations
+    \begin{align*}
+        \begin{cases}
+        x-ay-a^2z-a^3t &=a^4,\\x-by-b^2z-b^3t &=b^4,\\x-cy-c^2z-c^3t &=c^4,\\x-dy-d^2z-d^3t &=d^4.
+    \end{cases}
+    \end{align*}
+for $x,y,z$, and $t$.
+\end{question}
+
+\begin{solution}
+    Note that $u=a,b,c,d$ are the four roots of
+        \begin{align*}
+            u^4+tu^3+zu^2+yu-x=0.
+        \end{align*}
+        The relationship between the roots of this polynomial gives us the solutions to the system of equations:
+        \begin{align*}
+            \begin{cases}
+                x=-abcd,\\y=-(abc+abd+bcd+acd),\\z=ab+ac+ad+bc+bd+cd,\\t=-(a+b+c+d).
+            \end{cases}
+        \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-I}
+    Given three real numbers $a,b,c$, solve the trigonometric system of equations
+    \begin{align*}
+        \begin{cases}
+        x\sin a + y\sin 2a + z\sin 3a &= \sin 4a,\\ x\sin b + y\sin 2b + z\sin 3b &= \sin 4b,\\ x\sin c + y\sin 2c + z\sin 3c &= \sin 4c.
+    \end{cases}
+    \end{align*}
+    for $x,y$, and $z$.
+\end{question}
+
+\begin{solution}
+    Assuming $a,b,c \neq k\pi$, we can divide both sides of the first equation by $\sin a$, second equation by $\sin b$, and third by $\sin c$. As a result, we find that $u=\cos a,\cos b, \cos c$ are the roots of 
+        \begin{align*}
+            8u^3-4zu^2-2(y+2)u+(z-x)=0.
+        \end{align*}
+        This simplifies to
+        \begin{align*}
+            \begin{cases}
+                \cos a + \cos b + \cos c =\displaystyle \frac{z}{2},\\ \cos a \cos b + \cos b  \cos c + \cos c \cos a = \displaystyle -\frac{y+2}{4},\\ \cos a \cos b \cos c = \displaystyle \frac{x-z}{8}.
+            \end{cases} 
+        \end{align*}
+        and so the solutions are
+        \begin{align*}
+            \begin{cases}
+                x= 8 \cos a \cos b \cos c + 2 (\cos a + \cos b + \cos c),\\ y=-4(\cos a \cos b + \cos b  \cos c + \cos c \cos a)-2,\\ z = 2 (\cos a + \cos b + \cos c).
+            \end{cases}
+        \end{align*}
+\end{solution}
+
+
+\begin{question}\label{p:sys-eq-J}
+    Let $a$ and $b$ be appropriate given real numbers. Solve the following system of equations for $x$ and $y$:
+    \begin{align*}
+        \begin{cases}
+        \displaystyle \frac{x^2}{a^2}+\frac{xy}{ab}+\frac{y^2}{b^2} &=3,\\ \\b^2x^2+xy-a^2y^2 &=ab.
+    \end{cases}
+    \end{align*}
+\end{question}
+
+
+\begin{solution}
+    Let $y=mx$ and simplify the system into
+        \begin{align*}
+            \begin{cases}
+                b^2x^2+abmx^2+a^2m^2x^2=3a^2b^2,\\b^2x^2+mx^2-a^2m^2x^2=ab.
+            \end{cases}
+        \end{align*}
+        Dividing the first equation by the second, we arrive at a quadratic equation in $m$:
+        \begin{align*}
+            a^2(3ab+1)m^2-2abm-b^2(3ab-1)=0.
+        \end{align*}
+        The roots for $m$ are $m=b/a$ and $m=b(1-3ab)/(a(1+3ab))$, so that the final solutions would be
+        \begin{align*}
+            (x,y)=(a,b),(-a,-b),\left(\pm a\sqrt{\frac{3ab+1}{3ab-1}}, \pm b\sqrt{\frac{3ab-1}{3ab+1}}\right).
+        \end{align*}
+\end{solution}
+
+
+\begin{tcolorbox}
+    \begin{question}
+        Solve the following systems of equations for $x,y,z$, assuming $a,b,c$ are appropriate given real numbers.
+        \begin{tasks}(2)
+            \task $\begin{cases}
+                x+y+z &= 9,\\ \displaystyle \frac{1}{x} + \frac{1}{y} + \frac{1}{z} &= 1,\\ xy+yz+zx &= 27.
+            \end{cases}$
+            \task $\begin{cases}
+                x^2+y^2+xy &= 37,\\ x^2+z^2+xz &= 28,\\ y^2+z^2+yz &= 19.
+            \end{cases}$
+            \task $\begin{cases}
+                x+y+z &= 6,\\ x^2+y^2+z^2 &= 18,\\ \sqrt{x}+\sqrt{y}+\sqrt{z} &= 4.
+            \end{cases}$
+            \task $\begin{cases}
+                \displaystyle x &= \dfrac{2yz}{y^2+z^2},\\ \\ \displaystyle y&= \dfrac{2zx}{z^2+x^2},\\ \\ \displaystyle z &= \dfrac{2xy}{x^2+y^2}.
+            \end{cases}$
+            \task $\begin{cases}
+                ax-cy+bz &= x^2+z^2, \\ -bx+ay+cz &= y^2+z^2,\\ cx + by - az &= x^2+y^2.
+            \end{cases}$
+            \task $\begin{cases}
+            \sqrt[4]{1+5x}+\sqrt[4]{6-y} &= 3,\\ \\  5x-y &= 18.
+        \end{cases}$
+        \end{tasks}
+    \end{question}
+\end{tcolorbox}
+
+\begin{solution}
+    \begin{tasks}
+        \task Show that $t=x,y,z$ are the roots of $t^3-9t^2+27t-27=(t-3)^2$, so the only solution is $x=y=z=3$.
+        \task Subtract the second equation from the first equation, and also subtract the third equation from the second equation and simplify. The solutions are:
+        \begin{align*}
+            (x,y,z)= \left(\mp\frac{10\sqrt 3}{3}, \mp \frac{\sqrt 3}{3}, \pm\frac{8\sqrt{3}}{3}\right), (\mp 4, \mp 3, \pm 2).
+        \end{align*}
+        \task Show that $xy+yz+zx=9$ and $xyz=4$, so that $t=x,y,z$ are the roots of
+        \begin{align*}
+            t^3-6t^2+9t-4=0.
+        \end{align*}
+        The solutions are
+        \begin{align*}
+            (x,y,z)=(4,1,1), (1,4,1), (1,1,4).
+        \end{align*}
+        \task The solutions are
+        \begin{align*}
+            (x,y,z)= (1,1,1), (1,-1,-1), (-1,1,-1), (-1,-1,1).
+        \end{align*}
+        \task The trick is to solve the system for $a,b,c$ and assume that $x,y,z$ are given constants. In the system of equations, remove $c$ between the first two equations:
+        \begin{align*}
+            (x^2-yz)a+(y^2+zx)b = x^3 + y^3 + xz^2 + x^2y.
+        \end{align*}
+        Also, remove $c$ between the first and the third equation in the system:
+        \begin{align*}
+            (y^2+zx)a+(z^2-xy)b = y^3+z^3+x^2z+yz^2.
+        \end{align*}
+        Now, remove $b$ from the two latter equations to obtain
+        \begin{align*}
+            y(x^3+y^3+z^3+xyz)a = y(x+y)(x^3+y^3+z^3+xyz).
+        \end{align*}
+        The all-zero solution is obvious: $x=y=z=0$. Assuming $x^3+y^3+z^3+xyz\neq 0$, we find $a=x+y$. Similarly, we can find $b=y+z$ and $c=z+x$. This means the non-trivial solution would be
+        \begin{align*}
+            (x,y,z) = \left(\frac{a+c-b}{2}, \frac{a+b-c}{2}, \frac{c+b-a}{2}\right).
+        \end{align*}
+        \task Let $u=\sqrt[4]{1+5x}$ and $v=\sqrt[4]{6-y}$, so that the equations become $u+v=3$ and $u^4+v^4=25$, which are easy to solve.
+    \end{tasks}
+\end{solution}
+
+
+
+
+
+\begin{question}[name={2004 Denmark (Georg Mohr)}]
+    Find all sets $(x,y,z)$ of real numbers which satisfy
+    \[\begin{cases}
+        x^3 - y^2 &= z^2 -x, \\ y^3 - z^2 &= x^2 - y,\\ z^3 - x^2 &= y^2 - z.
+    \end{cases}\]
+\end{question}
+
+
+
+\begin{question}[name={2005 Denmark (Georg Mohr)}]
+    For any positive real number $a$ determine the number of solutions $(x,y)$ of the system of equations
+    \[\begin{cases}
+        |x| + |y| &= 1, \\ x^2 + y^2 &= a,
+    \end{cases}\]
+    where $x$ and $y$ are real numbers.
+\end{question}
+
+
+
+\begin{question}[name={2006 Denmark (Georg Mohr)}]
+    Determine all triplets $(x,y,z)$ of real numbers which satisfy
+    \[\begin{cases}
+        x+y &= 2, \\ xy - z^2 &= 1.
+    \end{cases}\]
+\end{question}
+
+
+
+\begin{question}[name={2009 Denmark (Georg Mohr)}]
+    Solve the following system of equations over reals:
+    \[\begin{cases}
+        \dfrac{1}{x+y} + x &= 3, \\ & \\  \displaystyle \frac{x}{x+y} &= 2.
+    \end{cases}\]
+\end{question}
+
+
+\begin{question}[name={2013 Denmark (Georg Mohr)}]
+    A sequence $\{x_n\}_{n=0}^{\infty}$ is given by $x_0=8$ and
+    \[x_{n+1} = \frac{1+x_n}{1-x_n},\qquad \text{for} \quad n=0,1,2,\dots\]
+    Determine the number $x_{2013}$.
+\end{question}
+
+
+\begin{question}[name={2015 Denmark (Georg Mohr)}]
+    Find all sets $(x,y,z)$ of real numbers which satisfy
+    \[\begin{cases}
+        x^2 + yz &= 1, \\ y^2 - xz &= 0,\\ z^2 + xy &= 1.
+    \end{cases}\]
+\end{question}
+
+
+\begin{question}[name={2017 Denmark (Georg Mohr)}]
+    The system of equations
+    \[\begin{cases}
+        x^2 \square z^2 &= -8,\\ y^2 \square z^2 &= 7,
+    \end{cases}\]
+    is written on a piece of paper, but unfortunately two of the symbols are a little blurred. However, it is known that the system has at least one solution, and that each of the two squares ($\square$) stands for either $+$ or $-$. What are the two symbols?
+\end{question}
+
+\begin{question}[name={1999 Switzerland TST}]
+    Solve the system of equations over reals:
+    \[\begin{cases}
+        \dfrac{4x^2}{1+4x^2} &= y, \\ \dfrac{4y^2}{1+4y^2} &= z,\\ \dfrac{4z^2}{1+4z^2} &= x.
+    \end{cases}\]
+\end{question}
+
+
+\begin{question}[name={2003 Switzerland TST}]
+    For real values of $x,y$, and $a$, we have
+    \[\begin{cases}
+        x + y  &= a, \\ x^3 + y^3  &= a,\\ x^5 + y^5  &= a.
+    \end{cases}\]
+    Find all possible values of $a$.
+\end{question}
+
+
+
+\begin{question}[name={2004 Switzerland TST}]
+    For real values of $a,b,c,d$, we have
+    \[\begin{cases}
+        a  &= \sqrt{45-\sqrt{21-a}}, \\ b  &= \sqrt{45+\sqrt{21-b}},\\ c  &= \sqrt{45-\sqrt{21+c}},\\ d  &= \sqrt{45+\sqrt{21+d}}.
+    \end{cases}\]
+    Prove that $abcd=2004$.
+\end{question}
+
+
+\begin{question}[name={2007 Ecuador TST}]
+    Let $a,b,c$, and $x,y,z$ be the solutions to the system of equations
+    \begin{align*}
+        \begin{cases}
+            x^2+y^2+z^2 &= 7+2\sqrt{3},\\
+            xy+yz+zx &= -3\sqrt{3},\\
+            a^2+b^2+c^2 &= 7,\\
+            ab+bc+ca &= 2\sqrt{3}.
+        \end{cases}
+    \end{align*}
+    Find the value of $|a+b+c|+|x+y+z|$.
+\end{question}
+
+
+\begin{question}[name={2008 Ecuador TST}]
+    Solve the system of equations
+    \begin{align*}
+        \begin{cases}
+            x+y^2 &= 1,\\ x^2+y^3 &= 1.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+
+\begin{question}[name={2009 Ecuador TST}]
+    Let $x,y,z$ be real numbers such that $abc=1$, and
+    \begin{align*}
+        \begin{cases}
+            x+\dfrac{1}{y} &= 5,\\ & \\ y+\dfrac{1}{z} &= 29,\\ & \\ z+\dfrac{1}{x} &= \dfrac{m}{n},
+        \end{cases}
+    \end{align*}
+    where $m$ and $n$ are coprime positive integers. Find the value of $m+n$.
+\end{question}
+
+
+\begin{question}[name={2009 Ecuador TST}]
+    Solve the system of equations over reals:
+    \begin{align*}
+        \begin{cases}
+            x+y+z &= 2,\\
+            (x+y)(y+z) + (y+z)(z+x) + (z+x)(x+y) &= 1,\\
+            x^2(y+z) + y^2(z+x) + z^2(x+y) &= -6.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+
+\begin{question}[name={2010 Ecuador TST}]
+    A sequence $\{a_n\}_{n=1}^{\infty}$ is defined initially by $a_1=1/2$ and recursively for $n\geq 1$ by
+    \begin{align*}
+        a_n &= \frac{a_{n-1}}{2na_{n-1}+1}.
+    \end{align*}
+    Find the sum $a_1+a_2+\cdots+a_{2010}$.
+\end{question}
+
+
+
+\begin{question}[name={2011 Ecuador TST}]
+    Solve the system of equations over reals:
+    \begin{align*}
+        \begin{cases}
+            x_1+x_2+\cdots+x_{2011} &= 2011,\\ x_1^4+x_2^4+\cdots+x_{2011}^4 & = x_1^3+x_2^3+\cdots+x_{2011}^3.
+        \end{cases}
+    \end{align*}
+\end{question}
+
+
+
+\begin{question}[name={2016 Ecuador}]
+    Let $a,b$, and $x,y$ be real numbers satisfying:
+    \begin{align*}
+        \begin{cases}
+            ax\phantom{^1} + by\phantom{^1} &= 3,\\
+            ax^2 + by^2 &= 7,\\
+            ax^3 + by^3 &= 16,\\
+            ax^4 + by^4 &= 42.
+        \end{cases}
+    \end{align*}
+    Find $ax^5+by^5$.
+\end{question}
+
+
+
+
+
+

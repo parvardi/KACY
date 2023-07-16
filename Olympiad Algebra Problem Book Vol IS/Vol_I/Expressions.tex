@@ -1,0 +1,564 @@
+\section{Exercises in Expressions}
+Here, we study algebraic expressions in the general form of Functional Expressions first, and then discuss problems of the special case of Polynomial Expressions.
+
+\subsection{Functional Expressions}
+Remember that a function $f:A\to B$ takes elements of the set $A$ as input and assigns to them elements of the set $B$ as outputs. We study simple functional expressions here and reserve the more advanced functional equations for a later chapter.
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If $f(x)=x^2-2x$, find $f(2x+1)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(2x+1)=4x^2-1$.
+\end{solution}
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If \[f(x)=x+\frac{1}{x},\] find $f(f(x))$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(f(x))= \frac{x^4+3x^2+1}{x(x^2+1)}$.
+\end{solution}
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If \[f(x)=\frac{x-1}{x+1},\] find $f(f(f(x)))\cdot f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(f(f(x)))\cdot f(x) = -1$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If \[f\left(\frac{x}{x+1}\right)=x^2,\] find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x) = \frac{x^2}{(x+1)^2}$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Write $x^3-3x+4$ as a sum in terms of exponents of $(x+2)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $x^3-3x+4 = (x+2)^3 -6(x+2)^2 + 9(x+2) + 2$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If $f(x)=ax^2+bx+c$, what is the value of the following expression?
+\begin{align*}
+    g(x) = f(x+3) - 3f(x+2) + 3f(x+1) - f(x).
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $g(x) \equiv 0$.
+\end{solution}
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Find a function in the form of $f(x)=a+bc^x$ such that
+\begin{align*}
+    f(0)=15, f(2)=30, f(4)=90.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x) = 10 + 5 \cdot 2^x$.
+\end{solution}
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+\begin{itemize}
+    \item[(a)] Consider a linear function $f(x)=ax+b$. If the inputs $x=x_n$ (for $n=1,2,3,\dots$) of the function form an arithmetic progression, then what kind of progression do the outputs $y_n=f(x_n)$ form?
+    \item[(b)] For $a>0$, consider an exponential function $f(x)=a^x$. If the inputs $x=x_n$ (for $n=1,2,3,\dots$) of the function form an arithmetic progression, then what kind of progression do the outputs $y_n=f(x_n)$ form?
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: (a) Arithmetic, (b) Geometric.
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+For $a>0$, define
+\begin{align*}
+    f(x)= \frac{1}{2}\left(a^{x}+a^{-x}\right).
+\end{align*}
+Find an alternative form for $f(x)+f(y)$ as a product.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x)+f(y) = 2f(x)f(y)$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If $f(x)+f(y)=f(z)$, find $z$ in terms of $x$ and $y$ so that:
+\begin{itemize}
+    \item[(a)] $f(x)=ax$;
+    \item[(b)] $f(x) = \frac{1}{x}$;
+    \item[(c)] $f(x) = \arctan x$, where $|x|<1$;
+    \item[(d)] $f(x)=\log \frac{1+x}{1-x}$.
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: (a) $z=x+y$; (b) $z=\frac{xy}{x+y}$; (c) $z=\frac{x+y}{1-xy}$; (d) $z=\frac{x+y}{1+xy}$. 
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Assuming
+\begin{align*}
+    f(x)= \frac{1}{1-x},
+\end{align*}
+Find $f(f(x))$ and $f(f(f(x)))$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(f(x))=\frac{x-1}{x}$ and $f(f(f(x)))=x$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Assuming
+\begin{align*}
+    f(x+1)= x^2-3x+2,
+\end{align*}
+Find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x)=x^2-5x+7$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Assuming
+\begin{align*}
+    f\left(x+\frac{1}{x}\right)= x^2 + \frac{1}{x^2},
+\end{align*}
+Find $f(x)$ for $|x| \geq 2$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x)=x^2-2$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If for $x >0$,
+\begin{align*}
+    f\left(\frac{1}{x}\right)= x+ \sqrt{1+x^2},
+\end{align*}
+Find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x)=\frac{1}{x}\left(1+\sqrt{1+x^2}\right)$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If
+\begin{align*}
+    f\left(\frac{2x-1}{x+2}\right)= \frac{3x^2-3x+7}{(x+2)^2},
+\end{align*}
+Find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x)=x^2-x+1$.
+\end{solution}
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If we define
+\begin{align*}
+    f_n(x)= \underbrace{f(f(f(\dots(f}_{n \text{ times}}(x))\dots))),
+\end{align*}
+find $f_n(x)$ given that
+\begin{align*}
+    f(x)=\frac{x}{\sqrt{1+x^2}}.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+One can easily prove by induction that $f_n(x)=\frac{x}{\sqrt{1+nx^2}}$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+The function $f(x)$ is defined for $x>1$ as
+\begin{align*}
+    f(x) = \log(x+\sqrt{x^2-1}).
+\end{align*}
+Find $f(2x^2-1)$ and $f(4x^3-3x)$ in terms of $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(2x^2-1)=2f(x)$ and $f(4x^3-3x)=3f(x)$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If we know that
+\begin{align*}
+    f\left(\frac{x+2}{x-2}\right) = \frac{x^2+4x+4}{8x},
+\end{align*}
+Find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x) = \frac{x^2}{x^2-1}$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If we know that
+\begin{align*}
+    f(x) &= \frac{4-x}{2x-4}, \text{ and}\\
+    f(\alpha+x) \cdot f(\alpha-x) &= \text{constant},
+\end{align*}
+Find $\alpha$ and the constant.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $\alpha=3$ and $f(\alpha+x) \cdot f(\alpha-x) = \frac{1}{4}$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Consider the function
+\begin{align*}
+    f(x) &= \frac{a(x-b)(x-c)}{(a-b)(a-c)} + \frac{b(x-c)(x-a)}{(b-c)(b-a)} + \frac{c(x-a)(x-b)}{(c-a)(c-b)}.
+\end{align*}
+Find the roots of $f(x)-x=0$ and conclude that $f(x)=x$ for all $x$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+It is easy to see that $f(a)=a, f(b)=b$, and $f(c)=c$, so that the equation $f(x)=x$ has at least three roots. However, the equation $f(x)-x=0$ is quadratic and having three roots implies that it is always zero, so that $f(x)=x$ for all $x$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If $n$ is an odd integer, $a^2 \neq 1$, and $f(x)$ is defined for all $x$ by
+\begin{align*}
+    af(x^n) + f(-x^n) = bx,
+\end{align*}
+Find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Change $x$ to $-x$ in the given equation to easily arrive at $f(x)=\frac{b}{a-1}\sqrt[n]{x}$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+\begin{itemize}
+    \item[(a)] Find two roots for the following equation:
+    \begin{align*}
+        f(x)=f\left(\frac{x+8}{x-1}\right).
+    \end{align*}
+    \item[(b)] If $f(x)=x^2-12x+3$, find all the roots of the equation given in (a).
+\end{itemize}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: (a) $x=-2, 4$, (b) $x=-2, 2, 4, 10$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Find $f(x,y)$ given that
+\begin{align*}
+    f\left(x+y, \frac{y}{x}\right) = x^2 - y^2.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x,y)=x^2 \cdot \frac{1-y}{1+y}$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+For a real $x$ and positive integer $n$, the function $F_n(x)$ is recursively defined by $F_1(x)=\cos x$ and
+\begin{align*}
+    F_{n+1}(x) + F_n(x+1) = F_n(x).
+\end{align*}
+Find $F_n(x)$ for different values of $n$ modulo $4$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+By induction, we arrive at:
+\begin{align*}
+    F_n(x) = \begin{cases}
+        -2^{n-1}\left(\sin \frac{1}{2}\right)^{n-1} \cdot \sin\left(x+ \frac{n-1}{2}\right), & \mbox{if } n=4k,\\
+        \phantom{+}2^{n-1}\left(\sin \frac{1}{2}\right)^{n-1}\cdot \cos\left(x+ \frac{n-1}{2}\right), & \mbox{if } n=4k+1,\\
+        \phantom{+}2^{n-1}\left(\sin \frac{1}{2}\right)^{n-1}\cdot \sin\left(x+ \frac{n-1}{2}\right), & \mbox{if } n=4k+2,\\
+        -2^{n-1}\left(\sin \frac{1}{2}\right)^{n-1}\cdot \cos\left(x+ \frac{n-1}{2}\right), & \mbox{if } n=4k+3.
+    \end{cases}
+\end{align*}
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If for all $-\frac{1}{2} < x < \frac{1}{2}$, we have
+\begin{align*}
+    f\left(\frac{x}{x^2+1}\right) = \frac{x^4+1}{x^2},
+\end{align*}
+find $f(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $f(x) = \frac{1}{x^2}-2$.
+\end{solution}
+
+\subsection{Polynomial Expressions}
+We are now going to study special types of functional expressions called \textbf{polynomial expressions}, which are so important that the whole of Chapter~\ref{ch:POLY} is dedicated to them.
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+What is the sum of coefficients of the following polynomial after expansion?
+\begin{align*}
+    p(x)=(12x^3-54x^2+19x+22)^{71}.
+\end{align*}
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $p(1)=-1$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Given a polynomial
+\begin{align*}
+    p(x)=(x+a)(x+a^2)\cdots (x+a^n),
+\end{align*}
+find an alternative factorization for $a^n(x+1)p(x)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: $a^n(x+1)p(x) = (x+a^n)p(ax)$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Given
+\begin{align*}
+    p(x) = (x-a)(x-b)(x-c),
+\end{align*}
+Find alternative expressions for $p(a+b)\cdot p(b+c) \cdot p(c+a)$ and $p(-a)\cdot p(-b) \cdot p(-c)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: 
+\begin{align*}
+    p(a+b)\cdot p(b+c) \cdot p(c+a) &= 8 p\left(\frac{a+b+c}{2}\right) \cdot \left(p(0)\right)^2,\\
+    p(-a)\cdot p(-b) \cdot p(-c) &= 8\left(p(a+b+c)\right)^2\cdot p(0).
+\end{align*}
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+(a) Write the given polynomial $p(x)$ as a sum of descending exponents of $(x-1)$:
+\begin{align*}
+    p(x) = 6x^4 + 19x^3 - 17x^2 -72x - 36.
+\end{align*}
+(b) Solve $f(x)=0$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by Parviz Shahriari]
+Answer: (a) $6(x-1)^4+43(x-1)^3+76(x-1)^2-25(x-1)-100$, (b) $x=2, -3, -\frac{2}{3}, -\frac{3}{2}$.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+If $a_0,a_1,\dots,a_{50}$ are the coefficients of the polynomial
+\begin{align*}
+    p(x) = (1+x+x^2)^{50},
+\end{align*}
+determine whether the sum $a_0+a_2+\cdots+a_{50}$ is odd or even.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+Plug in $x=\pm 1$ in $p(x)$ and observe that the given sum is even.
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Let $p(x)=x^2+ax+b$ be a quadratic polynomial in which $a$ and $b$ are integers. Find all integers $n$ for which there exists an integer $m$ such that $p(n)p(n+1)=p(m)$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+Answer: all integers $n$ work, and $m$ would be $m=n^2 +n(a+1) +b$.
+\end{solution}
+
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Let $p(x)=x^3+ax^2+bx+c$ and $q(x)=x^3+bx^2+cx+a$ be polynomials with integer coefficients and $c \neq 0$. If we know that $p(1)=0$ and that the roots of $q(x)$ are squares of roots of $p(x)$, find $a^{2023} + b^{2023} + c^{2023}$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+Answer: $a=c=-1$ and $b=1$, so that $a^{2023} + b^{2023} + c^{2023}=-1$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Let $p_k(x)=x^k+1/x^k$. If $x$ is a non-zero real number such that both $p_4(x)$ and $p_5(x)$ are rational numbers, prove that $p_1(x)$ is also rational.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+Using $p_{2k}(x)=p_k(x)^2+2$, we deduce the rationality of $p_8(x)$ and $p_{10}(x)$ from the rationality of 
+ $p_4(x)$ and $p_5(x)$, respectively. From $p_4(x)p_2(x)=p_2(x)+p_6(x)$ and $p_8(x)p_2(x)=p_{10}(x)+p_6(x)$, it follows that $p_2(x)$ and $p_6(x)$ are also rational. Finally, $p_5(x)p_1(x)=p_4(x)+p_6(x)$ implies the rationality of $p_1(x)$.
+\end{solution}
+
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Let $p(x)=x^2+ax+b$ and $q(x)=x^2+cx+d$ be quadratic polynomials with integer coefficients such that $a \neq c$ and there exist integers $m\neq n$ for which $p(m)=q(n)$ and $p(n)=q(m)$. What is the parity of $a-c$?
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}
+Show that $4(d-b)=c^2-a^2$, proving that $a-c$ is even.
+\end{solution}
+
+
+\begin{tcolorbox}
+\SetupExSheets{headings=runin}
+\begin{question}
+Given three real numbers $x,y,z$ such that $x+y+z=0$ and $xy+yz+zx=-3$, find the value of $x^3y+y^3z+z^3x$.
+\end{question}
+\end{tcolorbox}
+
+\begin{solution}[name=Solution by CRMO 2012]
+From the given equations we can obtain:
+\begin{align*}
+    x^3y+y^3z+z^3x-3(xy+yz+zx)-xyz(x+y+z)=0,
+\end{align*}
+to get $x^3y+y^3z+z^3x=-9$.
+\end{solution}
